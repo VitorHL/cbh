@@ -1,0 +1,16 @@
+init offset = -1
+
+default room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_edgar_diner )
+default room_edgar_kitchen = game_room( "kitchen_label", LOC_room_edgar_kitchen )
+default room_edgar_storeroom = game_room( "storeroom_label", LOC_room_edgar_storeroom )
+default room_church = game_room( "church_label", LOC_room_church, address_church )
+default room_cphpd_hall = game_room( "cphpd_hall_label", LOC_room_cphpd_hall, address_cphpd )
+default room_daniel_apartment = game_room( "daniel_apartment_label", LOC_room_daniel_apartment, address_daniel_apartment )
+default room_forest_trail = game_room( "forest_trail_label", LOC_room_forest_trail, address_forest_trail )
+default room_gas_station = game_room( "gas_station_label", LOC_room_gas_station, address_gas_station )
+default room_gia_mansion = game_room( "gia_mansion_label", LOC_room_gia_mansion )
+default room_gia_ranch = game_room( "gia_ranch_label", LOC_room_gia_ranch, address_gia_ranch )
+default room_gia_stable = game_room( "gia_stable_label", LOC_room_gia_stable )
+default room_horse_track = game_room( "horse_track_label", LOC_room_horse_track, address_horse_track )
+default room_library_hall = game_room( "library_hall_label", LOC_room_library_hall, address_library )
+default room_val_apartment = game_room( "val_apartment_label", LOC_room_val_apartment, address_chao_bookstore )

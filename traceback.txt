@@ -1,0 +1,74 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 41, in script call
+    call counter_label_menu
+  File "game/script.rpy", line 111, in script call
+    call gas_station_label_menu
+  File "game/script.rpy", line 177, in script call
+    call val_apartment_label_menu
+  File "game/script.rpy", line 55, in script call
+    call church_label_menu
+  File "game/script.rpy", line 89, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 177, in script call
+    call val_apartment_label_menu
+  File "game/script.rpy", line 133, in script call
+    call gia_ranch_label_menu
+  File "game/script.rpy", line 55, in script call
+    call church_label_menu
+  File "game/script.rpy", line 177, in script call
+    call val_apartment_label_menu
+  File "game/script.rpy", line 89, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 111, in script call
+    call gas_station_label_menu
+  File "game/script.rpy", line 113, in script
+    $ travel_menu( room_edgar_counter )
+  File "game/script.rpy", line 113, in <module>
+    $ travel_menu( room_edgar_counter )
+  File "game/Script/0_calendar.rpy", line 99, in travel_menu
+    menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address) ))
+UnboundLocalError: local variable 'var_name' referenced before assignment
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 41, in script call
+    call counter_label_menu
+  File "game/script.rpy", line 111, in script call
+    call gas_station_label_menu
+  File "game/script.rpy", line 177, in script call
+    call val_apartment_label_menu
+  File "game/script.rpy", line 55, in script call
+    call church_label_menu
+  File "game/script.rpy", line 89, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 177, in script call
+    call val_apartment_label_menu
+  File "game/script.rpy", line 133, in script call
+    call gia_ranch_label_menu
+  File "game/script.rpy", line 55, in script call
+    call church_label_menu
+  File "game/script.rpy", line 177, in script call
+    call val_apartment_label_menu
+  File "game/script.rpy", line 89, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 111, in script call
+    call gas_station_label_menu
+  File "game/script.rpy", line 113, in script
+    $ travel_menu( room_edgar_counter )
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 113, in <module>
+    $ travel_menu( room_edgar_counter )
+  File "game/Script/0_calendar.rpy", line 99, in travel_menu
+    menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address) ))
+UnboundLocalError: local variable 'var_name' referenced before assignment
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.7.25031702
+dice test 1.0
+Fri Jul  4 07:54:29 2025

@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 267: is not terminated with a newline. (Check strings and parenthesis.)
+                    hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address,  )
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Fri Jul  4 14:51:53 2025
