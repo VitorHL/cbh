@@ -5,31 +5,35 @@ While running game code:
     call counter_label_menu
   File "game/script.rpy", line 111, in script call
     call gas_station_label_menu
-  File "game/script.rpy", line 177, in script call
-    call val_apartment_label_menu
-  File "game/script.rpy", line 55, in script call
-    call church_label_menu
-  File "game/script.rpy", line 89, in script call
-    call daniel_apartment_label_menu
-  File "game/script.rpy", line 177, in script call
-    call val_apartment_label_menu
-  File "game/script.rpy", line 133, in script call
-    call gia_ranch_label_menu
-  File "game/script.rpy", line 55, in script call
-    call church_label_menu
-  File "game/script.rpy", line 177, in script call
-    call val_apartment_label_menu
-  File "game/script.rpy", line 89, in script call
-    call daniel_apartment_label_menu
+  File "game/script.rpy", line 41, in script call
+    call counter_label_menu
   File "game/script.rpy", line 111, in script call
     call gas_station_label_menu
   File "game/script.rpy", line 113, in script
     $ travel_menu( room_edgar_counter )
   File "game/script.rpy", line 113, in <module>
     $ travel_menu( room_edgar_counter )
-  File "game/Script/0_calendar.rpy", line 99, in travel_menu
-    menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address) ))
-UnboundLocalError: local variable 'var_name' referenced before assignment
+  File "game/Script/0_calendar.rpy", line 111, in travel_menu
+    room = renpy.display_menu(menu_list, "" , True, screen='travel'  )
+  File "game/screens/choice_menu.rpy", line 11, in execute
+    screen travel(items):
+  File "game/screens/choice_menu.rpy", line 11, in execute
+    screen travel(items):
+  File "game/screens/choice_menu.rpy", line 19, in execute
+    fixed:
+  File "game/screens/choice_menu.rpy", line 24, in execute
+    fixed:
+  File "game/screens/choice_menu.rpy", line 37, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 41, in execute
+    for i in items:
+  File "game/screens/choice_menu.rpy", line 45, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 51, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 60, in execute
+    frame:
+TypeError: 'str' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -38,22 +42,8 @@ Full traceback:
     call counter_label_menu
   File "game/script.rpy", line 111, in script call
     call gas_station_label_menu
-  File "game/script.rpy", line 177, in script call
-    call val_apartment_label_menu
-  File "game/script.rpy", line 55, in script call
-    call church_label_menu
-  File "game/script.rpy", line 89, in script call
-    call daniel_apartment_label_menu
-  File "game/script.rpy", line 177, in script call
-    call val_apartment_label_menu
-  File "game/script.rpy", line 133, in script call
-    call gia_ranch_label_menu
-  File "game/script.rpy", line 55, in script call
-    call church_label_menu
-  File "game/script.rpy", line 177, in script call
-    call val_apartment_label_menu
-  File "game/script.rpy", line 89, in script call
-    call daniel_apartment_label_menu
+  File "game/script.rpy", line 41, in script call
+    call counter_label_menu
   File "game/script.rpy", line 111, in script call
     call gas_station_label_menu
   File "game/script.rpy", line 113, in script
@@ -64,11 +54,53 @@ Full traceback:
     exec(bytecode, globals, locals)
   File "game/script.rpy", line 113, in <module>
     $ travel_menu( room_edgar_counter )
-  File "game/Script/0_calendar.rpy", line 99, in travel_menu
-    menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address) ))
-UnboundLocalError: local variable 'var_name' referenced before assignment
+  File "game/Script/0_calendar.rpy", line 111, in travel_menu
+    room = renpy.display_menu(menu_list, "" , True, screen='travel'  )
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 424, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 11, in execute
+    screen travel(items):
+  File "game/screens/choice_menu.rpy", line 11, in execute
+    screen travel(items):
+  File "game/screens/choice_menu.rpy", line 19, in execute
+    fixed:
+  File "game/screens/choice_menu.rpy", line 24, in execute
+    fixed:
+  File "game/screens/choice_menu.rpy", line 37, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 41, in execute
+    for i in items:
+  File "game/screens/choice_menu.rpy", line 45, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 51, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 60, in execute
+    frame:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\sl2\slast.py", line 1234, in execute
+    d = transform(d)
+TypeError: 'str' object is not callable
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Fri Jul  4 07:54:29 2025
+Fri Jul  4 20:13:06 2025
