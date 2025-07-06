@@ -63,10 +63,11 @@ init python:
 ######################################################################################################################################
 
     class game_room(store.object):
-        def __init__(self, game_label, name = None, address = None):
+        def __init__(self, game_label, name = None, address = None, location = None):
             self.name = name
             self.game_label = game_label
             self.address = address
+            self.location = location
     
     def move_room(to_where):
         global current_room
@@ -98,14 +99,14 @@ init python:
             for room in new_entries:
                 var_name = get_var_name(room, globals())[0]
                 var_address = room.address
-                menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address) ))
+                menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address, room_location=room.location) ))
         
         # Add items from avaliable_travels, excluding current_room
         for room in avaliable_travels:
             if room != current_room:
                 var_name = get_var_name(room, globals())[0]
                 var_address = room.address
-                menu_list.append( (room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address) ) )
+                menu_list.append( (room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address, room_location=room.location) ) )
         
         # Display the menu with the processed list
         room = renpy.display_menu(menu_list, "" , True, screen='travel'  )

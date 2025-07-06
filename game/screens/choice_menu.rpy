@@ -17,6 +17,7 @@ screen travel(items):
     #style_prefix "choice"
     default thumb = "generic"
     default address = "???"
+    default location = "???"
     frame:
         xfill True
         yfill True
@@ -46,11 +47,12 @@ screen travel(items):
                 for i in items:
                     $ room_thumb = i.kwargs.get("room_thumb", None)
                     $ room_address = i.kwargs.get("room_address", "???")
+                    $ room_location = i.kwargs.get("room_location", "???")
                     
                     button:
                         #ymaximum 40
                         action i.action
-                        hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address,  )]
+                        hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address), SetScreenVariable( "location", room_location)]
                         selected False
                         sensitive True
                         hbox:
@@ -67,7 +69,7 @@ screen travel(items):
                                 text "[i.caption]": 
                                     yalign 0.5
                                     style "entrytext"
-#at "entrytext_trans"
+
         fixed:
             xsize 640
             ysize 480
@@ -76,7 +78,13 @@ screen travel(items):
             image "thumbnail_{0}_bg".format(thumb)
             frame: 
                 xalign 0.5 
-                yalign 1.0 
+                yalign 0.05 
+                background Frame("gui/tiles/black_tile.webp", 3, 3)
+                text "[location]": 
+                    textalign 0.5 
+            frame: 
+                xalign 0.50 
+                yalign 0.95 
                 background Frame("gui/tiles/black_tile.webp", 3, 3)
                 text "[address]": 
                     textalign 0.5 
