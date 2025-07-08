@@ -1,10 +1,12 @@
+define sounds = ['audio/default_talk_blip.ogg']
+
 init python:
     # Importing Important Stuff
     import renpy.store as store
     import renpy.exports as renpy
 
     class game_calendar(store.object):
-        def __init__(self,weekday,month,day,year):
+        def __init__(self, weekday, month, day, year):
             self.weekday = weekday
             self.month = month
             self.day = day
@@ -39,7 +41,13 @@ init python:
             return days
         
         def next_day(self): #Go to the next day
+            global events_played_today, room_where_events_played_already, interactions_played_today
             self.day += 1
+            events_played_today.clear()
+            room_where_events_played_already.clear()
+            for interaction in interactions_played_today:
+                interaction.runs_today = 0
+            interactions_played_today.clear()
             
             # Handle weekday progression
             if self.weekday >= 6:  # Sunday (assuming 0=Monday, 6=Sunday)
@@ -113,4 +121,125 @@ init python:
         move_room(room)
 
 
-    
+    ############################################################################################################################################
+
+    class game_event(store.object): 
+        def __init__(self,priority,game_label,game_room = None,**kwargs):
+            self.priority = priority
+            self.game_label = game_label
+            self.game_room = game_room  
+            self.day = kwargs.get('day', None)
+            self.month = kwargs.get('month', None)
+            self.year = kwargs.get('year', None)
+            self.weekday = kwargs.get('weekday', None)
+            self.instances = kwargs.get ('instances', 1) # if set to zero or less, the event is infinite
+            self.runs = 0
+
+    def run_event(event_to_run):
+        global avaliable_events, ongoing_event
+        event_to_run.runs += 1
+        # Checks if the event is single use or can run multiple times, if instance <= the event is infinite.
+        if event_to_run.instances == 1:
+            avaliable_events.remove(event_to_run)
+        elif event_to_run.instances > 1:
+            event_to_run.instances - 1
+        room_where_events_played_already.clear()
+        ongoing_event = event_to_run
+        renpy.call(event_to_run.game_label)
+
+    def end_event():
+        global ongoing_event, finished_events, events_played_today, room_where_events_played_already
+        finished_events.append(ongoing_event)
+        events_played_today.append(ongoing_event)
+        room_where_events_played_already.append(current_room)
+        del ongoing_event
+        renpy.return_statement()
+
+
+    def check_for_event():
+        global current_room, avaliable_events, finished_events, events_played_today, room_where_events_played_already, calendar
+
+        # Filter events that meet all criteria
+        suitable_events = []
+        
+        for event in avaliable_events:
+            # Check if event matches current room
+            if event.game_room == current_room or event.game_room is None:
+            # Check if event hasn't been played today
+                if event not in events_played_today:
+                    # Check if current room is not in rooms where events were played already
+                    if current_room not in room_where_events_played_already:
+                        
+                        # Check calendar-based conditions
+                        calendar_suitable = True
+                        
+                        # Check day if specified
+                        if hasattr(event, 'day') and event.day is not None:
+                            if event.day != calendar.day:
+                                calendar_suitable = False
+                        
+                        # Check month if specified
+                        if hasattr(event, 'month') and event.month is not None:
+                            if event.month != calendar.month:
+                                calendar_suitable = False
+                        
+                        # Check year if specified
+                        if hasattr(event, 'year') and event.year is not None:
+                            if event.year != calendar.year:
+                                calendar_suitable = False
+                        
+                        # Check weekday if specified
+                        if hasattr(event, 'weekday') and event.weekday is not None:
+                            if event.weekday != calendar.weekday:
+                                calendar_suitable = False
+                        
+                        # Only add to suitable events if all calendar conditions are met
+                        if calendar_suitable:
+                            suitable_events.append(event)
+        
+        # If we found suitable events, get the one with lowest priority
+        if suitable_events:
+            # Sort by priority (lowest first) and get the first one
+            best_event = min(suitable_events, key=lambda event: event.priority)
+            run_event(best_event)
+
+#####################################################################################################################################################
+
+    class game_interaction(store.object): 
+        def __init__(self,game_label,**kwargs):
+            self.game_label = game_label
+            self.state = 0 # used mainly to set this interaction in diferent "modes"
+            self.runs = 0
+            self.runs_today = 0
+
+    def run_interaction(interaction_to_run):
+        global avaliable_interactions, ongoing_interaction
+        if not avaliable_interactions or interaction_to_run in avaliable_interactions:
+            ongoing_interaction = interaction_to_run
+            renpy.call(interaction_to_run.game_label)
+        else:
+            renpy.say("", cdt_message )
+
+    def end_interaction():
+        global avaliable_interactions, ongoing_interaction, interactions_played_today
+        ongoing_interaction.runs += 1
+        ongoing_interaction.runs_today += 1
+        interactions_played_today.append(ongoing_interaction)
+        del ongoing_interaction
+        renpy.return_statement()
+
+
+#####################################################################################################################################################
+
+
+    def type_sound(event, interact=True, **kwargs):
+        if not interact:
+            return
+
+        if event == "show": #if text's being written by character, spam typing sounds until the text ends
+            renpy.sound.play(renpy.random.choice(sounds), loop=True)
+
+
+
+        elif event == "slow_done" or event == "end":
+            renpy.sound.stop(fadeout=1.0)

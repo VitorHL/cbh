@@ -83,7 +83,7 @@ screen top_bar():
         yminimum 75
         #ymaximum 75
         vbox:
-            text "[current_room.address]" textalign 1.00
+            text "[weekdays_list[calendar.weekday]], [months_list[calendar.month]] [calendar.day], [calendar.year]" textalign 1.00
 
 # screen missions_display():
 #     frame:

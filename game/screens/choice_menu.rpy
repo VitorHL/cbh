@@ -55,6 +55,8 @@ screen travel(items):
                         hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address), SetScreenVariable( "location", room_location)]
                         selected False
                         sensitive True
+                        hover_sound "audio/menu_hover.wav"
+                        activate_sound "audio/menu_select.wav"
                         hbox:
                             spacing 10
                             frame:

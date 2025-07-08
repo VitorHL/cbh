@@ -1,28 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Script/defines/places.rpy", line 3, in script
-    define room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_room_edgar_diner, location_room_edgar_diner )
-  File "game/Script/defines/places.rpy", line 3, in <module>
-    define room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_room_edgar_diner, location_room_edgar_diner )
-NameError: name 'game_room' is not defined
+  File "game/script.rpy", line 106, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 115, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 115, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 115, in script call
+    call daniel_apartment_label_menu
+  [Previous line repeated 6 more times]
+  File "game/script.rpy", line 108, in script
+    menu:
+TypeError: 'int' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Script/defines/places.rpy", line 3, in script
-    define room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_room_edgar_diner, location_room_edgar_diner )
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2248, in execute
-    self.set()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2262, in set
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/Script/defines/places.rpy", line 3, in <module>
-    define room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_room_edgar_diner, location_room_edgar_diner )
-NameError: name 'game_room' is not defined
+  File "game/script.rpy", line 106, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 115, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 115, in script call
+    call daniel_apartment_label_menu
+  File "game/script.rpy", line 115, in script call
+    call daniel_apartment_label_menu
+  [Previous line repeated 6 more times]
+  File "game/script.rpy", line 108, in script
+    menu:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 134, in menu
+    rv = renpy.store.menu(new_items)
+TypeError: 'int' object is not callable
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Sat Jul  5 05:51:06 2025
+Tue Jul  8 06:05:31 2025
