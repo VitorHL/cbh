@@ -5,13 +5,62 @@
     on hover:
         xsize 52
         ysize 52
-
+transform dialogue_entry:
+    on idle:
+        zoom 0.75
+    on hover:
+        zoom 1.0
 style entrytext:
     color "#ffffff"
     outlines [(1, "#000000", 0, 0)]
     hover_color "#000000"
     hover_outlines [(0, "#000000", 0, 0)]
     hover_size 45
+
+style dialogue_entry_text:
+    color "#ffffff"
+    outlines [(1, "#000000", 0, 0)]
+    hover_color "#000000"
+    hover_outlines [(0, "#000000", 0, 0)]
+
+## Choice screen ###############################################################
+##
+## This screen is used to display the in-game choices presented by the menu
+## statement. The one parameter, items, is a list of objects, each with caption
+## and action fields.
+##
+## https://www.renpy.org/doc/html/screen_special.html#choice
+
+screen choice(items):
+    #style_prefix "choice"
+    frame:
+        xfill True
+        yfill True
+        background Transform("black", alpha = 0.5)
+    vbox:
+        spacing 20
+        xalign 0.5
+        yalign 0.5
+        for i in items:
+            button:
+                at dialogue_entry
+                xalign 0.5
+                xsize 800
+                #ymaximum 40
+                action i.action
+                selected False
+                sensitive True
+                hover_sound "audio/menu_hover.wav"
+                activate_sound "audio/menu_select.wav"
+                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
+                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                text "[i.caption]": 
+                    yalign 0.5
+                    xalign 0.5 
+                    style "dialogue_entry_text"
+                    
+
+################################################################################
 
 screen travel(items):
     #style_prefix "choice"

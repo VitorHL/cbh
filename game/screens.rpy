@@ -236,61 +236,7 @@ style input:
     xmaximum gui.dialogue_width
 
 
-## Choice screen ###############################################################
-##
-## This screen is used to display the in-game choices presented by the menu
-## statement. The one parameter, items, is a list of objects, each with caption
-## and action fields.
-##
-## https://www.renpy.org/doc/html/screen_special.html#choice
 
-screen choice(items):
-    style_prefix "choice"
-
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
-
-screen travel(items):
-    #style_prefix "choice"
-    default thumb = "generic"
-    default address = "???"
-    vbox:
-        xalign 0.25
-        yalign 0.5
-        for i in items:
-            $ room_thumb = i.kwargs.get("room_thumb", None)
-            $ room_address = i.kwargs.get("room_address", "???")
-            #textbutton i.caption action i.action hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address,  )]
-            button:
-                action i.action
-                hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address,  )]
-                text "[i.caption]" yalign 0.5
-    frame:
-        xsize 640
-        ysize 480
-        xalign 0.75 
-        yalign 0.5
-        image "thumbnail_{0}_bg".format(thumb) 
-        text "[address]" textalign 0.5 xalign 0.5 yalign 1.0 
-
-
-style choice_vbox is vbox
-style choice_button is button
-style choice_button_text is button_text
-
-style choice_vbox:
-    xalign 0.5
-    ypos 405
-    yanchor 0.5
-
-    spacing gui.choice_spacing
-
-style choice_button is default:
-    properties gui.button_properties("choice_button")
-
-style choice_button_text is default:
-    properties gui.button_text_properties("choice_button")
 
 
 ## Quick Menu screen ###########################################################

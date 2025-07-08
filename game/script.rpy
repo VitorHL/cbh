@@ -106,6 +106,18 @@ label daniel_apartment_label:
     call daniel_apartment_label_menu
 label daniel_apartment_label_menu:
     menu:
+        "Talk with someone":
+            menu:
+                "About the milkshake sack...":
+                    "Ok"
+                "I don't know much about the boss either.":
+                    "Ok"
+                "I don't have time for it, just say where you left it.":
+                    "Ok"
+                "I would prefer to not say my reasons.":
+                    "Ok"
+                "Hey, don't speak about Val like that!":
+                    "Ok"
         "Next Day":
             $ calendar.next_day()
         "Fridge":

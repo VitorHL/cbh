@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 251: invalid syntax
-    meal_for_today renpy.random.randint(0,4)
-                    ^
+File "game/screens/choice_menu.rpy", line 10: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    scale 1.0
+             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Jul  7 09:58:57 2025
+Tue Jul  8 09:35:07 2025

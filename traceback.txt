@@ -3,38 +3,48 @@
 While running game code:
   File "game/script.rpy", line 106, in script call
     call daniel_apartment_label_menu
-  File "game/script.rpy", line 115, in script call
+  File "game/script.rpy", line 127, in script call
     call daniel_apartment_label_menu
-  File "game/script.rpy", line 115, in script call
+  File "game/script.rpy", line 127, in script call
     call daniel_apartment_label_menu
-  File "game/script.rpy", line 115, in script call
+  File "game/script.rpy", line 127, in script call
     call daniel_apartment_label_menu
-  [Previous line repeated 6 more times]
-  File "game/script.rpy", line 108, in script
-    menu:
-TypeError: 'int' object is not callable
+  [Previous line repeated 9 more times]
+  File "game/script.rpy", line 126, in script
+    $ travel_menu( )
+  File "game/script.rpy", line 126, in <module>
+    $ travel_menu( )
+  File "game/Script/0_calendar.rpy", line 115, in travel_menu
+    var_name = get_var_name(room, globals())[0]
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 106, in script call
     call daniel_apartment_label_menu
-  File "game/script.rpy", line 115, in script call
+  File "game/script.rpy", line 127, in script call
     call daniel_apartment_label_menu
-  File "game/script.rpy", line 115, in script call
+  File "game/script.rpy", line 127, in script call
     call daniel_apartment_label_menu
-  File "game/script.rpy", line 115, in script call
+  File "game/script.rpy", line 127, in script call
     call daniel_apartment_label_menu
-  [Previous line repeated 6 more times]
-  File "game/script.rpy", line 108, in script
-    menu:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 134, in menu
-    rv = renpy.store.menu(new_items)
-TypeError: 'int' object is not callable
+  [Previous line repeated 9 more times]
+  File "game/script.rpy", line 126, in script
+    $ travel_menu( )
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 126, in <module>
+    $ travel_menu( )
+  File "game/Script/0_calendar.rpy", line 115, in travel_menu
+    var_name = get_var_name(room, globals())[0]
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 214, in __getitem__
+    rv = list.__getitem__(self, index)
+IndexError: list index out of range
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Jul  8 06:05:31 2025
+Tue Jul  8 09:46:27 2025
