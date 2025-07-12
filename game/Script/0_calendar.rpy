@@ -243,3 +243,53 @@ init python:
 
         elif event == "slow_done" or event == "end":
             renpy.sound.stop(fadeout=1.0)
+
+#####################################################################################################################################################
+
+    class game_item(store.object):
+        def __init__(self, icon, name, desc, game_label, interaction_mode=0):
+            self.icon = icon
+            self.name = name
+            self.desc = desc
+            self.game_label = game_label
+            self.interaction_mode = interaction_mode
+
+    def inspect_item(item):
+        renpy.hide_screen("inventory_screen")
+        #renpy.show_screen("inventory_screen")
+        #renpy.say("", "Annoying shit")
+        #renpy.call(item.game_label)
+        #renpy.jump(item.game_label)
+
+########################################################################################################################################################
+
+    class game_character(store.object):
+        def __init__(self, name,game_label, small_talk_game_label, generic_show_label):
+            self.name = name
+            self.game_label = game_label # The intro dialogue played when you click in the character
+            self.small_talk_game_label = small_talk_game_label
+            self.generic_show_label = generic_show_label
+            self.interested_talks = {}
+            self.interested_items = {}
+            self.flags = {}
+
+            def add_talk(self, topic, dialogue):
+                self.interested_talks[topic] = dialogue
+            
+            def add_item_reaction(self, item, reaction):
+                self.interested_items[item] = reaction
+            
+            def set_flag(self, flag_name, value):
+                self.flags[flag_name] = value
+
+            def remove_talk(self, topic):
+                if topic in self.interested_talks:
+                    del self.interested_talks[topic]
+            
+            def remove_item_reaction(self, item):
+                if item in self.interested_items:
+                    del self.interested_items[item]
+            
+            def remove_flag(self, flag_name):
+                if flag_name in self.flags:
+                    del self.flags[flag_name]

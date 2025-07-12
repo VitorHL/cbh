@@ -30,3 +30,7 @@ image thumbnail_room_gia_stable_bg = "GFX/interface/thumbnail_gia_stable_bg.webp
 image thumbnail_room_horse_track_bg = "GFX/interface/thumbnail_horse_track_bg.webp"
 image thumbnail_room_library_bg = "GFX/interface/thumbnail_library_bg.webp"
 image thumbnail_room_mr_chao_store = "GFX/interface/thumbnail_mr_chao_store.webp"
+
+image burgar = "GFX/burgar.webp"
+image fries = "GFX/fries.webp"
+image coke = "GFX/coke.webp"

@@ -15,6 +15,14 @@ default event3 = game_event( 1, "new_year", room_church, day = 30, month=11 )
 default event4 = game_event( 2, "the_church_again", room_church )
 default event_repeat = game_event( 1, "recurring_event", room_daniel_apartment, instances = 0)
 
+default burgar = game_item("burgar", "Hamburgar", "Hamburgar, delicious!", "burgar_interaction" )
+default fries = game_item("fries", "Freedom_Fries", "Take that frenchies, those are FREEDOM fries!", "fries_interaction" )
+default coke = game_item("coke", "Coca-cola", "Cokey-cola!", "coke_interaction")
+
+default char_gia = game_character( "Gianna \"GIA\" Rossi", "char_gia_hello", "char_gia_small_talk", "gia_show_generic" )
+
+default game_iventory = [ burgar, fries, coke ]
+
 
 default kitchen_interaction = game_interaction( "fridge_interaction" )
 
@@ -101,7 +109,19 @@ label cphpd_hall_label_menu:
 ################################################################################
 
 label daniel_apartment_label:
+
+    # $ char_gia.add_item_reaction( burgar, "gia_show_burger" )
+    # $ char_gia.add_item_reaction( coke, "gia_show_coke" )
+    # $ char_gia.add_talk( "Relationship", "char_gia_talk_relationship" )
+    # $ char_gia.add_talk( "Val", "char_gia_talk_val" )
+    # $ char_gia.add_talk( "The Building", "char_gia_talk_building" )
+
+    $ char_gia.interested_items[burgar] = "gia_show_burger"
+    $ char_gia.interested_items[coke] = "gia_show_coke"
+
+
     scene daniel_apartment_bg with fade
+    call screen character_interaction(char_gia)
     $ check_for_event()
     call daniel_apartment_label_menu
 label daniel_apartment_label_menu:
@@ -250,3 +270,109 @@ label fridge_interaction():
     "Hmm, burgar!"
     $ end_interaction()
          
+
+label burgar_interaction():
+    "This is a burger"
+    "And it is (probably) delicious!"
+    call screen inventory_screen
+    return
+
+label fries_interaction():
+    "In 6 years those will become the epicenter of a geopolitical mini-crisis"
+    "I hope Saddam Hussein may have some ketchup..."
+    call screen inventory_screen
+    return
+
+label coke_interaction():
+    "Did you know those things had cocaine in its original formula?"
+    "Impressive, heh?"
+    call screen inventory_screen
+    return
+
+
+###################################################################################################################################################
+# System Labels
+
+label char_interaction(character):
+    call screen character_interaction(character)
+    return
+
+label show_char_item(mode, character, selected_slot=None):
+    # Calls the iventory screen to show item to character either in the interaction menu or mid conversation
+    call screen inventory_screen(mode, character, selected_slot)
+    # if mode == 1:
+    #     call screen character_interaction(character)
+    return
+
+label char_item_reaction(item, mode, character, selected_slot):
+    # Trigger the character reaction to the player showing a item
+    if item in character.interested_items:
+        $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+    else:
+        #call character.generic _show_label
+        $ renpy.call (character.generic_show_label, character)
+    #"Amongi"
+    return
+
+
+label char_conversation_list(character):
+    # Generates a list of entries to the conversation tab
+    call char_conversation_list(character)
+    return
+
+###################################################################################################################################################
+# Gia Interaction Labels
+
+label char_gia_hello(character):
+    "Hello, need something?"
+    return
+
+label char_gia_small_talk(character):
+    "I think the climate is very nice today"
+    "Don't you think?"
+    call screen character_interaction(character)
+    return
+
+
+
+
+label char_gia_talk_val(character):
+    "Val? What about her?"
+    "Can't really say i care much about her at all"
+    "You two are a nice couple though..."
+    call char_conversation_list
+    return
+
+label char_gia_talk_building(character):
+    "Yes, it was me who bought the building besides the highway"
+    "No i will not ellaborate"
+    "Only thing i will say is that it will be nice to be neighbours"
+    call char_conversation_list
+    return
+
+label char_gia_talk_relationship(character):
+    "It is over Daniel... There is nothing you can do to reapair the things now."
+    "Maybe we can talk about it later, but not really now."
+    call char_conversation_list
+    return
+
+
+
+label gia_show_generic(character):
+    "..."
+    "Why are you showing me this?"
+    "Can't really say much about it."
+    call show_char_item(mode,character,selected_slot)
+    return
+
+label gia_show_coke(character):
+    "Coke?"
+    "No thanks, this thing have way too much sugar."
+    call show_char_item(mode,character,selected_slot)
+    return
+
+label gia_show_burger(character):
+    "Oh sorry, no i'm not hungry"
+    "Besides, i would prefer to be hit by a car than eating something from your Diner."
+    call show_char_item(mode,character,selected_slot)
+    return

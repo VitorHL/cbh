@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 10: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    scale 1.0
-             ^
+File "game/screens/choice_menu.rpy", line 231: non-default parameter 'character' follows a default parameter
+    screen inventory_screen(mode=0, character): 
+                                             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul  8 09:35:07 2025
+Sat Jul 12 08:09:28 2025
