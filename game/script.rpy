@@ -118,6 +118,9 @@ label daniel_apartment_label:
 
     $ char_gia.interested_items[burgar] = "gia_show_burger"
     $ char_gia.interested_items[coke] = "gia_show_coke"
+    $ char_gia.interested_talks["Relationship"] = "char_gia_talk_relationship"
+    $ char_gia.interested_talks["The Building"] = "char_gia_talk_building"
+    $ char_gia.interested_talks["Val"] = "char_gia_talk_val"
 
 
     scene daniel_apartment_bg with fade
@@ -317,7 +320,7 @@ label char_item_reaction(item, mode, character, selected_slot):
 
 label char_conversation_list(character):
     # Generates a list of entries to the conversation tab
-    call char_conversation_list(character)
+    $ generate_character_talks(character)
     return
 
 ###################################################################################################################################################
@@ -333,27 +336,24 @@ label char_gia_small_talk(character):
     call screen character_interaction(character)
     return
 
-
-
-
 label char_gia_talk_val(character):
     "Val? What about her?"
     "Can't really say i care much about her at all"
     "You two are a nice couple though..."
-    call char_conversation_list
+    call char_conversation_list(character)
     return
 
 label char_gia_talk_building(character):
     "Yes, it was me who bought the building besides the highway"
     "No i will not ellaborate"
     "Only thing i will say is that it will be nice to be neighbours"
-    call char_conversation_list
+    call char_conversation_list(character)
     return
 
 label char_gia_talk_relationship(character):
     "It is over Daniel... There is nothing you can do to reapair the things now."
     "Maybe we can talk about it later, but not really now."
-    call char_conversation_list
+    call char_conversation_list(character)
     return
 
 

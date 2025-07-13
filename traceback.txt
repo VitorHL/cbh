@@ -1,34 +1,80 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 124, in script call
+  File "game/script.rpy", line 127, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 302, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 310, in script
-    $ renpy.Call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 310, in <module>
-    $ renpy.Call( character.interested_items[item], character )# call character.interested_items(item)
-AttributeError: module 'renpy.exports' has no attribute 'Call'
+  File "game/script.rpy", line 323, in script
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 323, in <module>
+    $ generate_character_talks(character)
+  File "game/Script/0_calendar.rpy", line 330, in generate_character_talks
+    return renpy.display_menu(menu_items,"",interact=True,screen="choice_label", args=[("character",character)])
+  File "game/screens/choice_menu.rpy", line 83, in execute
+    screen choice_label(items, args=[character,None]):
+  File "game/screens/choice_menu.rpy", line 83, in execute
+    screen choice_label(items, args=[character,None]):
+  File "game/screens/choice_menu.rpy", line 88, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 111, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 111, in keywords
+    button:
+  File "game/screens/choice_menu.rpy", line 116, in <module>
+    action Call(char_interaction, character)
+NameError: name 'char_interaction' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 124, in script call
+  File "game/script.rpy", line 127, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 302, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 310, in script
-    $ renpy.Call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 323, in script
+    $ generate_character_talks(character)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 310, in <module>
-    $ renpy.Call( character.interested_items[item], character )# call character.interested_items(item)
-AttributeError: module 'renpy.exports' has no attribute 'Call'
+  File "game/script.rpy", line 323, in <module>
+    $ generate_character_talks(character)
+  File "game/Script/0_calendar.rpy", line 330, in generate_character_talks
+    return renpy.display_menu(menu_items,"",interact=True,screen="choice_label", args=[("character",character)])
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 424, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 83, in execute
+    screen choice_label(items, args=[character,None]):
+  File "game/screens/choice_menu.rpy", line 83, in execute
+    screen choice_label(items, args=[character,None]):
+  File "game/screens/choice_menu.rpy", line 88, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 111, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 111, in keywords
+    button:
+  File "game/screens/choice_menu.rpy", line 116, in <module>
+    action Call(char_interaction, character)
+NameError: name 'char_interaction' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Sat Jul 12 10:37:18 2025
+Sun Jul 13 10:32:54 2025

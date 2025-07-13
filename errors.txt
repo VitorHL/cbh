@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 231: non-default parameter 'character' follows a default parameter
-    screen inventory_screen(mode=0, character): 
-                                             ^
+File "game/Script/0_calendar.rpy", line 330: positional argument follows keyword argument
+        return renpy.display_menu(menu_items,"",interact=True,screen="choice_label",menu,None,args=[character])
+                                                                                                               ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jul 12 08:09:28 2025
+Sun Jul 13 10:10:55 2025

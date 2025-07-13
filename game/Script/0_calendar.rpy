@@ -106,14 +106,12 @@ init python:
             # Add each room from new_entries
             for room in new_entries:
                 var_name = get_var_name(room, globals())[0]
-                var_address = room.address
                 menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address, room_location=room.location) ))
         
         # Add items from avaliable_travels, excluding current_room
         for room in avaliable_travels:
             if room != current_room:
                 var_name = get_var_name(room, globals())[0]
-                var_address = room.address
                 menu_list.append( (room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address, room_location=room.location) ) )
         
         # Display the menu with the processed list
@@ -238,7 +236,7 @@ init python:
 
         if event == "show": #if text's being written by character, spam typing sounds until the text ends
             renpy.sound.play(renpy.random.choice(sounds), loop=True)
-
+        
 
 
         elif event == "slow_done" or event == "end":
@@ -293,3 +291,40 @@ init python:
             def remove_flag(self, flag_name):
                 if flag_name in self.flags:
                     del self.flags[flag_name]
+
+#####################################################################################################################################################
+
+
+    
+
+    # def generate_character_talks(character):
+    #     items_list = []
+    #     for key, value in character.interested_talks.items():
+    #         items_list.append((key, value))
+    #     menu_items = tuple(items_list)
+    #     renpy.display_menu(menu_items,"",interact=True,screen="choice_label")
+
+    def generate_character_talks(character):
+        """
+        Creates a Ren'Py menu from a class object's interested_talks dictionary.
+        
+        Args:
+            class_object: Object with interested_talks dictionary attribute
+            
+        Returns:
+            The result of renpy.display_menu()
+        """
+        # Create tuples from the interested_talks dictionary
+        menu_items = []
+        label = "gia_show_coke"
+        
+        for key, value in character.interested_talks.items():
+            # Create a lambda that captures the current value and class_object
+            # This ensures the correct values are used when the menu item is selected
+            menu_action = lambda v=value, obj=character: renpy.call(v, obj)
+            
+            # Create tuple: (display_text, action_function)
+            menu_items.append((key, renpy.Choice(None, game_label=value, character=character) ))
+        
+        # Feed the tuple list to renpy.display_menu
+        return renpy.display_menu(menu_items,"",interact=True,screen="choice_label", args=[("character",character)])

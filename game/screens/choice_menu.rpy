@@ -78,6 +78,52 @@ screen choice(items):
                     xalign 0.5 
                     style "dialogue_entry_text"
                     
+################################################################################
+
+screen choice_label(items, args=[character,None]):
+    frame:
+        xfill True
+        yfill True
+        background Transform("black", alpha = 0.5)
+    vbox:
+        spacing 20
+        xalign 0.5
+        yalign 0.5
+        for i in items:
+            $ game_label = i.kwargs.get("game_label", None)
+            #$ character = i.kwargs.get("character", None)
+            button:
+                at dialogue_entry
+                xalign 0.5
+                xsize 800
+                #ymaximum 40
+                action Call(game_label,character)
+                selected False
+                sensitive True
+                hover_sound "audio/menu_hover.wav"
+                activate_sound "audio/menu_select.wav"
+                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
+                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                text "[i.caption]": 
+                    yalign 0.5
+                    xalign 0.5 
+                    style "dialogue_entry_text"
+        button:
+                at dialogue_entry
+                xalign 0.5
+                xsize 800
+                #ymaximum 40
+                action Call("char_interaction", character)
+                selected False
+                sensitive True
+                hover_sound "audio/menu_hover.wav"
+                activate_sound "audio/menu_select.wav"
+                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
+                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                text "< GO BACK": 
+                    yalign 0.5
+                    xalign 0.5 
+                    style "dialogue_entry_text"
 
 ################################################################################
 
@@ -186,7 +232,7 @@ screen character_interaction(character):
             button:
                 #xalign 0.5
                 yalign 0.5
-                sensitive False
+                action Call("char_conversation_list", character)
                 hover_sound "audio/menu_hover.wav"
                 activate_sound "audio/menu_select.wav"
                 hbox spacing 5:
