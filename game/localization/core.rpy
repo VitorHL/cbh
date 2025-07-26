@@ -22,6 +22,21 @@ define cgt_default = "Better stay in my way, i need to do something else right n
 define cdt_default = "Can't do that right now, i need to do something else."
 
 ################################################################################
+## Game Menus
+################################################################################
+
+define loc_clean_mode_desc = "Clean Mode"
+define loc_horny_mode_desc = "Explicit Mode"
+define loc_clean_mode_desc = "Clean Mode skips all explicit sex scenes. While the story and text remain unchanged, and adult themes are still mentioned, no depictions of sexual actions, whether visual or textual, are shown."
+define loc_horny_mode_desc = "Explicit mode displays all sex scenes. The narrative remains consistent with clean mode; only the depiction of sexual content differs."
+define loc_game_mode_psa = "Please note: This selection has no bearing on mature content that is not sexual in nature."
+
+define loc_continue = "Continue >"
+define loc_yes = "Yes" 
+define loc_no = "No"
+define loc_are_you_sure = "Are you Sure?"
+
+################################################################################
 ## Places
 ################################################################################
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Script/0_calendar.rpy", line 330: positional argument follows keyword argument
-        return renpy.display_menu(menu_items,"",interact=True,screen="choice_label",menu,None,args=[character])
-                                                                                                               ^
+File "game/screens/start_screen.rpy", line 37: the xfill keyword argument was not given a value.
+    xfill
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jul 13 10:10:55 2025
+Sat Jul 26 05:49:15 2025

@@ -4,10 +4,8 @@
 # name of the character.
 
 define e = Character("Eileen")
-default calendar = game_calendar(5,9,10,1997)
-default cgt_message = cgt_default
-default cdt_message = cdt_default
-default avaliable_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
+
+# Game Events -------------------------------------------------
 
 default event1 = game_event( 1, "special_day", room_church )
 default event2 = game_event( 1, "its_monday", room_church, weekday=1 )
@@ -15,23 +13,23 @@ default event3 = game_event( 1, "new_year", room_church, day = 30, month=11 )
 default event4 = game_event( 2, "the_church_again", room_church )
 default event_repeat = game_event( 1, "recurring_event", room_daniel_apartment, instances = 0)
 
+# Game Itens -------------------------------------------------
+
 default burgar = game_item("burgar", "Hamburgar", "Hamburgar, delicious!", "burgar_interaction" )
 default fries = game_item("fries", "Freedom_Fries", "Take that frenchies, those are FREEDOM fries!", "fries_interaction" )
 default coke = game_item("coke", "Coca-cola", "Cokey-cola!", "coke_interaction")
 
+# Game Characters -------------------------------------------------
+
 default char_gia = game_character( "Gianna \"GIA\" Rossi", "char_gia_hello", "char_gia_small_talk", "gia_show_generic" )
 
-default game_iventory = [ burgar, fries, coke ]
-
+# Game Interactions -------------------------------------------------
 
 default kitchen_interaction = game_interaction( "fridge_interaction" )
 
+# Game Lists -------------------------------------------------
 
-
-
-
-
-
+default game_iventory = [ burgar, fries, coke ]
 default avaliable_events = [ event1, event2, event3, event4, event_repeat ]
 default finished_events = []
 default events_played_today = []
@@ -44,6 +42,14 @@ default failed_objectives = []
 default completed_missions = []
 default avaliable_missions = []
 
+default calendar = game_calendar(5,9,10,1997)
+default cgt_message = cgt_default
+default cdt_message = cdt_default
+default avaliable_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
+
+# Game Variables -------------------------------------------------
+
+default clean_mode = True
 
 label start:
     #default calendar = game_calendar(1,1,1)
@@ -51,7 +57,12 @@ label start:
     $ current_room = room_edgar_counter
 
     show screen top_bar
-    jump daniel_apartment_label
+    jump choose_mode_label
+
+label choose_mode_label:
+    call screen start_choose_mode
+    jump choose_mode_label
+
 
 ################################################################################
 ## Counter

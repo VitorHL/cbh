@@ -27,6 +27,8 @@ style entrytext:
     outlines [(1, "#000000", 0, 0)]
     hover_color "#000000"
     hover_outlines [(0, "#000000", 0, 0)]
+    selected_color "#000000"
+    selected_outlines [(0, "#000000", 0, 0)]
     hover_size 45
 
 style dialogue_entry_text:
@@ -34,6 +36,8 @@ style dialogue_entry_text:
     outlines [(1, "#000000", 0, 0)]
     hover_color "#000000"
     hover_outlines [(0, "#000000", 0, 0)]
+    selected_color "#000000"
+    selected_outlines [(0, "#000000", 0, 0)]
 
 style desc_text:
     font "GFX/fonts/video_cond_light.otf"
@@ -41,6 +45,13 @@ style desc_text:
     justify True 
     kerning 1 
     line_spacing 2
+
+style hover_button:
+    hover_sound "audio/menu_hover.wav"
+    activate_sound "audio/menu_select.wav"
+    background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
+    hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+    selected_background Frame("gui/tiles/white_tile.webp", 3, 3)
 
 ## Choice screen ###############################################################
 ##
@@ -69,10 +80,7 @@ screen choice(items):
                 action i.action
                 selected False
                 sensitive True
-                hover_sound "audio/menu_hover.wav"
-                activate_sound "audio/menu_select.wav"
-                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                style "hover_button"
                 text "[i.caption]": 
                     yalign 0.5
                     xalign 0.5 
@@ -80,7 +88,7 @@ screen choice(items):
                     
 ################################################################################
 
-screen choice_label(items, args=[character,None]):
+screen choice_talks(items, args=[character,None]):
     frame:
         xfill True
         yfill True
@@ -100,10 +108,7 @@ screen choice_label(items, args=[character,None]):
                 action Call(game_label,character)
                 selected False
                 sensitive True
-                hover_sound "audio/menu_hover.wav"
-                activate_sound "audio/menu_select.wav"
-                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                style "hover_button"
                 text "[i.caption]": 
                     yalign 0.5
                     xalign 0.5 
@@ -116,10 +121,7 @@ screen choice_label(items, args=[character,None]):
                 action Call("char_interaction", character)
                 selected False
                 sensitive True
-                hover_sound "audio/menu_hover.wav"
-                activate_sound "audio/menu_select.wav"
-                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                style "hover_button"
                 text "< GO BACK": 
                     yalign 0.5
                     xalign 0.5 
@@ -177,11 +179,9 @@ screen travel(items):
                                 xpos 0
                                 ypos 0
                                 at travel_entry_dot
-                                background Frame("gui/tiles/black_tile.webp", 3, 3)
-                                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                                style "hover_button"
                             frame:
-                                background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                                hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                                style "hover_button"
                                 text "[i.caption]": 
                                     yalign 0.5
                                     style "entrytext"
@@ -223,11 +223,9 @@ screen character_interaction(character):
                 action Call(character.small_talk_game_label, character)
                 hbox spacing 5:
                     frame xsize 64 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                     frame xsize 320 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                         text "SMALL TALK" yalign 0.5 size 45 style "dialogue_entry_text"
             button:
                 #xalign 0.5
@@ -237,11 +235,9 @@ screen character_interaction(character):
                 activate_sound "audio/menu_select.wav"
                 hbox spacing 5:
                     frame xsize 64 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                     frame xsize 320 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                         text "CONVERSATION" yalign 0.5 size 45 style "dialogue_entry_text"
             button:
                 #xalign 0.5
@@ -251,11 +247,9 @@ screen character_interaction(character):
                 activate_sound "audio/menu_select.wav"
                 hbox spacing 5:
                     frame xsize 64 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                     frame xsize 320 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                         text "SHOW ITEM" yalign 0.5 size 45 style "dialogue_entry_text"
             button:
                 #xalign 0.5
@@ -265,11 +259,9 @@ screen character_interaction(character):
                 activate_sound "audio/menu_select.wav"
                 hbox spacing 5:
                     frame xsize 64 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                     frame xsize 320 ysize 64:
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                        style "hover_button"
                         text "< GO BACK" yalign 0.5 size 45 style "dialogue_entry_text"
 
 ##############################################################################################################################
@@ -318,11 +310,7 @@ screen inventory_screen(mode=0, character=None, selected_slot = None):
                                     action SetScreenVariable( "slot_value", slot )
                                     sensitive len(game_iventory) > slot
                                     selected (slot_value == slot)
-                                    hover_sound "audio/menu_hover.wav"
-                                    activate_sound "audio/menu_select.wav"
-                                    background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.75)
-                                    hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
-                                    selected_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                                    style "hover_button"
                                     if len(game_iventory) > slot:
                                         image "[game_iventory[slot].icon]" xalign 0.5 yalign 0.5
                     frame:
@@ -394,8 +382,7 @@ screen inventory_screen(mode=0, character=None, selected_slot = None):
                                     hover_sound "audio/menu_hover.wav"
                                     activate_sound "audio/menu_select.wav"
                                     frame:
-                                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                                        style "hover_button"
                                         #at dialogue_entry
                                         
                                         text "< GO BACK" yalign 0.5 style "dialogue_entry_text"
@@ -408,8 +395,7 @@ screen inventory_screen(mode=0, character=None, selected_slot = None):
                                     hover_sound "audio/menu_hover.wav"
                                     activate_sound "audio/menu_select.wav"
                                     frame:
-                                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3),alpha = 0.5)
-                                        hover_background Frame("gui/tiles/white_tile.webp", 3, 3)
+                                        style "hover_button"
                                         #at dialogue_entry
                                         if mode == 0:
                                             text "INSPECT" yalign 0.5 style "dialogue_entry_text"
