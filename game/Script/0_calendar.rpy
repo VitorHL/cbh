@@ -88,8 +88,7 @@ init python:
 
 ######################################################################################################################################
 
-    def get_var_name(var, scope):
-        return [name for name in scope if scope[name] is var]
+    
 
     def travel_menu(new_entries=None):
         global avaliable_travels, current_room
@@ -294,16 +293,6 @@ init python:
 
 #####################################################################################################################################################
 
-
-    
-
-    # def generate_character_talks(character):
-    #     items_list = []
-    #     for key, value in character.interested_talks.items():
-    #         items_list.append((key, value))
-    #     menu_items = tuple(items_list)
-    #     renpy.display_menu(menu_items,"",interact=True,screen="choice_label")
-
     def generate_character_talks(character):
         """
         Creates a Ren'Py menu from a class object's interested_talks dictionary.
@@ -327,4 +316,21 @@ init python:
             menu_items.append((key, renpy.Choice(None, game_label=value, character=character) ))
         
         # Feed the tuple list to renpy.display_menu
-        return renpy.display_menu(menu_items,"",interact=True,screen="choice_label", args=[("character",character)])
+        return renpy.display_menu(menu_items,"",interact=True,screen="choice_talks", args=[("character",character)])
+
+#####################################################################################################################################################
+
+    class game_skill(store.object):
+        def __init__(self):
+            self.level = 1
+            self.invested = 0
+            self.current = 1
+            
+        def GetName(self):
+            return get_var_suffix(self, "loc")
+
+        def GetDesc(self):
+            return get_var_suffix(self, "desc")
+
+        def GetQuote(self):
+            return get_var_suffix(self, "quote")

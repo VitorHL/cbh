@@ -83,7 +83,9 @@ screen top_bar():
         yminimum 75
         #ymaximum 75
         vbox:
-            text "[weekdays_list[calendar.weekday]], [months_list[calendar.month]] [calendar.day], [calendar.year]" textalign 1.00
+            for i in game_skills:
+                text "[i.GetName()!u]: [i.level]" textalign 1.0 xalign 1.0
+            #text "[weekdays_list[calendar.weekday]], [months_list[calendar.month]] [calendar.day], [calendar.year]" textalign 1.00
 
 # screen missions_display():
 #     frame:

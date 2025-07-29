@@ -34,3 +34,10 @@ image thumbnail_room_mr_chao_store = "GFX/interface/thumbnail_mr_chao_store.webp
 image burgar = "GFX/burgar.webp"
 image fries = "GFX/fries.webp"
 image coke = "GFX/coke.webp"
+
+image skill_inquiry_icon = "GFX/interface/skills/skill_inquiry_icon.webp"
+image skill_catharsis_icon = "GFX/interface/skills/skill_catharsis_icon.webp"
+image skill_communion_icon = "GFX/interface/skills/skill_communion_icon.webp"
+image skill_insight_icon = "GFX/interface/skills/skill_insight_icon.webp"
+image skill_lore_icon = "GFX/interface/skills/skill_lore_icon.webp"
+image skill_volition_icon = "GFX/interface/skills/skill_volition_icon.webp"

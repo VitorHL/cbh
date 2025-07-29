@@ -22,11 +22,36 @@ define cgt_default = "Better stay in my way, i need to do something else right n
 define cdt_default = "Can't do that right now, i need to do something else."
 
 ################################################################################
+## Game Skills
+################################################################################
+
+define skill_inquiry_loc = "inquiry"
+define skill_communion_loc = "communion"
+define skill_insight_loc = "insight"
+define skill_catharsis_loc = "catharsis"
+define skill_volition_loc = "volition"
+define skill_lore_loc = "lore"
+
+define skill_inquiry_quote = "\"Judge a man by his questions rather than his answers.\"\n\n- Voltaire -"
+define skill_communion_quote = "\"No man is an island, entire of itself.\"\n\n- John Donne -"
+define skill_insight_quote = "\"The unexamined life is not worth living.\"\n\n- Socrates -"
+define skill_catharsis_quote = "\"The wound is the place where the Light enters you.\"\n\n- Rumi -"
+define skill_volition_quote = "\"He who has a why to live can bear almost any how.\"\n\n- Friedrich Nietzsche -"
+define skill_lore_quote = "\"The past is never dead. It's not even past.\"\n\n- William Faulkner -"
+
+define skill_inquiry_desc = "Inquiry governs your capacity to question individuals, concepts, and circumstances with precision and depth. A high level of inquiry enables you to probe beneath surface answers, uncover hidden truths, and extract valuable information through skillful interrogation."
+define skill_communion_desc = "Communion governs your capacity to form meaningful connections and empathize with others. A high level of communion allows you to build trust quickly, understand unspoken feelings, and create bonds that transcend surface-level social interaction."
+define skill_insight_desc = "Insight governs your ability to quickly form logical conclusions and understand complex situations. A high level of insight helps you grasp the underlying causes of events, recognize patterns others miss, and solve practical problems through clear reasoning and deduction."
+define skill_catharsis_desc = "Catharsis governs your ability to understand and process complex emotions, both your own and others'. A high level of catharsis helps you navigate emotional turmoil with wisdom, find healing through acceptance, and offer genuine comfort to those in distress."
+define skill_volition_desc = "Volition governs your willpower and mental fortitude in the face of adversity. A high level of volition enables you to maintain composure under extreme pressure, resist psychological manipulation, and push through situations that would break weaker minds."
+define skill_lore_desc = "Lore governs your accumulated knowledge of history, culture, and forgotten wisdom. A high level of lore allows you to recall obscure details about past events, understand ancient mysteries, and draw upon deep wells of traditional knowledge."
+
+################################################################################
 ## Game Menus
 ################################################################################
 
-define loc_clean_mode_desc = "Clean Mode"
-define loc_horny_mode_desc = "Explicit Mode"
+define loc_clean_mode = "Clean Mode"
+define loc_horny_mode = "Explicit Mode"
 define loc_clean_mode_desc = "Clean Mode skips all explicit sex scenes. While the story and text remain unchanged, and adult themes are still mentioned, no depictions of sexual actions, whether visual or textual, are shown."
 define loc_horny_mode_desc = "Explicit mode displays all sex scenes. The narrative remains consistent with clean mode; only the depiction of sexual content differs."
 define loc_game_mode_psa = "Please note: This selection has no bearing on mature content that is not sexual in nature."

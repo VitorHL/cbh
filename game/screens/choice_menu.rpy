@@ -24,20 +24,20 @@ transform selected_hover:
         zoom 0.75
 style entrytext:
     color "#ffffff"
-    outlines [(1, "#000000", 0, 0)]
-    hover_color "#000000"
-    hover_outlines [(0, "#000000", 0, 0)]
-    selected_color "#000000"
-    selected_outlines [(0, "#000000", 0, 0)]
+    outlines [(1, "#191919", 0, 0)]
+    hover_color "#191919"
+    hover_outlines [(0, "#191919", 0, 0)]
+    selected_color "#191919"
+    selected_outlines [(0, "#191919", 0, 0)]
     hover_size 45
 
 style dialogue_entry_text:
     color "#ffffff"
-    outlines [(1, "#000000", 0, 0)]
-    hover_color "#000000"
-    hover_outlines [(0, "#000000", 0, 0)]
-    selected_color "#000000"
-    selected_outlines [(0, "#000000", 0, 0)]
+    outlines [(1, "#191919", 0, 0)]
+    hover_color "#ffffff"
+    #hover_outlines [(0, "#191919", 0, 0)]
+    selected_color "#191919"
+    selected_outlines [(0, "#191919", 0, 0)]
 
 style desc_text:
     font "GFX/fonts/video_cond_light.otf"

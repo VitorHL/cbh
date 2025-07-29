@@ -51,6 +51,68 @@ default avaliable_travels = [ room_gas_station, room_church, room_gia_ranch, roo
 
 default clean_mode = True
 
+
+default att_pts_avaliable = 8 # Attribute points at start
+default att_pts_spent = 0 # Attribute points at start
+define att_pts_max_start = 4 # Maximum a skill can have at start
+
+define game_level_max = 18 # Maximum level the player can get
+define xp_per_check = 10 # Amount of xp the player gets per dice roll
+define xp_per_unlock = 5 # Amount of xp the player gets per choice/dialogue unlocked
+
+
+
+default skill_inquiry = game_skill()
+default skill_insight = game_skill()
+default skill_lore = game_skill()
+default skill_catharsis = game_skill()
+default skill_volition = game_skill()
+default skill_communion = game_skill()
+
+default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsis, skill_volition, skill_communion ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 label start:
     #default calendar = game_calendar(1,1,1)
 
@@ -60,8 +122,14 @@ label start:
     jump choose_mode_label
 
 label choose_mode_label:
-    call screen start_choose_mode
+    scene edgar_diner_bg #with fade
+    call screen start_choose_mode 
     jump choose_mode_label
+
+label start_skills:
+    #scene edgar_diner_bg with fade
+    call screen skill_screen_start   
+    jump start_skills
 
 
 ################################################################################
