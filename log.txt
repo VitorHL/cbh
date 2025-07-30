@@ -1,18 +1,17 @@
-2025-07-29 14:51:10 UTC
+2025-07-30 07:20:56 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
-Early init took 0.07s
+Early init took 0.08s
 Loading error handling took 0.04s
-Loading script took 0.16s
+Loading script took 0.29s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.05s
+Running init code took 0.06s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
+Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
 Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -24,11 +23,11 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.02s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.02s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Interface start took 0.35s
@@ -44,10 +43,126 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+
+Full traceback:
+  File "game/script.rpy", line 126, in script
+    call screen start_choose_mode
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 6, in execute
+    frame:
+  File "game/screens/confirm_box.rpy", line 13, in execute
+    vbox:
+  File "game/screens/confirm_box.rpy", line 39, in execute
+    hbox:
+  File "game/screens/confirm_box.rpy", line 42, in execute
+    button:
+  File "game/screens/confirm_box.rpy", line 42, in keywords
+    button:
+  File "game/screens/confirm_box.rpy", line 47, in <module>
+    style hover_button
+NameError: name 'hover_button' is not defined
+
+While running game code:
+  File "game/script.rpy", line 126, in script
+    call screen start_choose_mode
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 6, in execute
+    frame:
+  File "game/screens/confirm_box.rpy", line 13, in execute
+    vbox:
+  File "game/screens/confirm_box.rpy", line 39, in execute
+    hbox:
+  File "game/screens/confirm_box.rpy", line 42, in execute
+    button:
+  File "game/screens/confirm_box.rpy", line 42, in keywords
+    button:
+  File "game/screens/confirm_box.rpy", line 47, in <module>
+    style hover_button
+NameError: name 'hover_button' is not defined
 Resetting cache.
-Early init took 29.35s
+Early init took 7.67s
 Loading error handling took 0.03s
-Loading script took 0.17s
+Loading script took 0.12s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 81.41s
+Loading error handling took 0.03s
+Loading script took 0.15s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.03s
@@ -69,9 +184,9 @@ Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.03s
+Save screen analysis took 0.02s
 Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
+Save pyanalysis. took 0.02s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.34s
@@ -87,13 +202,224 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+
+Full traceback:
+  File "game/script.rpy", line 126, in script
+    call screen start_choose_mode
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 6, in execute
+    frame:
+  File "game/screens/confirm_box.rpy", line 13, in execute
+    vbox:
+  File "game/screens/confirm_box.rpy", line 39, in execute
+    hbox:
+  File "game/screens/confirm_box.rpy", line 42, in execute
+    button:
+  File "game/screens/confirm_box.rpy", line 49, in execute
+    fixed:
+  File "game/screens/confirm_box.rpy", line 50, in execute
+    text "YES" xalign 0.5 yalign 0.5 style hover_button_text
+  File "game/screens/confirm_box.rpy", line 50, in keywords
+    text "YES" xalign 0.5 yalign 0.5 style hover_button_text
+  File "game/screens/confirm_box.rpy", line 50, in <module>
+    text "YES" xalign 0.5 yalign 0.5 style hover_button_text
+NameError: name 'hover_button_text' is not defined
+
+While running game code:
+  File "game/script.rpy", line 126, in script
+    call screen start_choose_mode
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 1, in execute
+    screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+  File "game/screens/confirm_box.rpy", line 6, in execute
+    frame:
+  File "game/screens/confirm_box.rpy", line 13, in execute
+    vbox:
+  File "game/screens/confirm_box.rpy", line 39, in execute
+    hbox:
+  File "game/screens/confirm_box.rpy", line 42, in execute
+    button:
+  File "game/screens/confirm_box.rpy", line 49, in execute
+    fixed:
+  File "game/screens/confirm_box.rpy", line 50, in execute
+    text "YES" xalign 0.5 yalign 0.5 style hover_button_text
+  File "game/screens/confirm_box.rpy", line 50, in keywords
+    text "YES" xalign 0.5 yalign 0.5 style hover_button_text
+  File "game/screens/confirm_box.rpy", line 50, in <module>
+    text "YES" xalign 0.5 yalign 0.5 style hover_button_text
+NameError: name 'hover_button_text' is not defined
 Resetting cache.
-Early init took 143.23s
+Early init took 95.25s
 Loading error handling took 0.02s
-Loading script took 0.15s
+Loading script took 0.14s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.08s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 146.97s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 279.42s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 300.81s
+Loading error handling took 0.03s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
@@ -114,10 +440,10 @@ Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
 Prepare screens took 0.11s
-Save pyanalysis. took 0.02s
+Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.37s
+Interface start took 0.35s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -131,18 +457,18 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 controller: '03000000100800000100000000000000' 'PS1 Controller' 1
 Resetting cache.
-Early init took 205.79s
+Early init took 314.69s
 Loading error handling took 0.02s
-Loading script took 0.16s
+Loading script took 0.15s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.04s
+Running init code took 0.03s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.07s
@@ -154,10 +480,96 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
+Analyze screens took 0.02s
 Save screen analysis took 0.03s
 Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 375.74s
+Loading error handling took 0.02s
+Loading script took 0.15s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 601.91s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.36s
@@ -174,7 +586,136 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 controller: '03000000100800000100000000000000' 'PS1 Controller' 1
 Resetting cache.
-Early init took 252.94s
+Early init took 609.67s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 640.19s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 654.04s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 1090.47s
 Loading error handling took 0.02s
 Loading script took 0.17s
 Loading save slot metadata took 0.03s
@@ -200,10 +741,149 @@ Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.02s
 Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+
+Full traceback:
+  File "game/script.rpy", line 131, in script
+    call screen skill_screen_start
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 485, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 2 more times]
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 424, in visit_all
+    for d in self.visit():
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1376, in visit
+    self.style._visit_window(rv.append)
+  File "style.pyx", line 541, in renpy.style.StyleCore._visit_window
+  File "style.pyx", line 528, in renpy.style.StyleCore._get_unoffset
+  File "style.pyx", line 493, in renpy.style.StyleCore._get
+  File "style.pyx", line 686, in renpy.style.build_style
+  File "style.pyx", line 142, in renpy.style.get_full_style
+  File "style.pyx", line 98, in renpy.style.get_style
+Exception: Style 'border_white' does not exist.
+
+While running game code:
+  File "game/script.rpy", line 131, in script
+    call screen skill_screen_start
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+Exception: Style 'border_white' does not exist.
+Resetting cache.
+Early init took 1101.27s
+Loading error handling took 0.02s
+Loading script took 0.15s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+controller: '03000000100800000100000000000000' 'PS1 Controller' 1
+Resetting cache.
+Early init took 1960.72s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.34s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

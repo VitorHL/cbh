@@ -123,7 +123,7 @@ label start:
 
 label choose_mode_label:
     scene edgar_diner_bg #with fade
-    call screen start_choose_mode 
+    call screen start_choose_mode
     jump choose_mode_label
 
 label start_skills:

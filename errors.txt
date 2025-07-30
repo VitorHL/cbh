@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Script/0_calendar.rpy", line 328: invalid syntax
-        def GetName(self)
+File "game/screens/confirm_box.rpy", line 34: keyword argument 'xalign' appears more than once in a text statement.
+    text "[desc]" xalign 0.5 style "desc_text" xalign 0.5 yalign 0.5
+                                                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul 29 04:37:33 2025
+Wed Jul 30 03:45:21 2025

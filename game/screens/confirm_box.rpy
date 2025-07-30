@@ -4,38 +4,55 @@
     frame:
         background Solid ((0,0,0,200))
     frame:
+        background None
+        xsize 500
         #xsize 500
         #ysize 150
         xalign 0.5
         yalign 0.5
-        grid 1 3:
-            text "Are you sure?" xalign 0.5 yalign 0.25
-            if desc <> None:
-                text "[desc]" xalign 0.5
-            grid 2 1:
+        vbox:
+            hbox:
+                frame:
+                        style "black_tile"
+                        xsize 50
+                        ysize 50
+                        text "*" xalign 0.5 yalign 0.5
+                frame:
+                        style "black_tile"
+                        xsize 390
+                        ysize 50
+                        text "ARE YOU SURE?" xalign 0.5 yalign 0.25
+                frame:
+                        style "black_tile"
+                        xsize 50
+                        ysize 50
+                        text "*" xalign 0.5 yalign 0.5
+            frame:
+                style "black_tile_75"
+                xfill True
+                vbox:
+                    spacing 15
+                    text "-------------------------" xalign 0.5
+                    if desc != None:
+                        text "[desc]" xalign 0.5 yalign 0.5 style "desc_text"
+                    text "-------------------------" xalign 0.5
+            hbox:
                 xalign 0.5
                 #yalign 0.75
                 button:
-                    xsize 230
-                    ysize 60
+                    xsize 245
+                    ysize 50
                     xalign 0.5
                     yalign 0.5
-                    #xalign 0.5
-                    selected False
                     style "hover_button"
                     action [ Hide(None, hide_transition), on_confirm]
                     fixed:
-                        xsize 230
-                        ysize 60
-                        xalign 0.5 
-                        yalign 0.5
-                        text "Yes" xalign 0.5 yalign 0.5
+                        text "YES" xalign 0.5 yalign 0.5 style "hover_button_text"
                 button:
-                    xsize 230
-                    ysize 60
+                    xsize 245
+                    ysize 50
                     xalign 0.5
                     yalign 0.5
-                    #xalign 0.5
                     selected False
                     style "hover_button"
                     action Hide()
@@ -44,4 +61,4 @@
                         ysize 60
                         xalign 0.5 
                         yalign 0.5
-                        text "No" xalign 0.5 yalign 0.5
+                        text "NO" xalign 0.5 yalign 0.5 style "hover_button_text"
