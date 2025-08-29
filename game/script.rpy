@@ -51,6 +51,7 @@ default avaliable_travels = [ room_gas_station, room_church, room_gia_ranch, roo
 
 default clean_mode = True
 
+default skill_success = False
 
 default att_pts_avaliable = 8 # Attribute points at start
 default att_pts_spent = 0 # Attribute points at start
@@ -79,7 +80,32 @@ default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsi
 
 
 
-
+label skill_test_label(total, difficulty, dice1, dice2, dice3, skill):
+    show screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill)
+    # show screen dice_roll_fake_0()
+    # show screen dice_roll_fake_1()
+    # show screen dice_roll_fake_2()
+    # show screen dice_roll_result_fake(skill)
+    pause 1
+    #hide screen dice_roll_anim
+    hide screen dice_roll_anim
+    show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill)
+    # hide screen dice_roll_fake_0
+    # hide screen dice_roll_fake_1
+    # hide screen dice_roll_fake_2
+    # hide screen dice_roll_result_fake
+    # show screen dice_roll_0(dice1, difficulty)
+    # show screen dice_roll_1(dice2, difficulty)
+    # show screen dice_roll_2(dice3, difficulty)
+    # show screen dice_roll_result(skill, dice1, dice2, dice3)
+    
+    pause
+    hide screen dice_roll
+    # hide screen dice_roll_0
+    # hide screen dice_roll_1
+    # hide screen dice_roll_2
+    # hide screen dice_roll_result
+    return
 
 
 
@@ -210,16 +236,30 @@ label daniel_apartment_label_menu:
     menu:
         "Talk with someone":
             menu:
-                "About the milkshake sack...":
+                "About the milkshake sack..." (skill_check=[skill_inquiry,10]):
                     "Ok"
-                "I don't know much about the boss either.":
-                    "Ok"
-                "I don't have time for it, just say where you left it.":
-                    "Ok"
-                "I would prefer to not say my reasons.":
-                    "Ok"
-                "Hey, don't speak about Val like that!":
-                    "Ok"
+                "I don't know much about the boss either." (skill_roll=[skill_communion,14]):
+                    #$ skill_check(skill_communion, 14)
+                    #show screen dice_roll(1,1)
+                    if skill_success == True:
+                        "The test was a success"
+                    if skill_success == False:
+                        "The test was a failure"
+                "I don't have time for it, just say where you left it." (skill_roll=[skill_catharsis,14]):
+                    if skill_success == True:
+                        "The test was a success"
+                    if skill_success == False:
+                        "The test was a failure"
+                "I would prefer to not say my reasons." (skill_roll=[skill_lore,5]):
+                    if skill_success == True:
+                        "The test was a success"
+                    if skill_success == False:
+                        "The test was a failure"
+                "Hey, don't speak about Val like that!" (skill_roll=[skill_inquiry,18]):
+                    if skill_success == True:
+                        "The test was a success"
+                    if skill_success == False:
+                        "The test was a failure"
         "Next Day":
             $ calendar.next_day()
         "Fridge":

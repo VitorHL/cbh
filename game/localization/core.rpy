@@ -46,6 +46,15 @@ define skill_catharsis_desc = "Catharsis governs your ability to understand and 
 define skill_volition_desc = "Volition governs your willpower and mental fortitude in the face of adversity. A high level of volition enables you to maintain composure under extreme pressure, resist psychological manipulation, and push through situations that would break weaker minds."
 define skill_lore_desc = "Lore governs your accumulated knowledge of history, culture, and forgotten wisdom. A high level of lore allows you to recall obscure details about past events, understand ancient mysteries, and draw upon deep wells of traditional knowledge."
 
+define skill_tag_dict = {
+    "inquiry" : "INQ",
+    "communion" : "COM",
+    "insight" : "INS",
+    "catharsis" : "CAT",
+    "volition" : "VOL",
+    "lore" : "LOR"
+}
+
 ################################################################################
 ## Game Menus
 ################################################################################

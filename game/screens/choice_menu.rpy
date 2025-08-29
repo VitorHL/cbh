@@ -17,19 +17,30 @@ screen choice(items):
         xalign 0.5
         yalign 0.5
         for i in items:
+            $ skill_roll = i.kwargs.get("skill_roll", [])
+            $ skill_check = i.kwargs.get("skill_check", [])
             button:
                 at dialogue_entry
                 xalign 0.5
                 xsize 800
                 #ymaximum 40
-                action i.action
+                if skill_roll != []:
+                    action [ Function(game_skill_roll, skill_roll[0], skill_roll[1]), i.action ]
+                else:
+                    action i.action
                 selected False
                 sensitive True
                 style "hover_button"
-                text "[i.caption]": 
-                    yalign 0.5
-                    xalign 0.5 
-                    style "dialogue_entry_text"
+                vbox:
+                    frame:
+                        xfill True
+                        background None
+                        text "[i.caption]" yalign 0.5 xalign 0.5 style "dialogue_entry_text"
+                    if skill_roll != []:
+                        text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                    if skill_check != []:
+                        
+                        text "> [skill_check[0].GetName()!u]:[skill_check[0].level]/[skill_check[1]] <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
                     
 ################################################################################
 

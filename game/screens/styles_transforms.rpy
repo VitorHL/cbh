@@ -64,6 +64,11 @@ style desc_text:
     kerning 1 
     line_spacing 2
 
+style title_text:
+    size 50
+    color "#ffffff"
+    outlines [(2, "#191919", 0, 0)]
+
 # Button Styles -------------------------------------------------------
 
 style hover_button:
@@ -71,6 +76,8 @@ style hover_button:
     activate_sound "audio/menu_select.wav"
     background Frame("gui/tiles/black_tile_bracket.webp", 20, 20,)
     hover_background Frame("gui/tiles/black_tile_bracket_dark.webp", 20, 20)
+    # xpadding 15
+    # ypadding 15
 
 style select_button:
     hover_sound "audio/menu_hover.wav"
@@ -78,10 +85,14 @@ style select_button:
     background Frame("gui/tiles/black_tile_bracket.webp", 20, 20,)
     hover_background Frame("gui/tiles/black_tile_bracket_dark.webp", 20, 20)
     selected_background Frame("gui/tiles/white_tile_bracket.webp", 20, 20)
+    # xpadding 15
+    # ypadding 15
 style select_button_border:
     background Frame("gui/tiles/black_tile_border.webp", 20, 20,)
     hover_background Frame("gui/tiles/black_tile_border_dark.webp", 20, 20)
     selected_background Frame("gui/tiles/white_tile_border.webp", 20, 20)
+    # xpadding 15
+    # ypadding 15
 
 # Screen Styles -------------------------------------------------------
 

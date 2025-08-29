@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/confirm_box.rpy", line 34: keyword argument 'xalign' appears more than once in a text statement.
-    text "[desc]" xalign 0.5 style "desc_text" xalign 0.5 yalign 0.5
-                                                     ^
+File "game/screens/dice_roll.rpy", line 93: 'size' is not a keyword argument or valid child of the frame statement.
+    size (200,200)
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jul 30 03:45:21 2025
+Fri Aug 29 12:20:37 2025
