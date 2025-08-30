@@ -25,7 +25,10 @@ screen choice(items):
                 xsize 800
                 #ymaximum 40
                 if skill_roll != []:
-                    action [ Function(game_skill_roll, skill_roll[0], skill_roll[1]), i.action ]
+                    if len(skill_roll) > 2:
+                        action [ Function(game_skill_roll, skill_roll[0], skill_roll[1], skill_roll[2]), i.action ]
+                    else:
+                        action [ Function(game_skill_roll, skill_roll[0], skill_roll[1]), i.action ]
                 else:
                     action i.action
                 selected False
@@ -37,9 +40,18 @@ screen choice(items):
                         background None
                         text "[i.caption]" yalign 0.5 xalign 0.5 style "dialogue_entry_text"
                     if skill_roll != []:
-                        text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                        if len(skill_roll) > 2:
+                            vpgrid:
+                                cols 2
+                                xalign 0.5
+                                for buff in skill_roll[2]:
+                                    if buff in available_skill_buffs and buff not in used_skill_buffs:
+                                        text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                        if len(skill_roll) > 2:
+                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1], skill_roll[2])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                        else:
+                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
                     if skill_check != []:
-                        
                         text "> [skill_check[0].GetName()!u]:[skill_check[0].level]/[skill_check[1]] <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
                     
 ################################################################################

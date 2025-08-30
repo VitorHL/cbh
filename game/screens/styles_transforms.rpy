@@ -105,6 +105,11 @@ style black_tile_75:
     xpadding 10
     ypadding 10
 
+style black_tile_border_75:
+    background Frame("gui/tiles/black_tile_border_75.webp", 20, 20,)
+    xpadding 10
+    ypadding 10
+
 style border_white:
     background Frame("gui/tiles/border_white.webp", 7, 7)
     xpadding 10

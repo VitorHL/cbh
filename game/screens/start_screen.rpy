@@ -60,7 +60,7 @@ screen skill_screen_start():
     default selected_skill = None
     default spent_skill_points = 0
     default selected_skill_level = None
-    $ free_skill_points = att_pts_avaliable - spent_skill_points
+    $ free_skill_points = att_pts_available - spent_skill_points
 
     # python:
     #     if selected_skill != None:
@@ -176,7 +176,7 @@ screen skill_screen_start():
                             background None
                             xfill True
                             ysize 35
-                            text "ATTRIBUTE POINTS: [att_pts_avaliable]" xalign 0.5 yalign 0.5 style "dialogue_entry_text" size 28
+                            text "ATTRIBUTE POINTS: [att_pts_available]" xalign 0.5 yalign 0.5 style "dialogue_entry_text" size 28
                         text "-------------------" style "dialogue_entry_text" xalign 0.5
                 frame:
                         style "black_tile_75"
@@ -202,7 +202,7 @@ screen skill_screen_start():
                         ysize 50
                         style "hover_button"
                         text "+" xalign 0.5 yalign 0.5 style "dialogue_entry_text"
-                        sensitive selected_skill != None and att_pts_avaliable > 0 and selected_skill.current < att_pts_max_start
+                        sensitive selected_skill != None and att_pts_available > 0 and selected_skill.current < att_pts_max_start
                         action [ Function(add_skill_point, selected_skill, 1) ]
                 frame:
                     style "black_tile_75"
@@ -236,6 +236,6 @@ screen skill_screen_start():
                         xsize 192
                         ysize 50
                         style "hover_button"
-                        sensitive att_pts_avaliable == 0 and att_pts_spent > 0
+                        sensitive att_pts_available == 0 and att_pts_spent > 0
                         action Show( "game_confirm_box", None, [Function(apply_skill_points), Jump("daniel_apartment_label")], "This cannot be changed later", Fade )
                         text "CONFIRM" xalign 0.5 yalign 0.5 style "dialogue_entry_text"

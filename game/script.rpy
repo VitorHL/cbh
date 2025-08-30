@@ -30,22 +30,24 @@ default kitchen_interaction = game_interaction( "fridge_interaction" )
 # Game Lists -------------------------------------------------
 
 default game_iventory = [ burgar, fries, coke ]
-default avaliable_events = [ event1, event2, event3, event4, event_repeat ]
+default available_events = [ event1, event2, event3, event4, event_repeat ]
 default finished_events = []
 default events_played_today = []
 default room_where_events_played_already = []
-default avaliable_rooms = []
-default avaliable_interactions = []
+default available_rooms = []
+default available_interactions = []
 default interactions_played_today = []
 default failed_missions = []
 default failed_objectives = []
 default completed_missions = []
-default avaliable_missions = []
+default available_missions = []
+default available_skill_buffs  = []
+default used_skill_buffs = []
 
 default calendar = game_calendar(5,9,10,1997)
 default cgt_message = cgt_default
 default cdt_message = cdt_default
-default avaliable_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
+default available_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
 
 # Game Variables -------------------------------------------------
 
@@ -53,7 +55,7 @@ default clean_mode = True
 
 default skill_success = False
 
-default att_pts_avaliable = 8 # Attribute points at start
+default att_pts_available = 8 # Attribute points at start
 default att_pts_spent = 0 # Attribute points at start
 define att_pts_max_start = 4 # Maximum a skill can have at start
 
@@ -86,7 +88,7 @@ label skill_test_label(total, difficulty, dice1, dice2, dice3, skill):
     # show screen dice_roll_fake_1()
     # show screen dice_roll_fake_2()
     # show screen dice_roll_result_fake(skill)
-    pause 1
+    pause 1.5
     #hide screen dice_roll_anim
     hide screen dice_roll_anim
     show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill)
@@ -456,6 +458,7 @@ label char_gia_small_talk(character):
     return
 
 label char_gia_talk_val(character):
+    $ add_skill_buff(talked_about_val)
     "Val? What about her?"
     "Can't really say i care much about her at all"
     "You two are a nice couple though..."
@@ -472,6 +475,16 @@ label char_gia_talk_building(character):
 label char_gia_talk_relationship(character):
     "It is over Daniel... There is nothing you can do to reapair the things now."
     "Maybe we can talk about it later, but not really now."
+    menu:
+        "I want to still discuss it though." (skill_roll=[skill_catharsis,18,[showed_burguer,showed_coke,talked_about_val]]):
+            if skill_success == True:
+                "The test was a success"
+                "Victory!"
+                "She is not coming back though"
+            else:
+                "This is what should be shown"
+                "The text continues"
+                "Etc"
     call char_conversation_list(character)
     return
 
@@ -485,12 +498,14 @@ label gia_show_generic(character):
     return
 
 label gia_show_coke(character):
+    $ add_skill_buff(showed_coke)
     "Coke?"
     "No thanks, this thing have way too much sugar."
     call show_char_item(mode,character,selected_slot)
     return
 
 label gia_show_burger(character):
+    $ add_skill_buff(showed_burguer)
     "Oh sorry, no i'm not hungry"
     "Besides, i would prefer to be hit by a car than eating something from your Diner."
     call show_char_item(mode,character,selected_slot)

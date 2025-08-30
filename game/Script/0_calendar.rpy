@@ -81,7 +81,7 @@ init python:
     def move_room(to_where):
         global current_room
         global cgt_message
-        if not avaliable_rooms or to_where in avaliable_rooms:
+        if not available_rooms or to_where in available_rooms:
             current_room = to_where
             renpy.jump(to_where.game_label)
         else:
@@ -92,7 +92,7 @@ init python:
     
 
     def travel_menu(new_entries=None):
-        global avaliable_travels, current_room
+        global available_travels, current_room
         
         # Start with empty list
         menu_list = []
@@ -108,8 +108,8 @@ init python:
                 var_name = get_var_name(room, globals())[0]
                 menu_list.append((room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address, room_location=room.location) ))
         
-        # Add items from avaliable_travels, excluding current_room
-        for room in avaliable_travels:
+        # Add items from available_travels, excluding current_room
+        for room in available_travels:
             if room != current_room:
                 var_name = get_var_name(room, globals())[0]
                 menu_list.append( (room.name, renpy.Choice(room, room_thumb=var_name, room_address=room.address, room_location=room.location) ) )
@@ -134,11 +134,11 @@ init python:
             self.runs = 0
 
     def run_event(event_to_run):
-        global avaliable_events, ongoing_event
+        global available_events, ongoing_event
         event_to_run.runs += 1
         # Checks if the event is single use or can run multiple times, if instance <= the event is infinite.
         if event_to_run.instances == 1:
-            avaliable_events.remove(event_to_run)
+            available_events.remove(event_to_run)
         elif event_to_run.instances > 1:
             event_to_run.instances - 1
         room_where_events_played_already.clear()
@@ -155,12 +155,12 @@ init python:
 
 
     def check_for_event():
-        global current_room, avaliable_events, finished_events, events_played_today, room_where_events_played_already, calendar
+        global current_room, available_events, finished_events, events_played_today, room_where_events_played_already, calendar
 
         # Filter events that meet all criteria
         suitable_events = []
         
-        for event in avaliable_events:
+        for event in available_events:
             # Check if event matches current room
             if event.game_room == current_room or event.game_room is None:
             # Check if event hasn't been played today
@@ -211,15 +211,15 @@ init python:
             self.runs_today = 0
 
     def run_interaction(interaction_to_run):
-        global avaliable_interactions, ongoing_interaction
-        if not avaliable_interactions or interaction_to_run in avaliable_interactions:
+        global available_interactions, ongoing_interaction
+        if not available_interactions or interaction_to_run in available_interactions:
             ongoing_interaction = interaction_to_run
             renpy.call(interaction_to_run.game_label)
         else:
             renpy.say("", cdt_message )
 
     def end_interaction():
-        global avaliable_interactions, ongoing_interaction, interactions_played_today
+        global available_interactions, ongoing_interaction, interactions_played_today
         ongoing_interaction.runs += 1
         ongoing_interaction.runs_today += 1
         interactions_played_today.append(ongoing_interaction)
@@ -338,8 +338,8 @@ init python:
 
 ########################
 
-    def game_skill_roll(skill, difficulty):
-        global skill_success
+    def game_skill_roll(skill, difficulty, skill_buffs = []):
+        global skill_success, available_skill_buffs , used_skill_buffs
         
         dice1 = random.randint(1, 6)
         dice2 = random.randint(1, 6)
@@ -347,15 +347,32 @@ init python:
         roll = dice1 + dice2 + dice3
 
         total = roll + skill.level
-        
+
+        sum_buffs = 0
+        for buff in skill_buffs:
+            if buff in available_skill_buffs :
+                sum_buffs = sum_buffs + buff.value
+                buff.times_used += 1
+                if buff.limit <> 0 and buff.times_used >= buff.limit:
+                    available_skill_buffs .remove(buff)
+                    used_skill_buffs.append(buff)
+        total = total + sum_buffs
+
         skill_success = total >= difficulty
 
         renpy.call("skill_test_label", total, difficulty, dice1, dice2, dice3, skill )
 
 ##########################
 
-    def rollchance(skill,difficulty):
+    def add_skill_buff(skill_buff):
+        global available_skill_buffs , used_skill_buffs
+        if skill_buff not in available_skill_buffs  and skill_buff not in used_skill_buffs:
+            available_skill_buffs .append(skill_buff)
 
+##########################
+
+    def rollchance(skill,difficulty,skill_buffs = []):
+        global available_skill_buffs
         die_table = {
             "die_3" : 1,
             "die_4" : 0.9954,
@@ -377,6 +394,10 @@ init python:
         }
 
         difficulty -= skill.level
+        for buff in skill_buffs:
+            if buff in available_skill_buffs:
+                difficulty -= buff.value
+
         if difficulty <= 3:
             difficulty = 3
         if difficulty > 18:
@@ -387,11 +408,10 @@ init python:
 
 ##########################
 
-    def get_new_random_number(base_number):
-        """Get a new random number that's different from the current one"""
-        new_number = base_number
-        
-        # Keep generating until we get a different number
-        while new_number == base_number:
-            new_number = renpy.random.randint(1, 9)
-        return new_number
+    class skill_check_buff(store.object):
+        def __init__(self, value , limit = 0):
+            self.times_used = 0
+            self.value = value
+            self.limit = limit
+        def GetName(self):
+            return get_var_suffix(self, "loc")

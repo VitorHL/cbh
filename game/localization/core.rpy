@@ -59,6 +59,14 @@ define skill_tag_dict = {
 ## Game Menus
 ################################################################################
 
+define showed_burguer_loc = "Showed Burguer"
+define showed_coke_loc = "Showed Coke"
+define talked_about_val_loc = "Talked about Val"
+
+################################################################################
+## Game Menus
+################################################################################
+
 define loc_clean_mode = "Clean Mode"
 define loc_horny_mode = "Explicit Mode"
 define loc_clean_mode_desc = "Clean Mode skips all explicit sex scenes. While the story and text remain unchanged, and adult themes are still mentioned, no depictions of sexual actions, whether visual or textual, are shown."

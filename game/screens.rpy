@@ -96,7 +96,7 @@ screen top_bar():
 #         vbox:
 #             #xalign 0.5
 #             text "{size=20}Missions:"
-#             for mission in avaliable_missions:
+#             for mission in available_missions:
 #                 vbox:
 #                     xsize 500
 #                     yminimum 16
