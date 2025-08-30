@@ -41,12 +41,26 @@ screen choice(items):
                         text "[i.caption]" yalign 0.5 xalign 0.5 style "dialogue_entry_text"
                     if skill_roll != []:
                         if len(skill_roll) > 2:
-                            vpgrid:
-                                cols 2
+                            default columns = 2
+                            default buffs_for_this_check = []
+                            for i in skill_roll[2]:
+                                python:
+                                    if i in available_skill_buffs:
+                                        buffs_for_this_check.append(i)
+                            vbox:
                                 xalign 0.5
-                                for buff in skill_roll[2]:
-                                    if buff in available_skill_buffs and buff not in used_skill_buffs:
-                                        text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                                spacing 5
+                                for i in chunk(buffs_for_this_check, columns):
+                                    hbox:
+                                        spacing 40
+                                        align (0.5, 0.5)
+                                        yalign 0.5
+                                        for buff in i:
+                                            if buff.value >= 0:
+                                                text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#0adc28" size 24
+                                            else:
+                                                text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#dc2020" size 24
+                            
                         if len(skill_roll) > 2:
                             text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1], skill_roll[2])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
                         else:

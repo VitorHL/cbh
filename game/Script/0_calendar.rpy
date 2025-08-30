@@ -360,7 +360,7 @@ init python:
 
         skill_success = total >= difficulty
 
-        renpy.call("skill_test_label", total, difficulty, dice1, dice2, dice3, skill )
+        renpy.call("skill_test_label", total, difficulty, dice1, dice2, dice3, skill,skill_buffs )
 
 ##########################
 
@@ -415,3 +415,12 @@ init python:
             self.limit = limit
         def GetName(self):
             return get_var_suffix(self, "loc")
+
+##########################
+
+    def chunk(lst, size):
+        rt = []
+        for i in range(0, len(lst), size):
+            rt.append(lst[i:i+size])
+
+        return rt

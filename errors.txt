@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 47: keyword argument 'xalign' appears more than once in a text statement.
-    text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24 xalign 0.5 yalign 0.5
-                                                                                                          ^
+File "game/screens/dice_roll.rpy", line 192: reached end of line when expecting ':'.
+    if
+      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Aug 30 11:57:41 2025
+Sat Aug 30 15:05:42 2025

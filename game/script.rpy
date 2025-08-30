@@ -82,31 +82,13 @@ default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsi
 
 
 
-label skill_test_label(total, difficulty, dice1, dice2, dice3, skill):
-    show screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill)
-    # show screen dice_roll_fake_0()
-    # show screen dice_roll_fake_1()
-    # show screen dice_roll_fake_2()
-    # show screen dice_roll_result_fake(skill)
+label skill_test_label(total, difficulty, dice1, dice2, dice3, skill, skill_buffs=[]):
+    show screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
     pause 1.5
-    #hide screen dice_roll_anim
     hide screen dice_roll_anim
-    show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill)
-    # hide screen dice_roll_fake_0
-    # hide screen dice_roll_fake_1
-    # hide screen dice_roll_fake_2
-    # hide screen dice_roll_result_fake
-    # show screen dice_roll_0(dice1, difficulty)
-    # show screen dice_roll_1(dice2, difficulty)
-    # show screen dice_roll_2(dice3, difficulty)
-    # show screen dice_roll_result(skill, dice1, dice2, dice3)
-    
+    show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
     pause
     hide screen dice_roll
-    # hide screen dice_roll_0
-    # hide screen dice_roll_1
-    # hide screen dice_roll_2
-    # hide screen dice_roll_result
     return
 
 
