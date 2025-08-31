@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/dice_roll.rpy", line 192: reached end of line when expecting ':'.
-    if
-      ^
+File "game/screens/dice_roll.rpy", line 216: 'bottom_margin' is not a keyword argument or valid child of the vbox statement.
+    bottom_margin 0
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Aug 30 15:05:42 2025
+Sun Aug 31 00:08:02 2025
