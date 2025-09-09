@@ -59,6 +59,8 @@ define level_up_loc = "You levelled up to level [player_level]!"
 define xp_gain_skill_test_loc = "SKILL ROLL:"
 define xp_gain_skill_check_loc = "SKILL CHECK:"
 define xp_gain_shown_item_loc = "SHOWN ITEM:"
+define level_up_loc = "LEVEL UP:"
+define level_prefix = "Lvl"
 
 ################################################################################
 ## Game Menus

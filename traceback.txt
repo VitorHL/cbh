@@ -1,166 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 236, in script call
+  File "game/script.rpy", line 235, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 460, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 428, in script call
+  File "game/script.rpy", line 427, in script call
     call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 437, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 507, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 428, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 437, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 514, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 428, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 423, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 481, in script call
-    menu:
-  File "game/script.rpy", line 108, in script
-    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
-  File "game/script.rpy", line 108, in <module>
-    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
-  File "game/Script/0_calendar.rpy", line 435, in add_xp
-    renpy.notify( quantity + "Amomgos")
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
+  File "game/script.rpy", line 437, in script
+    if character not in item.character_shown:
+  File "game/script.rpy", line 437, in <module>
+    if character not in item.character_shown:
+AttributeError: 'game_item' object has no attribute 'character_shown'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 236, in script call
+  File "game/script.rpy", line 235, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 460, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 428, in script call
+  File "game/script.rpy", line 427, in script call
     call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 437, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 507, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 428, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 437, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 514, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 428, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 423, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 491, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 447, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 481, in script call
-    menu:
-  File "game/script.rpy", line 108, in script
-    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 108, in <module>
-    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
-  File "game/Script/0_calendar.rpy", line 435, in add_xp
-    renpy.notify( quantity + "Amomgos")
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
+  File "game/script.rpy", line 437, in script
+    if character not in item.character_shown:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 437, in <module>
+    if character not in item.character_shown:
+AttributeError: 'game_item' object has no attribute 'character_shown'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Sep  9 01:05:49 2025
+Tue Sep  9 02:54:00 2025

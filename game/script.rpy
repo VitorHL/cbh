@@ -142,7 +142,6 @@ label skill_test_label(total, difficulty, dice1, dice2, dice3, skill, skill_buff
 
 
 
-
 label start:
     #default calendar = game_calendar(1,1,1)
 
@@ -227,6 +226,7 @@ label daniel_apartment_label:
 
     $ char_gia.interested_items[burgar] = "gia_show_burger"
     $ char_gia.interested_items[coke] = "gia_show_coke"
+    $ char_gia.relevant_itens.append(coke)
     $ char_gia.interested_talks["Relationship"] = "char_gia_talk_relationship"
     $ char_gia.interested_talks["The Building"] = "char_gia_talk_building"
     $ char_gia.interested_talks["Val"] = "char_gia_talk_val"
@@ -433,7 +433,9 @@ label show_char_item(mode, character, selected_slot=None):
 label char_item_reaction(item, mode, character, selected_slot):
     # Trigger the character reaction to the player showing a item
     if item in character.interested_items:
-        $ add_xp(xp_per_item_shown,xp_gain_shown_item_loc)
+        if item in character.relevant_itens and character not in item.characters_shown:
+            $ add_xp(xp_per_item_shown, xp_gain_shown_item_loc)
+            $ item.characters_shown.append(character)
         $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
     else:
         #call character.generic _show_label

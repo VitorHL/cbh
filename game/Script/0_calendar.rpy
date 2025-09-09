@@ -251,6 +251,7 @@ init python:
             self.desc = desc
             self.game_label = game_label
             self.interaction_mode = interaction_mode
+            self.characters_shown = []
 
     def inspect_item(item):
         renpy.hide_screen("inventory_screen")
@@ -269,6 +270,7 @@ init python:
             self.generic_show_label = generic_show_label
             self.interested_talks = {}
             self.interested_items = {}
+            self.relevant_itens = []
             self.flags = {}
 
             def add_talk(self, topic, dialogue):
@@ -434,7 +436,7 @@ init python:
         if quantity >= 0:
             renpy.notify(f"{reason}{{color=#0adc28}}+{quantity}XP{{/color}}")
         else:
-           renpy.notify(f"{reason}{{color=#dc2020}}-{quantity}XP{{/color}}")
+            renpy.notify(f"{reason}{{color=#dc2020}}-{quantity}XP{{/color}}")
         if next_level in xp_progression and player_xp >= xp_progression[next_level]:
             player_levelup()
             
@@ -442,8 +444,8 @@ init python:
 ########################
 
     def player_levelup():
-        global player_level, player_xp, att_pts_available
+        global player_level, player_xp, att_pts_available, level_up_loc, level_prefix
         player_xp -= xp_progression[player_level + 1]
         player_level += 1
         att_pts_available += 1
-        renpy.notify("You levelled up to [player_level]!")
+        renpy.notify(f"{level_up_loc}{{color=#0adc28}}{level_prefix}{player_level}{{/color}}")
