@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/dice_roll.rpy", line 216: 'bottom_margin' is not a keyword argument or valid child of the vbox statement.
-    bottom_margin 0
-                 ^
+File "game/Script/0_calendar.rpy", line 356: invalid syntax
+                if buff.limit <> 0 and buff.times_used >= buff.limit:
+                               ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Aug 31 00:08:02 2025
+Tue Sep  9 01:08:06 2025

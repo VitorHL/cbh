@@ -22,6 +22,8 @@ init python:
         for i in game_skills:
             i.invested = 0
 
+    # Function that sets all the skills according on how the player arrange them in the skill screen
+
     def apply_skill_points ():
         global att_pts_available, att_pts_spent
         att_pts_spent = 0

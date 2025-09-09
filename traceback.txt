@@ -1,151 +1,166 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 216, in script call
+  File "game/script.rpy", line 236, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 408, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 416, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 486, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 408, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 403, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 439, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 426, in script call
-    $ generate_character_talks(character)
   File "game/script.rpy", line 460, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 428, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 437, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 507, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 428, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 437, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 514, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 428, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 423, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 481, in script call
     menu:
-  File "game/script.rpy", line 91, in script
-    hide screen dice_roll
-  File "renpy/common/000statements.rpy", line 682, in execute_hide_screen
-    renpy.hide_screen(name, layer=layer)
-  File "game/screens/dice_roll.rpy", line 144, in execute
-    screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs=[]):
-  File "game/screens/dice_roll.rpy", line 144, in execute
-    screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs=[]):
-  File "game/screens/dice_roll.rpy", line 146, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 167, in execute
-    frame:
-  File "game/screens/dice_roll.rpy", line 173, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 213, in execute
-    if len(skill_buffs) > 0 and any(skill in available_skill_buffs for skill in skill_buffs):
-  File "game/screens/dice_roll.rpy", line 214, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 220, in execute
-    for i in chunk(skill_buffs, columns):
-  File "game/screens/dice_roll.rpy", line 221, in execute
-    hbox:
-  File "game/screens/dice_roll.rpy", line 225, in execute
-    for buff in i:
-  File "game/screens/dice_roll.rpy", line 226, in execute
-    if buff in available_skill_buffs:
-  File "game/screens/dice_roll.rpy", line 227, in execute
-    if buff.value >= 0:
-  File "game/screens/dice_roll.rpy", line 228, in execute
-    text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
-  File "game/Script/0_calendar.rpy", line 417, in GetName
-    return get_var_suffix(self, "loc")
-  File "game/Script/0_core.rpy", line 11, in get_var_suffix
-    var_loc = get_var_name(var, scope)[0]
-IndexError: list index out of range
+  File "game/script.rpy", line 108, in script
+    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
+  File "game/script.rpy", line 108, in <module>
+    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
+  File "game/Script/0_calendar.rpy", line 435, in add_xp
+    renpy.notify( quantity + "Amomgos")
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 216, in script call
+  File "game/script.rpy", line 236, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 408, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 416, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 486, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 408, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 403, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 439, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 426, in script call
-    $ generate_character_talks(character)
   File "game/script.rpy", line 460, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 428, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 437, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 507, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 428, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 437, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 514, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 428, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 423, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 491, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 447, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 481, in script call
     menu:
-  File "game/script.rpy", line 91, in script
-    hide screen dice_roll
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 682, in execute_hide_screen
-    renpy.hide_screen(name, layer=layer)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 1458, in hide_screen
-    sls.remove(layer, screen.tag, prefix="hide" if not immediately else None)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\scenelists.py", line 597, in remove
-    self.hide_or_replace(layer, remove_index, prefix)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\scenelists.py", line 503, in hide_or_replace
-    if not oldsle.displayable._handles_event(prefix):
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 533, in _handles_event
-    self.update()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens/dice_roll.rpy", line 144, in execute
-    screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs=[]):
-  File "game/screens/dice_roll.rpy", line 144, in execute
-    screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs=[]):
-  File "game/screens/dice_roll.rpy", line 146, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 167, in execute
-    frame:
-  File "game/screens/dice_roll.rpy", line 173, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 213, in execute
-    if len(skill_buffs) > 0 and any(skill in available_skill_buffs for skill in skill_buffs):
-  File "game/screens/dice_roll.rpy", line 214, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 220, in execute
-    for i in chunk(skill_buffs, columns):
-  File "game/screens/dice_roll.rpy", line 221, in execute
-    hbox:
-  File "game/screens/dice_roll.rpy", line 225, in execute
-    for buff in i:
-  File "game/screens/dice_roll.rpy", line 226, in execute
-    if buff in available_skill_buffs:
-  File "game/screens/dice_roll.rpy", line 227, in execute
-    if buff.value >= 0:
-  File "game/screens/dice_roll.rpy", line 228, in execute
-    text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2079, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-  File "game/Script/0_calendar.rpy", line 417, in GetName
-    return get_var_suffix(self, "loc")
-  File "game/Script/0_core.rpy", line 11, in get_var_suffix
-    var_loc = get_var_name(var, scope)[0]
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 214, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/script.rpy", line 108, in script
+    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 108, in <module>
+    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
+  File "game/Script/0_calendar.rpy", line 435, in add_xp
+    renpy.notify( quantity + "Amomgos")
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Sun Aug 31 00:32:15 2025
+Tue Sep  9 01:05:49 2025

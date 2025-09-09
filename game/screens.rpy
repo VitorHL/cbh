@@ -83,6 +83,9 @@ screen top_bar():
         yminimum 75
         #ymaximum 75
         vbox:
+            text "Level: [player_level]"
+            text "XP: [player_xp]/[xp_progression[player_level + 1]]"
+            text "-----------------"
             for i in game_skills:
                 text "[i.GetName()!u]: [i.level]" textalign 1.0 xalign 1.0
             #text "[weekdays_list[calendar.weekday]], [months_list[calendar.month]] [calendar.day], [calendar.year]" textalign 1.00
@@ -1260,7 +1263,7 @@ screen notify(message):
     style_prefix "notify"
 
     frame at notify_appear:
-        text "[message!tq]"
+        text message
 
     timer 3.25 action Hide('notify')
 
