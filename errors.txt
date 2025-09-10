@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Script/0_calendar.rpy", line 356: invalid syntax
-                if buff.limit <> 0 and buff.times_used >= buff.limit:
-                               ^
+File "game/screens/vhs_overlay.rpy", line 11: the ypadding keyword argument was not given a value.
+    ypadding
+            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Sep  9 01:08:06 2025
+Wed Sep 10 05:42:46 2025

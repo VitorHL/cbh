@@ -3,7 +3,33 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+# Characters
+
+# Gia -------------------------------------------------------------------------------
+define Gia = Character("GIANNA", color="#b32137", namebox_background="gia_namebox")
+image gia_namebox:
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    matrixcolor TintMatrix("#b32137")
+# Daniel ----------------------------------------------------------------------------
+define Daniel = Character("DANIEL", color="#21b393", namebox_background="daniel_namebox")
+image daniel_namebox:
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    matrixcolor TintMatrix("#21b393")
+# Val --------------------------------------------------------------------------------
+define Val = Character("VALERIE", color="#21b32d", namebox_background="val_namebox")
+image val_namebox:
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    matrixcolor TintMatrix("#21b32d")
+# Val --------------------------------------------------------------------------------
+define Karol = Character("KAROLINA", color="#8521b3", namebox_background="karol_namebox")
+image karol_namebox:
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    matrixcolor TintMatrix("#8521b3")
+# Boss --------------------------------------------------------------------------------
+define Boss = Character("BOSS", color="#b34f21", namebox_background="boss_namebox")
+image boss_namebox:
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    matrixcolor TintMatrix("#b34f21")
 
 # Game Events -------------------------------------------------
 
@@ -101,21 +127,6 @@ default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsi
 
 
 
-label skill_test_label(total, difficulty, dice1, dice2, dice3, skill, skill_buffs=[]):
-    show screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
-    pause 1.5
-    hide screen dice_roll_anim
-    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
-    show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
-    pause
-    hide screen dice_roll
-    return
-
-
-
-
-
-
 
 
 
@@ -147,7 +158,7 @@ label start:
 
     $ current_room = room_edgar_counter
 
-    show screen top_bar
+    #show screen top_bar
     jump choose_mode_label
 
 label choose_mode_label:
@@ -430,6 +441,8 @@ label show_char_item(mode, character, selected_slot=None):
     #     call screen character_interaction(character)
     return
 
+
+
 label char_item_reaction(item, mode, character, selected_slot):
     # Trigger the character reaction to the player showing a item
     if item in character.interested_items:
@@ -440,13 +453,26 @@ label char_item_reaction(item, mode, character, selected_slot):
     else:
         #call character.generic _show_label
         $ renpy.call (character.generic_show_label, character)
-    #"Amongi"
     return
+    
+
 
 
 label char_conversation_list(character):
     # Generates a list of entries to the conversation tab
     $ generate_character_talks(character)
+    return
+
+
+
+label skill_test_label(total, difficulty, dice1, dice2, dice3, skill, skill_buffs=[]):
+    show screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
+    pause 1.5
+    hide screen dice_roll_anim
+    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
+    show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
+    pause
+    hide screen dice_roll
     return
 
 ###################################################################################################################################################
@@ -457,8 +483,21 @@ label char_gia_hello(character):
     return
 
 label char_gia_small_talk(character):
-    "I think the climate is very nice today"
-    "Don't you think?"
+    Boss "Yes, that’s right shithead, you are being promoted, Congratulations!"
+    Boss "Maybe with the immense responsibility I'm humbly entitling to you, you may start doing something useful with your miserable life."
+    Daniel "R-really? B-but there are many people who have been working here for longer than me."
+    Boss "Yes, and they are all even more useless than you, can you believe it?"
+    Boss "It leaves me with no choice but to let you manage those rascals."
+    Boss "It was either you or the crackhead marine."
+    Daniel "Blackwood?"
+    Boss "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
+    Daniel "He wasn’t a marine, I believe he served in the army sir."
+    Daniel "And I’m pretty sure General Powell’s Branch is the Army too..."
+    Boss "Does it make any difference?"
+    Boss "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
+    Boss "Now it is your job to guarantee that he will not do that by the way."
+    Boss "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
+    Daniel "Gulp... Yes sir."
     call screen character_interaction(character)
     return
 
