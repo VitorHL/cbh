@@ -207,3 +207,10 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+
+
+define config.layers = [ "master", "transient", "underlay", "vignette", "screens", "overlay" ]    
+define config.menu_clear_layers = [ "screens" ]
+define config.top_layers = [ "vhs_screens", "effect_overlay" ]
+python:
+    renpy.add_layer()

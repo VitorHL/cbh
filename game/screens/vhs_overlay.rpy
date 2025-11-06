@@ -7,6 +7,7 @@ screen vhs_overlay():
     timer 1.0 action Function(update_clock) repeat clock_running
     image "gui/vhs_lines.webp"
     zorder 100
+    layer "vhs_screens"
     frame:
         xsize 1853
         ysize 1012
@@ -29,8 +30,8 @@ style vhs_overlay_text:
     color "#c8c8c8"
     outlines [(2, "#000000", 1, 1)]
 
-init python:
-    config.overlay_screens.append("vhs_overlay")
+# init python:
+#     config.overlay_screens.append("vhs_overlay")
 
 # Ren'Py Real-Time Clock System
 # Add this code to your script.rpy file

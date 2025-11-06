@@ -123,10 +123,38 @@ default skill_communion = game_skill()
 default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsis, skill_volition, skill_communion ]
 
 
+image grain_effect:
+        "gui/overlay/grain/grain_00.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_01.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_02.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_03.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_04.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_05.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_06.webp"   
+        pause 0.06
+        "gui/overlay/grain/grain_07.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_08.webp"
+        pause 0.06
+        "gui/overlay/grain/grain_09.webp"
+        pause 0.06
+        repeat
 
+label  before_main_menu:
+    show grain_effect onlayer effect_overlay
+    show image "gui/overlay/scanlines.webp" onlayer effect_overlay
+return
 
-
-
+label  after_load:
+    # show image "gui/overlay/vignette.webp" onlayer vignette
+    # show image "gui/overlay/scanlines.webp" onlayer effect_overlay
+return
 
 
 
@@ -154,10 +182,11 @@ default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsi
 
 
 label start:
-    #default calendar = game_calendar(1,1,1)
-
     $ current_room = room_edgar_counter
-
+    show screen vhs_overlay
+    show image "gui/overlay/vignette.webp" onlayer vignette
+    show image "gui/overlay/scanlines.webp" onlayer effect_overlay
+    show grain_effect onlayer effect_overlay
     #show screen top_bar
     jump choose_mode_label
 
@@ -242,8 +271,9 @@ label daniel_apartment_label:
     $ char_gia.interested_talks["The Building"] = "char_gia_talk_building"
     $ char_gia.interested_talks["Val"] = "char_gia_talk_val"
 
-
+    
     scene daniel_apartment_bg with fade
+    show image "gui/overlay/summer_overlay.webp" onlayer underlay
     call screen character_interaction(char_gia)
     $ check_for_event()
     call daniel_apartment_label_menu

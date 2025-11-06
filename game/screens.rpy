@@ -307,14 +307,14 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     #   style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+    # if main_menu:
+    #     add gui.main_menu_background
+    # else:
+    #     add gui.game_menu_background
 
     frame:
         #style "game_menu_outer_frame"
-        background Solid("#414a8d")
+        background None
         hbox:
 
             ## Reserve space for the navigation section.
