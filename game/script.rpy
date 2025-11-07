@@ -5,11 +5,28 @@
 
 # Characters
 
+
+define config.speaking_attribute = "talk"
+
 # Gia -------------------------------------------------------------------------------
-define Gia = Character("GIANNA", color="#b32137", namebox_background="gia_namebox")
+define Gia = Character("GIANNA", color="#b32137", namebox_background="gia_namebox", callback=callback_builder("Gia"))
 image gia_namebox:
     Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
     matrixcolor TintMatrix("#b32137")
+
+image Gia front:
+    "GFX/characters/gia/standard/front_stare_cigarrette/0_0.webp"
+image Gia front talk:
+    "GFX/characters/gia/standard/front_stare_cigarrette/0_1.webp"
+    pause 0.10
+    "GFX/characters/gia/standard/front_stare_cigarrette/0_0.webp"
+    pause 0.10
+    "GFX/characters/gia/standard/front_stare_cigarrette/0_2.webp"
+    pause 0.10
+    "GFX/characters/gia/standard/front_stare_cigarrette/0_0.webp"
+    pause 0.10
+    repeat
+        
 # Daniel ----------------------------------------------------------------------------
 define Daniel = Character("DANIEL", color="#21b393", namebox_background="daniel_namebox")
 image daniel_namebox:
@@ -274,6 +291,7 @@ label daniel_apartment_label:
     
     scene daniel_apartment_bg with fade
     show image "gui/overlay/summer_overlay.webp" onlayer underlay
+    show Gia front
     call screen character_interaction(char_gia)
     $ check_for_event()
     call daniel_apartment_label_menu
@@ -513,20 +531,20 @@ label char_gia_hello(character):
     return
 
 label char_gia_small_talk(character):
-    Boss "Yes, that’s right shithead, you are being promoted, Congratulations!"
-    Boss "Maybe with the immense responsibility I'm humbly entitling to you, you may start doing something useful with your miserable life."
+    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
+    Gia "Maybe with the immense responsibility I'm humbly entitling to you, you may start doing something useful with your miserable life."
     Daniel "R-really? B-but there are many people who have been working here for longer than me."
-    Boss "Yes, and they are all even more useless than you, can you believe it?"
-    Boss "It leaves me with no choice but to let you manage those rascals."
-    Boss "It was either you or the crackhead marine."
+    Gia "Yes, and they are all even more useless than you, can you believe it?"
+    Gia "It leaves me with no choice but to let you manage those rascals."
+    Gia "It was either you or the crackhead marine."
     Daniel "Blackwood?"
-    Boss "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
+    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
     Daniel "He wasn’t a marine, I believe he served in the army sir."
     Daniel "And I’m pretty sure General Powell’s Branch is the Army too..."
-    Boss "Does it make any difference?"
-    Boss "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
-    Boss "Now it is your job to guarantee that he will not do that by the way."
-    Boss "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
+    Gia "Does it make any difference?"
+    Gia "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
+    Gia "Now it is your job to guarantee that he will not do that by the way."
+    Gia "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
     Daniel "Gulp... Yes sir."
     call screen character_interaction(character)
     return

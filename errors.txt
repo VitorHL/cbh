@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 129: expected 'image_name_component' not found.
-    show image "gui/overlay/scanlines.webp" onlayer "effect_overlay"
-                                                    ^
+File "game/script.rpy", line 19: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    attribute talk:
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Sep 10 12:24:47 2025
+Fri Nov  7 12:51:31 2025

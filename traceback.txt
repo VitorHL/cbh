@@ -1,36 +1,44 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 278, in script call
-    call daniel_apartment_label_menu
-  File "game/script.rpy", line 312, in script
-    $ travel_menu( )
-  File "game/script.rpy", line 312, in <module>
-    $ travel_menu( )
-  File "game/Script/0_calendar.rpy", line 114, in travel_menu
-    var_name = get_var_name(room, globals())[0]
-IndexError: list index out of range
+  File "game/script.rpy", line 295, in script call
+    call screen character_interaction(char_gia)
+  File "game/script.rpy", line 534, in script
+    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
+  File "game/Script/0_core.rpy", line 23, in char_callback
+    renpy.show(character_sprite_basename, what=list(current_attrs) + ["talk"])
+AttributeError: 'RevertableList' object has no attribute 'split'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 278, in script call
-    call daniel_apartment_label_menu
-  File "game/script.rpy", line 312, in script
-    $ travel_menu( )
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 312, in <module>
-    $ travel_menu( )
-  File "game/Script/0_calendar.rpy", line 114, in travel_menu
-    var_name = get_var_name(room, globals())[0]
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 214, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/script.rpy", line 295, in script call
+    call screen character_interaction(char_gia)
+  File "game/script.rpy", line 534, in script
+    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 808, in display_say
+    pause_callback("show_done")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
+    c(*args, **kwargs)
+  File "game/Script/0_core.rpy", line 23, in char_callback
+    renpy.show(character_sprite_basename, what=list(current_attrs) + ["talk"])
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
+    name = tuple(name.split())
+AttributeError: 'RevertableList' object has no attribute 'split'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Wed Sep 10 13:09:08 2025
+Fri Nov  7 13:20:48 2025
