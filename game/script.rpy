@@ -8,6 +8,10 @@
 
 define config.speaking_attribute = "talk"
 
+init python:
+    def randompause(min,max):
+        return renpy.random.randint(min,max)
+
 # Gia -------------------------------------------------------------------------------
 define Gia = Character("GIANNA", color="#b32137", namebox_background="gia_namebox", callback=callback_builder("Gia"))
 image gia_namebox:
@@ -16,6 +20,7 @@ image gia_namebox:
 
 image Gia front:
     "GFX/characters/gia/standard/front_stare_cigarrette/0_0.webp"
+
 image Gia front talk:
     "GFX/characters/gia/standard/front_stare_cigarrette/0_1.webp"
     pause 0.10
@@ -24,6 +29,73 @@ image Gia front talk:
     "GFX/characters/gia/standard/front_stare_cigarrette/0_2.webp"
     pause 0.10
     "GFX/characters/gia/standard/front_stare_cigarrette/0_0.webp"
+    pause 0.10
+    repeat
+
+# Claire -------------------------------------------------------------------------------
+
+define Claire = Character("CLAIRE", color="#3962af", namebox_background="claire_namebox", callback=callback_builder("Claire"))
+image claire_namebox:
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    matrixcolor TintMatrix("#3962af")
+
+image Claire front_shy:
+    block:
+        "GFX/characters/claire/standard/front_shy/0_0.webp"
+        pause renpy.random.uniform(2.0, 3.0)
+        "GFX/characters/claire/standard/front_shy/0_0_1.webp"
+        pause 0.1
+        "GFX/characters/claire/standard/front_shy/0_0_2.webp"
+        pause 0.1
+        "GFX/characters/claire/standard/front_shy/0_0_1.webp"
+        pause 0.1
+    repeat
+
+image Claire front_shy talk:
+    "GFX/characters/claire/standard/front_shy/0_1.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/0_0.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/0_2.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/0_0.webp"
+    pause 0.10
+    repeat
+
+image Claire front_shy happy:
+    block:
+        "GFX/characters/claire/standard/front_shy/1_0.webp"
+        pause renpy.random.uniform(2.0, 3.0)
+        "GFX/characters/claire/standard/front_shy/1_0_1.webp"
+        pause 0.1
+        "GFX/characters/claire/standard/front_shy/1_0_2.webp"
+        pause 0.1
+        "GFX/characters/claire/standard/front_shy/1_0_1.webp"
+        pause 0.1
+    repeat
+
+image Claire front_shy happy talk:
+    "GFX/characters/claire/standard/front_shy/1_1.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/1_0.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/1_2.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/1_0.webp"
+    pause 0.10
+    repeat
+
+image Claire front_shy mad:
+        "GFX/characters/claire/standard/front_shy/2_0.webp"
+
+image Claire front_shy mad talk:
+    "GFX/characters/claire/standard/front_shy/2_1.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/2_0.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/2_2.webp"
+    pause 0.10
+    "GFX/characters/claire/standard/front_shy/2_0.webp"
     pause 0.10
     repeat
         
@@ -290,8 +362,8 @@ label daniel_apartment_label:
 
     
     scene daniel_apartment_bg with fade
-    show image "gui/overlay/summer_overlay.webp" onlayer underlay
-    show Gia front
+    #show image "gui/overlay/summer_overlay.webp" onlayer underlay
+    show Claire front_shy
     call screen character_interaction(char_gia)
     $ check_for_event()
     call daniel_apartment_label_menu
@@ -531,20 +603,26 @@ label char_gia_hello(character):
     return
 
 label char_gia_small_talk(character):
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-    Gia "Maybe with the immense responsibility I'm humbly entitling to you, you may start doing something useful with your miserable life."
+    show Claire front_shy happy
+    Claire "Yes, that’s right shithead, you are being promoted, Congratulations!"
+    Claire "Maybe with the immense responsibility I'm humbly entitling to you, you may start doing something useful with your miserable life."
     Daniel "R-really? B-but there are many people who have been working here for longer than me."
-    Gia "Yes, and they are all even more useless than you, can you believe it?"
-    Gia "It leaves me with no choice but to let you manage those rascals."
-    Gia "It was either you or the crackhead marine."
+    show Claire front_shy
+    Claire "Yes, and they are all even more useless than you, can you believe it?"
+    Claire "It leaves me with no choice but to let you manage those rascals."
+    Claire "It was either you or the crackhead marine."
     Daniel "Blackwood?"
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
+    show Claire front_shy mad
+    Claire "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
+    show Claire front_shy
     Daniel "He wasn’t a marine, I believe he served in the army sir."
     Daniel "And I’m pretty sure General Powell’s Branch is the Army too..."
-    Gia "Does it make any difference?"
-    Gia "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
-    Gia "Now it is your job to guarantee that he will not do that by the way."
-    Gia "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
+    show Claire front_shy mad
+    Claire "Does it make any difference?"
+    Claire "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
+    Claire "Now it is your job to guarantee that he will not do that by the way."
+    Claire "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
+    show Claire front_shy
     Daniel "Gulp... Yes sir."
     call screen character_interaction(character)
     return

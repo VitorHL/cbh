@@ -1,13 +1,13 @@
-2025-11-07 15:50:56 UTC
-Windows-10-10.0.19045
+2026-01-18 11:01:58 UTC
+Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.08s
+Early init took 0.12s
 Loading error handling took 0.04s
-Loading script took 0.36s
+Loading script took 0.14s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.07s
+Running init code took 0.05s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
@@ -23,302 +23,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.05s
+Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.41s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 287, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 526, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1407, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1234, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, temporary_attrs):
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1179, in resolve_say_attributes
-    renpy.exports.show(show_image)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1188, in _duplicate
-    args.extraneous()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 109, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'Gia' does not accept attributes 'talk'.
-
-While running game code:
-  File "game/script.rpy", line 287, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 526, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-Exception: Image 'Gia' does not accept attributes 'talk'.
-Resetting cache.
-Early init took 34.60s
-Loading error handling took 0.04s
-Loading script took 0.23s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 19: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    attribute talk:
-                  ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.11s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 121.50s
-Loading error handling took 0.04s
-Loading script took 0.21s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.06s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.41s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 287, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 526, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1407, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1234, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, temporary_attrs):
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1179, in resolve_say_attributes
-    renpy.exports.show(show_image)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1188, in _duplicate
-    args.extraneous()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 109, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'Gia' does not accept attributes 'talk'.
-
-While running game code:
-  File "game/script.rpy", line 287, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 526, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-Exception: Image 'Gia' does not accept attributes 'talk'.
-Resetting cache.
-Early init took 128.94s
-Loading error handling took 0.02s
-Loading script took 0.15s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.12s
+Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
-Interface start took 0.44s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 287, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 526, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1407, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1234, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, temporary_attrs):
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1179, in resolve_say_attributes
-    renpy.exports.show(show_image)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1188, in _duplicate
-    args.extraneous()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 109, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'Gia' does not accept attributes 'talk'.
-
-While running game code:
-  File "game/script.rpy", line 287, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 541, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 526, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-Exception: Image 'Gia' does not accept attributes 'talk'.
-Resetting cache.
-Early init took 598.77s
-Loading error handling took 0.02s
-Loading script took 0.21s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.46s
+Interface start took 0.41s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -331,181 +43,13 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 684.31s
-Loading error handling took 0.02s
+Early init took 12085.55s
+Loading error handling took 0.04s
 Loading script took 0.24s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 722.66s
-Loading error handling took 0.02s
-Loading script took 0.22s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1081.67s
-Loading error handling took 0.02s
-Loading script took 0.16s
 Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.46s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1092.59s
-Loading error handling took 0.02s
-Loading script took 0.17s
-Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
 Running init code took 0.04s
 Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.47s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1136.85s
-Loading error handling took 0.02s
-Loading script took 0.22s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
@@ -513,7 +57,7 @@ Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cb
 Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.09s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -523,12 +67,12 @@ Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.14s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.44s
+Interface start took 0.41s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -540,65 +84,19 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  [Previous line repeated 3 more times]
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 627, in display_say
-    callback("begin")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 19, in char_callback
-    if mute:
-NameError: name 'mute' is not defined
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  [Previous line repeated 3 more times]
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "game/Script/0_core.rpy", line 19, in char_callback
-    if mute:
-NameError: name 'mute' is not defined
 Resetting cache.
-Early init took 1166.13s
+Early init took 12368.27s
 Loading error handling took 0.02s
-Loading script took 0.17s
-Loading save slot metadata took 0.06s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.06s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.07s
@@ -612,11 +110,11 @@ Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.13s
+Prepare screens took 0.11s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.43s
+Interface start took 0.39s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -629,119 +127,7 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1306.33s
-Loading error handling took 0.02s
-Loading script took 0.22s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 297, in script call
-    call daniel_apartment_label_menu
-  File "game/script.rpy", line 331, in script
-    $ travel_menu( )
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 331, in <module>
-    $ travel_menu( )
-  File "game/Script/0_calendar.rpy", line 114, in travel_menu
-    var_name = get_var_name(room, globals())[0]
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 214, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
-
-While running game code:
-  File "game/script.rpy", line 297, in script call
-    call daniel_apartment_label_menu
-  File "game/script.rpy", line 331, in script
-    $ travel_menu( )
-  File "game/script.rpy", line 331, in <module>
-    $ travel_menu( )
-  File "game/Script/0_calendar.rpy", line 114, in travel_menu
-    var_name = get_var_name(room, globals())[0]
-IndexError: list index out of range
-Resetting cache.
-Early init took 1723.35s
-Loading error handling took 0.02s
-Loading script took 0.17s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.44s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1740.08s
+Early init took 12685.73s
 Loading error handling took 0.02s
 Loading script took 0.16s
 Loading save slot metadata took 0.03s
@@ -751,10 +137,11 @@ Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Dump and make backups took 0.07s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.08s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -762,14 +149,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.12s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.43s
+Interface start took 0.40s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -781,1242 +168,64 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2511, in event
-    self.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 549, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 547, in script
-    Gia "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 811, in display_say
-    slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 547, in script
-    Gia "If he ever serves the ‘Hiroshima special’ and blow-up the place the repairs were going to go out of your pocket, I’m clear?"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 546, in script
-    Gia "Now it is your job to guarantee that he will not do that by the way."
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 811, in display_say
-    slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 546, in script
-    Gia "Now it is your job to guarantee that he will not do that by the way."
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 545, in script
-    Gia "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 811, in display_say
-    slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 545, in script
-    Gia "The nut job gives me some McVeigh vibes, I have the feeling that this nazi-ass will eventually bomb the diner just to kill the boredom."
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 544, in script
-    Gia "Does it make any difference?"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 811, in display_say
-    slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 544, in script
-    Gia "Does it make any difference?"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 811, in display_say
-    slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2523, in event
-    i.slow_done()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 487, in __call__
-    self.callback("slow_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 541, in script
-    Gia "No you idiot, I meant Colin Powell.– Of course it is Blackwood moron!"
-  File "game/Script/0_core.rpy", line 29, in char_callback
-    renpy.show(character_sprite_basename, what=attrs_without_talk)
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-Full traceback:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 808, in display_say
-    pause_callback("show_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 23, in char_callback
-    renpy.show(character_sprite_basename, what=list(current_attrs) + ["talk"])
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
-
-While running game code:
-  File "game/script.rpy", line 295, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "game/Script/0_core.rpy", line 23, in char_callback
-    renpy.show(character_sprite_basename, what=list(current_attrs) + ["talk"])
-AttributeError: 'RevertableList' object has no attribute 'split'
 Resetting cache.
-Early init took 1863.64s
+Early init took 12788.67s
 Loading error handling took 0.02s
-Loading script took 0.17s
+Loading script took 0.16s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
+Running init code took 0.03s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.09s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 12929.43s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -2027,11 +236,53 @@ Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.12s
+Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.43s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 13735.39s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.42s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

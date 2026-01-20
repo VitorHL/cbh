@@ -1,44 +1,159 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 295, in script call
+Executing ATL code at game/script.rpy:90
+  File "game/script.rpy", line 369, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "game/Script/0_core.rpy", line 23, in char_callback
-    renpy.show(character_sprite_basename, what=list(current_attrs) + ["talk"])
-AttributeError: 'RevertableList' object has no attribute 'split'
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  [Previous line repeated 11 more times]
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 644, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 556, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  [Previous line repeated 10 more times]
+  File "game/script.rpy", line 609, in script
+    Claire "Yes, that’s right shithead, you are being promoted, Congratulations!"
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+Exception: ATL appears to be in an infinite loop.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 295, in script call
+  File "game/script.rpy", line 369, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 534, in script
-    Gia "Yes, that’s right shithead, you are being promoted, Congratulations!"
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  [Previous line repeated 11 more times]
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 660, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 644, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 585, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 556, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 629, in script call
+    call screen character_interaction(character)
+  [Previous line repeated 10 more times]
+  File "game/script.rpy", line 609, in script
+    Claire "Yes, that’s right shithead, you are being promoted, Congratulations!"
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
     Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 808, in display_say
-    pause_callback("show_done")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/Script/0_core.rpy", line 23, in char_callback
-    renpy.show(character_sprite_basename, what=list(current_attrs) + ["talk"])
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 387, in find_target
-    name = tuple(name.split())
-AttributeError: 'RevertableList' object has no attribute 'split'
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 591, in execute
+    statement_name(stmt_name)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 58, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1581, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2882, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1384, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transition.py", line 383, in render
+    bottom = render(self.old_widget, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1056, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 994, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 427, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1054, in render
+    self.update_state()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1235, in update_state
+    fr = self.execute(self, fst, fat)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 798, in execute
+    action, arg, pause = block.execute(trans, timebase, self.atl_state, events)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 1071, in execute
+    raise Exception("ATL appears to be in an infinite loop.")
+Exception: ATL appears to be in an infinite loop.
 
-Windows-10-10.0.19045 AMD64
+Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Fri Nov  7 13:20:48 2025
+Fri Nov 14 06:18:09 2025
