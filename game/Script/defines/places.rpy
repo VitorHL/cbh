@@ -1,16 +1,1 @@
-#init offset = -1
-
-define room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_room_edgar_diner, location_room_edgar_diner )
-define room_edgar_kitchen = game_room( "kitchen_label", LOC_room_edgar_kitchen )
-define room_edgar_storeroom = game_room( "storeroom_label", LOC_room_edgar_storeroom )
-define room_church = game_room( "church_label", LOC_room_church, address_room_church, location_room_church )
-define room_cphpd_hall = game_room( "cphpd_hall_label", LOC_room_cphpd_hall, address_room_cphpd, location_room_cphpd )
-define room_daniel_apartment = game_room( "daniel_apartment_label", LOC_room_daniel_apartment, address_room_daniel_apartment, location_room_daniel_apartment )
-define room_forest_trail = game_room( "forest_trail_label", LOC_room_forest_trail, address_room_forest_trail, location_room_forest_trail )
-define room_gas_station = game_room( "gas_station_label", LOC_room_gas_station, address_room_gas_station, location_room_gas_station )
-define room_gia_mansion = game_room( "gia_mansion_label", LOC_room_gia_mansion )
-define room_gia_ranch = game_room( "gia_ranch_label", LOC_room_gia_ranch, address_room_gia_ranch, location_room_gia_ranch )
-define room_gia_stable = game_room( "gia_stable_label", LOC_room_gia_stable )
-define room_horse_track = game_room( "horse_track_label", LOC_room_horse_track, address_room_horse_track, location_room_horse_track )
-define room_library_hall = game_room( "library_hall_label", LOC_room_library_hall, address_room_library, location_room_library )
-define room_val_apartment = game_room( "val_apartment_label", LOC_room_val_apartment, address_room_chao_bookstore, location_room_chao_bookstore )
+init offset = 0

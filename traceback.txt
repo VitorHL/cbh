@@ -1,159 +1,113 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Executing ATL code at game/script.rpy:90
-  File "game/script.rpy", line 369, in script call
+While running game code:
+  File "game/script.rpy", line 237, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 629, in script call
+  File "game/script.rpy", line 497, in script call
     call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  [Previous line repeated 11 more times]
-  File "game/script.rpy", line 585, in script call
+  File "game/script.rpy", line 453, in script call
     $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 644, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 556, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  [Previous line repeated 10 more times]
-  File "game/script.rpy", line 609, in script
-    Claire "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 75, in _window_show
-    renpy.with_statement(trans)
-Exception: ATL appears to be in an infinite loop.
+  File "game/script.rpy", line 518, in script call
+    menu:
+  File "game/script.rpy", line 460, in script
+    pause 1.5
+  File "renpy/common/000statements.rpy", line 460, in execute_pause
+    renpy.pause(delay)
+  File "game/screens/dice_roll.rpy", line 20, in execute
+    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
+  File "game/screens/dice_roll.rpy", line 20, in execute
+    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
+  File "game/screens/dice_roll.rpy", line 29, in execute
+    vbox:
+  File "game/screens/dice_roll.rpy", line 50, in execute
+    frame:
+  File "game/screens/dice_roll.rpy", line 56, in execute
+    vbox:
+  File "game/screens/dice_roll.rpy", line 58, in execute
+    hbox:
+  File "game/screens/dice_roll.rpy", line 92, in execute
+    frame:
+  File "game/screens/dice_roll.rpy", line 96, in execute
+    text "[skill_tag_dict[skill.GetName()]]:[skill.level]" style "title_text" color "#dc910a" xalign 0.5 yalign 0.5
+KeyError: 'sentiment'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 369, in script call
+  File "game/script.rpy", line 237, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 629, in script call
+  File "game/script.rpy", line 497, in script call
     call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  [Previous line repeated 11 more times]
-  File "game/script.rpy", line 585, in script call
+  File "game/script.rpy", line 453, in script call
     $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 660, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 644, in script call
-    call char_conversation_list(character)
-  File "game/script.rpy", line 585, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 556, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 629, in script call
-    call screen character_interaction(character)
-  [Previous line repeated 10 more times]
-  File "game/script.rpy", line 609, in script
-    Claire "Yes, that’s right shithead, you are being promoted, Congratulations!"
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 591, in execute
-    statement_name(stmt_name)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 58, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 75, in _window_show
-    renpy.with_statement(trans)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 257, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1581, in do_with
-    return self.interact(trans_pause=True,
+  File "game/script.rpy", line 518, in script call
+    menu:
+  File "game/script.rpy", line 460, in script
+    pause 1.5
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 460, in execute_pause
+    renpy.pause(delay)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 194, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2882, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1384, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transition.py", line 383, in render
-    bottom = render(self.old_widget, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1056, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 994, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 427, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 513, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 316, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1054, in render
-    self.update_state()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1235, in update_state
-    fr = self.execute(self, fst, fat)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 798, in execute
-    action, arg, pause = block.execute(trans, timebase, self.atl_state, events)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 1071, in execute
-    raise Exception("ATL appears to be in an infinite loop.")
-Exception: ATL appears to be in an infinite loop.
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/dice_roll.rpy", line 20, in execute
+    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
+  File "game/screens/dice_roll.rpy", line 20, in execute
+    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
+  File "game/screens/dice_roll.rpy", line 29, in execute
+    vbox:
+  File "game/screens/dice_roll.rpy", line 50, in execute
+    frame:
+  File "game/screens/dice_roll.rpy", line 56, in execute
+    vbox:
+  File "game/screens/dice_roll.rpy", line 58, in execute
+    hbox:
+  File "game/screens/dice_roll.rpy", line 92, in execute
+    frame:
+  File "game/screens/dice_roll.rpy", line 96, in execute
+    text "[skill_tag_dict[skill.GetName()]]:[skill.level]" style "title_text" color "#dc910a" xalign 0.5 yalign 0.5
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2079, in __init__
+    self.set_text(text, scope, substitute) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+KeyError: 'sentiment'
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Fri Nov 14 06:18:09 2025
+Tue Jan 20 11:14:10 2026

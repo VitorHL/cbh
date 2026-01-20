@@ -1,4 +1,4 @@
-#init offset = -1
+init offset = 0
 
 default showed_burguer = skill_check_buff(1)
 default showed_coke = skill_check_buff(4)

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 19: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    attribute talk:
-                  ^
+File "game/definitions/characters/claire.rpy", line 8: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Nov  7 12:51:31 2025
+Tue Jan 20 11:18:04 2026
