@@ -1,6 +1,8 @@
 
 init offset = 0
 
+default available_rooms = []
+
 define room_edgar_counter = game_room( "counter_label", LOC_room_edgar_counter, address_room_edgar_diner, location_room_edgar_diner )
 define room_edgar_kitchen = game_room( "kitchen_label", LOC_room_edgar_kitchen )
 define room_edgar_storeroom = game_room( "storeroom_label", LOC_room_edgar_storeroom )

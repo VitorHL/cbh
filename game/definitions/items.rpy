@@ -1,6 +1,8 @@
 
 init offset = 0
 
+default game_iventory = [ ]
+
 # Game Itens -------------------------------------------------
 
 default burgar = game_item("burgar", "Hamburgar", "Hamburgar, delicious!", "burgar_interaction" )

@@ -1,113 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 237, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 497, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 453, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 518, in script call
-    menu:
-  File "game/script.rpy", line 460, in script
-    pause 1.5
-  File "renpy/common/000statements.rpy", line 460, in execute_pause
-    renpy.pause(delay)
-  File "game/screens/dice_roll.rpy", line 20, in execute
-    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
-  File "game/screens/dice_roll.rpy", line 20, in execute
-    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
-  File "game/screens/dice_roll.rpy", line 29, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 50, in execute
-    frame:
-  File "game/screens/dice_roll.rpy", line 56, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 58, in execute
-    hbox:
-  File "game/screens/dice_roll.rpy", line 92, in execute
-    frame:
-  File "game/screens/dice_roll.rpy", line 96, in execute
-    text "[skill_tag_dict[skill.GetName()]]:[skill.level]" style "title_text" color "#dc910a" xalign 0.5 yalign 0.5
-KeyError: 'sentiment'
+  File "game/definitions/characters/claire.rpy", line 6, in script
+    define Claire = Character("CLAIRE", color="#3962af", namebox_background="claire_namebox", callback=callback_builder("Claire"))
+  File "game/definitions/characters/claire.rpy", line 6, in <module>
+    define Claire = Character("CLAIRE", color="#3962af", namebox_background="claire_namebox", callback=callback_builder("Claire"))
+NameError: name 'callback_builder' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 237, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 497, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 453, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 518, in script call
-    menu:
-  File "game/script.rpy", line 460, in script
-    pause 1.5
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 460, in execute_pause
-    renpy.pause(delay)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 194, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens/dice_roll.rpy", line 20, in execute
-    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
-  File "game/screens/dice_roll.rpy", line 20, in execute
-    screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs):
-  File "game/screens/dice_roll.rpy", line 29, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 50, in execute
-    frame:
-  File "game/screens/dice_roll.rpy", line 56, in execute
-    vbox:
-  File "game/screens/dice_roll.rpy", line 58, in execute
-    hbox:
-  File "game/screens/dice_roll.rpy", line 92, in execute
-    frame:
-  File "game/screens/dice_roll.rpy", line 96, in execute
-    text "[skill_tag_dict[skill.GetName()]]:[skill.level]" style "title_text" color "#dc910a" xalign 0.5 yalign 0.5
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2079, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
+  File "game/definitions/characters/claire.rpy", line 6, in script
+    define Claire = Character("CLAIRE", color="#3962af", namebox_background="claire_namebox", callback=callback_builder("Claire"))
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2248, in execute
+    self.set()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2262, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-KeyError: 'sentiment'
+  File "game/definitions/characters/claire.rpy", line 6, in <module>
+    define Claire = Character("CLAIRE", color="#3962af", namebox_background="claire_namebox", callback=callback_builder("Claire"))
+NameError: name 'callback_builder' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Jan 20 11:14:10 2026
+Tue Jan 20 11:32:33 2026

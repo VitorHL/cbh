@@ -1,6 +1,11 @@
 
 init offset = 0
 
+default available_events = []
+default finished_events = []
+default events_played_today = []
+default room_where_events_played_already = []
+
 # Game Events -------------------------------------------------
 
 default event1 = game_event( 1, "special_day", room_church )

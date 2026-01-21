@@ -2,10 +2,16 @@
 init offset = 0
 
 # Gia -------------------------------------------------------------------------------
-define Gia = Character("GIANNA", color="#b32137", namebox_background="gia_namebox", callback=callback_builder("Gia"))
-image gia_namebox:
-    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
-    matrixcolor TintMatrix("#b32137")
+
+define Gia = Character(
+    "GIANNA", 
+    color="#b32137",
+    namebox_background=Transform(
+        Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20),
+        matrixcolor=TintMatrix("#b32137")
+    ),
+    callback=callback_builder("Gia")
+)
 
 image Gia front:
     "GFX/characters/gia/standard/front_stare_cigarrette/0_0.webp"

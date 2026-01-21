@@ -1,12 +1,16 @@
 
-#init offset = 0
 
 # Claire -------------------------------------------------------------------------------
 
-define Claire = Character("CLAIRE", color="#3962af", namebox_background="claire_namebox", callback=callback_builder("Claire"))
-image claire_namebox:
-    Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20)
-    matrixcolor TintMatrix("#3962af")
+define Claire = Character(
+    "CLAIRE", 
+    color="#3962af",
+    namebox_background=Transform(
+        Frame("gui/tiles/black_tile_border_recolor.webp", 20, 20),
+        matrixcolor=TintMatrix("#3962af")
+    ),
+    callback=callback_builder("Claire")
+)
 
 image Claire front_shy:
     block:
