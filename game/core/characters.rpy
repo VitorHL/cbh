@@ -14,26 +14,26 @@ init python:
             self.relevant_itens = []
             self.flags = {}
 
-            def add_talk(self, topic, dialogue):
-                self.interested_talks[topic] = dialogue
-            
-            def add_item_reaction(self, item, reaction):
-                self.interested_items[item] = reaction
-            
-            def set_flag(self, flag_name, value):
-                self.flags[flag_name] = value
+        def add_talk(self, topic, dialogue):
+            self.interested_talks[topic] = dialogue
+        
+        def add_item_reaction(self, item, reaction):
+            self.interested_items[item] = reaction
+        
+        def set_flag(self, flag_name, value):
+            self.flags[flag_name] = value
 
-            def remove_talk(self, topic):
-                if topic in self.interested_talks:
-                    del self.interested_talks[topic]
-            
-            def remove_item_reaction(self, item):
-                if item in self.interested_items:
-                    del self.interested_items[item]
-            
-            def remove_flag(self, flag_name):
-                if flag_name in self.flags:
-                    del self.flags[flag_name]
+        def remove_talk(self, topic):
+            if topic in self.interested_talks:
+                del self.interested_talks[topic]
+        
+        def remove_item_reaction(self, item):
+            if item in self.interested_items:
+                del self.interested_items[item]
+        
+        def remove_flag(self, flag_name):
+            if flag_name in self.flags:
+                del self.flags[flag_name]
 
 #####################################################################################################################################################
 

@@ -22,7 +22,7 @@ init python:
         if event_to_run.instances == 1:
             available_events.remove(event_to_run)
         elif event_to_run.instances > 1:
-            event_to_run.instances - 1
+            event_to_run.instances -= 1
         room_where_events_played_already.clear()
         ongoing_event = event_to_run
         renpy.call(event_to_run.game_label)

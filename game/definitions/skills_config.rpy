@@ -35,9 +35,9 @@ define xp_progression = {
 
 default skill_inquiry = game_skill()
 default skill_insight = game_skill()
-default skill_lore = game_skill()
-default skill_catharsis = game_skill()
-default skill_volition = game_skill()
+default skill_acuity = game_skill()
+default skill_sentiment = game_skill()
+default skill_resolve = game_skill()
 default skill_communion = game_skill()
 
-default game_skills = [ skill_inquiry, skill_insight, skill_lore, skill_catharsis, skill_volition, skill_communion ]
+default game_skills = [ skill_inquiry, skill_insight, skill_acuity, skill_sentiment, skill_resolve, skill_communion ]

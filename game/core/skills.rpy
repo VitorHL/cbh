@@ -35,7 +35,7 @@ init python:
             if buff in available_skill_buffs :
                 sum_buffs = sum_buffs + buff.value
                 buff.times_used += 1
-                if buff.limit <> 0 and buff.times_used >= buff.limit:
+                if buff.limit != 0 and buff.times_used >= buff.limit:
                     available_skill_buffs .remove(buff)
                     used_skill_buffs.append(buff)
         total = total + sum_buffs
@@ -49,44 +49,48 @@ init python:
     def add_skill_buff(skill_buff):
         global available_skill_buffs , used_skill_buffs
         if skill_buff not in available_skill_buffs  and skill_buff not in used_skill_buffs:
-            available_skill_buffs .append(skill_buff)
+            available_skill_buffs.append(skill_buff)
 
 ##########################
 
-    def rollchance(skill,difficulty,skill_buffs = []):
-        global available_skill_buffs
-        die_table = {
-            "die_3" : 1,
-            "die_4" : 0.9954,
-            "die_5" : 0.9815,
-            "die_6" : 0.9537,
-            "die_7" : 0.9074,
-            "die_8" : 0.8380,
-            "die_9" : 0.7407,
-            "die_10" : 0.6250,
-            "die_11" : 0.5,
-            "die_12" : 0.3750,
-            "die_13" : 0.2593,
-            "die_14" : 0.1620,
-            "die_15" : 0.0926,
-            "die_16" : 0.0463,
-            "die_17" : 0.0185,
-            "die_18" : 0.0046,
-            "die_impossible" : 0
+    def rollchance(skill, difficulty, skill_buffs=None):
+        if skill_buffs is None:
+            skill_buffs = []
+        
+        # More readable table
+        SUCCESS_PROBABILITIES = {
+            3: 1.0000,
+            4: 0.9954,
+            5: 0.9815,
+            6: 0.9537,
+            7: 0.9074,
+            8: 0.8380,
+            9: 0.7407,
+            10: 0.6250,
+            11: 0.5000,
+            12: 0.3750,
+            13: 0.2593,
+            14: 0.1620,
+            15: 0.0926,
+            16: 0.0463,
+            17: 0.0185,
+            18: 0.0046,
         }
-
-        difficulty -= skill.level
+        
+        # Calculate effective difficulty
+        effective_difficulty = difficulty - skill.level
+        
         for buff in skill_buffs:
             if buff in available_skill_buffs:
-                difficulty -= buff.value
-
-        if difficulty <= 3:
-            difficulty = 3
-        if difficulty > 18:
-            difficulty = "impossible"
-        chance = die_table["die_%r" % difficulty]
-
-        return round(chance*100)
+                effective_difficulty -= buff.value
+        
+        # Clamp to valid range
+        effective_difficulty = max(3, min(18, effective_difficulty))
+        
+        if effective_difficulty > 18:
+            return 0
+        
+        return round(SUCCESS_PROBABILITIES[effective_difficulty] * 100)
 
 ##########################
 

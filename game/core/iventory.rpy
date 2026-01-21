@@ -12,6 +12,15 @@ init python:
             self.interaction_mode = interaction_mode
             self.characters_shown = []
 
+        def has_been_shown_to(self, character):
+            """Check if item was shown to character"""
+            return character in self.characters_shown
+
+        def mark_shown_to(self, character):
+            """Mark as shown to character"""
+            if character not in self.characters_shown:
+                self.characters_shown.append(character)
+
     def inspect_item(item):
         renpy.hide_screen("inventory_screen")
         #renpy.show_screen("inventory_screen")

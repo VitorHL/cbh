@@ -8,16 +8,14 @@
 
 define config.speaking_attribute = "talk"
 
-init python:
-    def randompause(min,max):
-    return renpy.random.randint(min,max)
-
 # Game Lists -------------------------------------------------
 
 default calendar = game_calendar(5,9,10,1997)
 default cgt_message = cgt_default
 default cdt_message = cdt_default
 default available_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
+
+default available_skill_buffs = []
 
 # Game Variables -------------------------------------------------
 
@@ -26,27 +24,27 @@ default clean_mode = True
 default skill_success = False
 
 image grain_effect:
-        "gui/overlay/grain/grain_00.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_01.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_02.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_03.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_04.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_05.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_06.webp"   
-        pause 0.06
-        "gui/overlay/grain/grain_07.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_08.webp"
-        pause 0.06
-        "gui/overlay/grain/grain_09.webp"
-        pause 0.06
-        repeat
+    "gui/overlay/grain/grain_00.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_01.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_02.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_03.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_04.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_05.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_06.webp"   
+    pause 0.06
+    "gui/overlay/grain/grain_07.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_08.webp"
+    pause 0.06
+    "gui/overlay/grain/grain_09.webp"
+    pause 0.06
+    repeat
 
 label  before_main_menu:
     show grain_effect onlayer effect_overlay
@@ -176,7 +174,7 @@ label char_gia_talk_relationship(character):
     "It is over Daniel... There is nothing you can do to reapair the things now."
     "Maybe we can talk about it later, but not really now."
     menu:
-        "I want to still discuss it though." (skill_roll=[skill_catharsis,18,[showed_burguer,showed_coke,talked_about_val]]):
+        "I want to still discuss it though." (skill_roll=[skill_sentiment,18,[showed_burguer,showed_coke,talked_about_val]]):
             if skill_success == True:
                 "The test was a success"
                 "Victory!"

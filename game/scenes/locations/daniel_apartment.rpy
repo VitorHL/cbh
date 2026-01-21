@@ -37,12 +37,12 @@ label daniel_apartment_label_menu:
                         "The test was a success"
                     if skill_success == False:
                         "The test was a failure"
-                "I don't have time for it, just say where you left it." (skill_roll=[skill_catharsis,14]):
+                "I don't have time for it, just say where you left it." (skill_roll=[skill_sentiment,14]):
                     if skill_success == True:
                         "The test was a success"
                     if skill_success == False:
                         "The test was a failure"
-                "I would prefer to not say my reasons." (skill_roll=[skill_lore,5]):
+                "I would prefer to not say my reasons." (skill_roll=[skill_acuity,5]):
                     if skill_success == True:
                         "The test was a success"
                     if skill_success == False:
