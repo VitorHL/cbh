@@ -7,7 +7,7 @@ init python:
 
     # Function that takes the name of a given variable and return as a string
     def get_var_name(var, scope):
-        return [name for name in scope if scope[name] is var]
+        return next((name for name in scope if scope[name] is var), None)
 
     # Function that takes one string, add something to it and return as a variable name
     def get_var_suffix(var, suffix, scope=globals()):

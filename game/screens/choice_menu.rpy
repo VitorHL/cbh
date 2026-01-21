@@ -111,8 +111,7 @@ screen choice_talks(items, args=[character,None]):
 
 ################################################################################
 
-screen travel(items):
-    #style_prefix "choice"
+screen travel():
     default thumb = "generic"
     default address = "???"
     default location = "???"
@@ -143,14 +142,14 @@ screen travel(items):
                 yalign 0.5
                 spacing 4
                 for i in available_travels:
-                    $ room_thumb = i.kwargs.get("room_thumb", None)
-                    $ room_address = i.kwargs.get("room_address", "???")
-                    $ room_location = i.kwargs.get("room_location", "???")
+                    $ room_thumb = i.room_thumb if hasattr(i, "room_thumb") else "generic"
+                    $ room_address = i.address if hasattr(i, "address") else "???"
+                    $ room_location = i.location if hasattr(i, "location") else "???"
                     
                     button:
                         #ymaximum 40
-                        action i.action
-                        hovered [SetScreenVariable("thumb", room_thumb), SetScreenVariable( "address", room_address), SetScreenVariable( "location", room_location)]
+                        action [ Function( move_room, i ) ]
+                        hovered [SetScreenVariable("thumb", get_var_name(i, vars(store))), SetScreenVariable( "address", room_address), SetScreenVariable( "location", room_location)]
                         selected False
                         sensitive True
                         hover_sound "audio/menu_hover.wav"
@@ -164,7 +163,7 @@ screen travel(items):
                                 style "hover_button"
                             frame:
                                 style "hover_button"
-                                text "[i.caption]": 
+                                text "[i.name]": 
                                     yalign 0.5
                                     style "entrytext"
 
@@ -173,10 +172,10 @@ screen travel(items):
             ysize 480
             xalign 1.0 
             yalign 0.5
-            if renpy.loadable("thumbnail_{0}_bg".format(thumb)):
-                image "thumbnail_{0}_bg".format(thumb)
-            else:
-                image Solid("#333")
+            #if renpy.loadable("GFX/interface/thumbnail_{0}_bg.webp".format(thumb)):
+            image "GFX/interface/thumbnail_{0}_bg.webp".format(thumb)
+            #else:
+                #image Solid("#333")
             frame: 
                 xalign 0.5 
                 yalign 0.05 

@@ -13,7 +13,6 @@ define config.speaking_attribute = "talk"
 default calendar = game_calendar(5,9,10,1997)
 default cgt_message = cgt_default
 default cdt_message = cdt_default
-default available_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
 
 default available_skill_buffs = []
 default used_skill_buffs = []
@@ -58,7 +57,7 @@ label  after_load:
 return
 
 label start:
-    $ current_room = room_edgar_counter
+    $set_room( room_edgar_counter )
     show screen vhs_overlay
     show image "gui/overlay/vignette.webp" onlayer vignette
     show image "gui/overlay/scanlines.webp" onlayer effect_overlay

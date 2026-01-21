@@ -2,29 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/definitions/rooms.rpy", line 43: invalid syntax
-        True\
-         ^
-
-File "game/definitions/rooms.rpy", line 53: invalid syntax
-        True\
-         ^
-
-File "game/definitions/rooms.rpy", line 62: invalid syntax
-        True\
-         ^
-
-File "game/definitions/rooms.rpy", line 71: invalid syntax
-        True\
-         ^
-
-File "game/definitions/rooms.rpy", line 80: invalid syntax
-        True\
-         ^
-
-File "game/definitions/rooms.rpy", line 93: invalid syntax
-        True\
-         ^
+File "game/screens/choice_menu.rpy", line 175: Line is indented, but the preceding yalign statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    if renpy.loadable("GFX/interface/thumbnail_{0}_bg.webp".format(thumb)):
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jan 21 14:31:53 2026
+Wed Jan 21 15:27:41 2026

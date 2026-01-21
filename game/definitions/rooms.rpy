@@ -5,7 +5,7 @@ init offset = 0
 # Game Room Class Definition
 # Navigation / Rooms Definitions
 ################################################################################
-default available_rooms = [room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment] # List of rooms the player can access
+default available_rooms = [room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment, room_edgar_counter, room_edgar_kitchen, room_edgar_storeroom] # List of rooms the player can access
 default available_travels = [] # List of rooms the player can travel to from current room
 
 ################################################################################
@@ -19,19 +19,19 @@ define room_edgar_counter = game_room(
     address = address_room_edgar_diner, 
     location = location_room_edgar_diner,
     room_hub = True,
-    travel = [room_gas_station, room_edgar_kitchen, room_edgar_storeroom]
+    travel = ["room_gas_station", "room_edgar_kitchen", "room_edgar_storeroom"]
 )
 define room_edgar_kitchen = game_room(
     game_label = "kitchen_label", 
     name = LOC_room_edgar_kitchen,
     location = location_room_edgar_diner,
-    travel = [room_edgar_counter]
+    travel = ["room_edgar_counter"]
 )
 define room_edgar_storeroom = game_room(
     game_label = "storeroom_label", 
     name = LOC_room_edgar_storeroom,
     location = location_room_edgar_diner,
-    travel = [room_edgar_counter]
+    travel = ["room_edgar_counter"]
 )
 
 # Gas Station
@@ -89,7 +89,7 @@ define room_gia_ranch = game_room(
     address = address_room_gia_ranch, 
     location = location_room_gia_ranch,
     room_hub = True,
-    travel = [room_gia_stable, room_horse_track]
+    travel = ["room_gia_stable", "room_horse_track"]
 )
 define room_gia_stable = game_room(
     game_label = "gia_stable_label", 
@@ -116,6 +116,6 @@ define room_library_hall = game_room(
 define room_val_apartment = game_room(
     game_label = "val_apartment_label", 
     name = LOC_room_val_apartment, 
-    address = address_room_val_apartment, 
-    location = location_room_val_apartment
+    #address = address_room_val_apartment, 
+    location = location_room_library
 )
