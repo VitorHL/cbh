@@ -1,5 +1,5 @@
 
-init offset = 0
+init offset = 1 # Set offset to 1 to ensure this init block runs after room definitions
 
 default available_events = []
 default finished_events = []

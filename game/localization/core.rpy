@@ -6,7 +6,7 @@
 
 # ATTENTION: Those two are extremely important, as the number of items in those lists are actually relevant for the calendar code, do not change the size of the list!
 
-define weekdays_list = [ "Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday" ]
+define weekdays_list = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ]
 define months_list = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
 
 ################################################################################

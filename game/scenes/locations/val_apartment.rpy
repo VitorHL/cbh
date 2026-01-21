@@ -7,7 +7,7 @@ label val_apartment_label:
     scene val_apartment_bg with fade
     call val_apartment_label_menu
 label val_apartment_label_menu:
-    $ travel_menu( )
+    call screen travel()
     call val_apartment_label_menu
     
 

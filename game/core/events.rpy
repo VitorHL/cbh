@@ -28,11 +28,12 @@ init python:
         renpy.call(event_to_run.game_label)
 
     def end_event():
-        global ongoing_event, finished_events, events_played_today, room_where_events_played_already
-        finished_events.append(ongoing_event)
-        events_played_today.append(ongoing_event)
-        room_where_events_played_already.append(current_room)
-        del ongoing_event
+        global ongoing_event
+        if ongoing_event is not None:
+            finished_events.append(ongoing_event)
+            events_played_today.append(ongoing_event)
+            room_where_events_played_already.append(current_room)
+            ongoing_event = None
         renpy.return_statement()
 
 

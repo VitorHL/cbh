@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/definitions/characters/claire.rpy", line 7, in script
-    define Claire = Character(
-  File "game/definitions/characters/claire.rpy", line 14, in <module>
-    callback=callback_builder("Claire")
-NameError: name 'callback_builder' is not defined
+  File "game/definitions/rooms.rpy", line 16, in script
+    define room_edgar_counter = game_room(
+  File "game/definitions/rooms.rpy", line 22, in <module>
+    travel = [room_gas_station, room_edgar_kitchen, room_edgar_storeroom]
+NameError: name 'room_gas_station' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/definitions/characters/claire.rpy", line 7, in script
-    define Claire = Character(
+  File "game/definitions/rooms.rpy", line 16, in script
+    define room_edgar_counter = game_room(
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2248, in execute
     self.set()
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2262, in set
     value = renpy.python.py_eval_bytecode(self.code.bytecode)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/definitions/characters/claire.rpy", line 14, in <module>
-    callback=callback_builder("Claire")
-NameError: name 'callback_builder' is not defined
+  File "game/definitions/rooms.rpy", line 22, in <module>
+    travel = [room_gas_station, room_edgar_kitchen, room_edgar_storeroom]
+NameError: name 'room_gas_station' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Wed Jan 21 11:24:26 2026
+Wed Jan 21 14:36:30 2026

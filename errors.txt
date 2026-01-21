@@ -2,9 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 13: expected an indented block
-    return renpy.random.randint(min,max)
-     ^
+File "game/definitions/rooms.rpy", line 43: invalid syntax
+        True\
+         ^
+
+File "game/definitions/rooms.rpy", line 53: invalid syntax
+        True\
+         ^
+
+File "game/definitions/rooms.rpy", line 62: invalid syntax
+        True\
+         ^
+
+File "game/definitions/rooms.rpy", line 71: invalid syntax
+        True\
+         ^
+
+File "game/definitions/rooms.rpy", line 80: invalid syntax
+        True\
+         ^
+
+File "game/definitions/rooms.rpy", line 93: invalid syntax
+        True\
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jan 21 10:53:34 2026
+Wed Jan 21 14:31:53 2026

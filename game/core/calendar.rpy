@@ -1,4 +1,4 @@
-define sounds = ['audio/default_talk_blip.ogg']
+
 
 init python:
     # Importing Important Stuff

@@ -10,5 +10,5 @@ label church_label:
     call church_label_menu
 
 label church_label_menu:
-    $ travel_menu( )
+    call screen travel()
     call church_label_menu

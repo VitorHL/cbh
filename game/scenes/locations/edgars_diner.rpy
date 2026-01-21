@@ -21,5 +21,5 @@ label storeroom_label:
     scene edgar_storeroom_bg with fade
     call storeroom_label_menu
 label storeroom_label_menu:
-    $ travel_menu( )
+    call screen travel()
     call storeroom_label_menu

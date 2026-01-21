@@ -57,6 +57,6 @@ label daniel_apartment_label_menu:
         "Fridge":
             $ run_interaction(kitchen_interaction)
         "Travel":
-            $ travel_menu( )
+            call screen travel()
     call daniel_apartment_label_menu
 

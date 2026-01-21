@@ -142,7 +142,7 @@ screen travel(items):
                 #xalign 0.0
                 yalign 0.5
                 spacing 4
-                for i in items:
+                for i in available_travels:
                     $ room_thumb = i.kwargs.get("room_thumb", None)
                     $ room_address = i.kwargs.get("room_address", "???")
                     $ room_location = i.kwargs.get("room_location", "???")
@@ -173,7 +173,10 @@ screen travel(items):
             ysize 480
             xalign 1.0 
             yalign 0.5
-            image "thumbnail_{0}_bg".format(thumb)
+            if renpy.loadable("thumbnail_{0}_bg".format(thumb)):
+                image "thumbnail_{0}_bg".format(thumb)
+            else:
+                image Solid("#333")
             frame: 
                 xalign 0.5 
                 yalign 0.05 

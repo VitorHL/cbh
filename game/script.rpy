@@ -16,6 +16,7 @@ default cdt_message = cdt_default
 default available_travels = [ room_gas_station, room_church, room_gia_ranch, room_daniel_apartment, room_val_apartment]
 
 default available_skill_buffs = []
+default used_skill_buffs = []
 
 # Game Variables -------------------------------------------------
 
