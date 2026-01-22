@@ -16,6 +16,10 @@ init python:
             self.room_travels = kwargs.get("room_travels", []) # List of rooms the player can travel to from this room
             self.base_travel_sound = kwargs.get("travel_sound", "sfx/travel/default_travel.wav") # Default sound played when traveling from this room
             self.travel_sound_table = kwargs.get("travel_sound_table", {}) # Dictionary with specific travel sounds for specific rooms
+            self.thumb = kwargs.get("thumb", None) # Thumbnail image path for the room
+
+        def GetThumb(self):
+            return get_var_suffix(self, "thumbnail")
 
         @property
         def room_travels(self):

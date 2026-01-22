@@ -27,6 +27,10 @@ transform selected_hover:
 
 # Text Styles -------------------------------------------------------
 
+style header_text:
+    color "#ffffff"
+    size 40
+
 style entrytext:
     color "#ffffff"
     outlines [(1, "#191919", 0, 0)]
@@ -100,6 +104,22 @@ style black_tile:
     background Frame("gui/tiles/black_tile.webp", 20, 20,)
     xpadding 10
     ypadding 10
+
+style black_tile_hollow:
+    background Frame("gui/tiles/black_tile_hollow.webp", 20, 20,)
+    xpadding 10
+    ypadding 10
+
+style black_tile_border:
+    background Frame("gui/tiles/black_tile_border.webp", 20, 20,)
+    xpadding 10
+    ypadding 10
+
+style black_tile_underline:
+    background Frame("gui/tiles/black_tile_underline.webp", 20, 20,)
+    xpadding 10
+    ypadding 10
+
 style black_tile_75:
     background Frame("gui/tiles/black_tile_75.webp", 20, 20,)
     xpadding 10

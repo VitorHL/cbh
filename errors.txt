@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 175: Line is indented, but the preceding yalign statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    if renpy.loadable("GFX/interface/thumbnail_{0}_bg.webp".format(thumb)):
-    ^
+File "game/screens/travel_menu.rpy", line 140: 'sytle' is not a keyword argument or valid child of the text statement.
+    text "Hover over a destination" sytle "say_dialogue"
+                                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jan 21 15:27:41 2026
+Wed Jan 21 20:37:32 2026
