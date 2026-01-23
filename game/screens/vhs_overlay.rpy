@@ -4,7 +4,7 @@ default clock_seconds = 0
 default clock_running = True
 
 screen vhs_overlay():
-    timer 1.0 action Function(update_clock) repeat clock_running
+#timer 1.0 action Function(update_clock) repeat clock_running
     image "gui/vhs_lines.webp"
     zorder 100
     layer "vhs_screens"
@@ -22,7 +22,7 @@ screen vhs_overlay():
             image "gui/vhs_arrow.webp" ypos 11 
         text "SLP" style "vhs_overlay_text" yalign 1.0
         text "--:--" style "vhs_overlay_text" xalign 1.0
-        text "{:02d}:{:02d}:{:02d}".format(clock_hours, clock_minutes, clock_seconds) style "vhs_overlay_text" xalign 1.0 yalign 1.0
+        #text "{:02d}:{:02d}:{:02d}".format(clock_hours, clock_minutes, clock_seconds) style "vhs_overlay_text" xalign 1.0 yalign 1.0
         
 
 style vhs_overlay_text:

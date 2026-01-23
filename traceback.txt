@@ -3,7 +3,27 @@
 While running game code:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
+    call gia_ranch_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/church.rpy", line 10, in script call
+    call church_label_menu
+  File "game/scenes/locations/church.rpy", line 14, in script call
+    call church_label_menu
+  File "game/scenes/locations/church.rpy", line 14, in script call
+    call church_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
+    call gia_ranch_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
@@ -22,7 +42,27 @@ NameError: name 'available_interactions' is not defined
 Full traceback:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
+    call gia_ranch_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/church.rpy", line 10, in script call
+    call church_label_menu
+  File "game/scenes/locations/church.rpy", line 14, in script call
+    call church_label_menu
+  File "game/scenes/locations/church.rpy", line 14, in script call
+    call church_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
+    call gia_ranch_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
@@ -43,4 +83,4 @@ NameError: name 'available_interactions' is not defined
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Wed Jan 21 22:30:15 2026
+Fri Jan 23 19:27:14 2026

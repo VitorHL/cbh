@@ -17,6 +17,8 @@ init python:
             self.base_travel_sound = kwargs.get("travel_sound", "sfx/travel/default_travel.wav") # Default sound played when traveling from this room
             self.travel_sound_table = kwargs.get("travel_sound_table", {}) # Dictionary with specific travel sounds for specific rooms
             self.thumb = kwargs.get("thumb", None) # Thumbnail image path for the room
+            self.icon = kwargs.get("icon", None) # Icon image path for the room
+            self.known = kwargs.get("known", False) # If false, the room is unknown and will display "???" in travel menu
 
         def GetThumb(self):
             return get_var_suffix(self, "thumbnail")
@@ -55,6 +57,10 @@ init python:
 
         # Resolve string references to actual room objects
         available_travels = [resolve_room(r) for r in new_room.room_travels]
+
+        # Mark the room as known when visited
+        if new_room.known == False:
+            new_room.known = True
 
         # If the new room is a hub, add other hubs to available travels
         if new_room.room_hub:

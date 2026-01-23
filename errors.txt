@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/travel_menu.rpy", line 140: 'sytle' is not a keyword argument or valid child of the text statement.
-    text "Hover over a destination" sytle "say_dialogue"
-                                         ^
+File "game/screens/travel_menu.rpy", line 154: keyword argument 'style' appears more than once in a frame statement.
+    style "vhs_gothic"
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jan 21 20:37:32 2026
+Fri Jan 23 18:56:29 2026

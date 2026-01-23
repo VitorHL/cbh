@@ -103,29 +103,29 @@ define region_forest = "Forest"
 
 # locations
 # locations are not classes, they are only strings set in this page.
-define address_room_edgar_diner = "2847 Industrial Highway North\nAdjacent to Heartland Motors complex, visible from Highway 6"
-define address_room_church = "200 Sacred Heart Street\nOld Town Neighborhood"
-define address_room_claire_house = "Claire House"
-define address_room_cphpd = "100 Municipal Plaza\nDowntown Government Center"
-define address_room_daniel_apartment = "1156 Eastbrook Commons\nEastern District"
-define address_room_forest_trail = "Copperbell Hill State Forest\nAccessed via Forest Service Road 12"
-define address_room_gas_station = "2845 Industrial Highway North\nConnected to Edgar's Diner, Mile Marker 127"
-define address_room_gia_ranch = "750 Horseshoe Ranch Road\nRural Route 4, Northern Outskirts"
-define address_room_horse_track = "500 Victory Boulevard\nRiverside Entertainment District"
-define address_room_library = "75 Carnegie Avenue\nHistoric Downtown District"
-define address_room_chao_bookstore = "322 Huron Avenue\nChinatown District"
+define address_room_edgar_diner = ["2847 Industrial Highway North", "Adjacent to Heartland Motors complex, visible from Highway 6"]
+define address_room_church = ["200 Sacred Heart Street", "Old Town Neighborhood"]
+define address_room_claire_house = ["Claire House"]
+define address_room_cphpd = ["100 Municipal Plaza", "Downtown Government Center"]
+define address_room_daniel_apartment = ["1156 Eastbrook Commons", "Eastern District"]
+define address_room_forest_trail = ["Copperbell Hill State Forest", "Accessed via Forest Service Road 12"]
+define address_room_gas_station = ["2845 Industrial Highway North", "Connected to Edgar's Diner", "Mile Marker 127"]
+define address_room_gia_ranch = ["750 Horseshoe Ranch Road", "Rural Route 4","Northern Outskirts"]
+define address_room_horse_track = ["500 Victory Boulevard", "Riverside Entertainment District"]
+define address_room_library = ["75 Carnegie Avenue", "Historic Downtown District"]
+define address_room_chao_bookstore = ["322 Huron Avenue", "Chinatown District"]
 
-define location_room_edgar_diner = "Edgar's Diner"
-define location_room_church = "St. Peter Episcopal Church"
-define location_room_claire_house = "Park Residency"
-define location_room_cphpd = "Copperbell Hill Police Department"
-define location_room_daniel_apartment = "Maple Grove Apartments, Unit 3B"
-define location_room_forest_trail = "Copperbell Hill State Forest"
-define location_room_gas_station = "Highway Gas Station"
-define location_room_gia_ranch = "Rossi Ranch"
-define location_room_horse_track = "CPH Horse Track"
-define location_room_library = "Copperbell Hill Public Library"
-define location_room_chao_bookstore = "Jade Garden Books & Imports"
+define location_room_edgar_diner = ["Edgar's Diner"]
+define location_room_church = ["St. Peter Episcopal Church"]
+define location_room_claire_house = ["Park Residency"]
+define location_room_cphpd = ["Copperbell Hill Police Department"]
+define location_room_daniel_apartment = ["Maple Grove Apartments", "Unit 3B"]
+define location_room_forest_trail = ["Copperbell Hill State Forest"]
+define location_room_gas_station = ["Highway Gas Station"]
+define location_room_gia_ranch = ["Rossi Ranch"]
+define location_room_horse_track = ["CPH Horse Track"]
+define location_room_library = ["Copperbell Hill Public Library"]
+define location_room_chao_bookstore = ["Jade Garden Books & Imports"]
 
 #Rooms
 define LOC_room_edgar_counter = "Roadside Diner"

@@ -53,7 +53,8 @@ define room_church = game_room(
     thumb = "gfx/interface/thumbnail_church_bg.webp",
     address = address_room_church, 
     location = location_room_church,
-    room_hub = True
+    room_hub = True,
+    icon = "gui/travel_menu/travel_icons/travel_icon_st_peter_church.webp"
 )
 
 # Police Department

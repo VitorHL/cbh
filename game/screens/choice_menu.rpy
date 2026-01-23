@@ -20,7 +20,7 @@ screen choice(items):
             $ skill_roll = i.kwargs.get("skill_roll", [])
             $ skill_check = i.kwargs.get("skill_check", [])
             button:
-                at dialogue_entry
+                #at dialogue_entry
                 xalign 0.5
                 xsize 800
                 #ymaximum 40
@@ -38,8 +38,11 @@ screen choice(items):
                     frame:
                         xfill True
                         background None
-                        text "[i.caption]" yalign 0.5 xalign 0.5 style "dialogue_entry_text"
+                        text "> [i.caption]" yalign 0.5 style "dialogue_entry_text"
+                    #if skill_roll != [] or skill_check != []:
+                    #    text "-------------------------" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 14
                     if skill_roll != []:
+                        text "-SKILL ROLL-" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 12
                         if len(skill_roll) > 2:
                             default columns = 2
                             default buffs_for_this_check = []
@@ -57,16 +60,17 @@ screen choice(items):
                                         yalign 0.5
                                         for buff in i:
                                             if buff.value >= 0:
-                                                text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#0adc28" size 24
+                                                text "[buff.GetName()]: +[buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#0adc28" size 14
                                             else:
-                                                text "[buff.GetName()]: [buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#dc2020" size 24
+                                                text "[buff.GetName()]: -[buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#dc2020" size 14
                             
                         if len(skill_roll) > 2:
-                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1], skill_roll[2])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1], skill_roll[2])!u]% <" yalign 0.5 xalign 0.5 style "hover_button_text" size 16
                         else:
-                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% <" yalign 0.5 xalign 0.5 style "hover_button_text" size 16
                     if skill_check != []:
-                        text "> [skill_check[0].GetName()!u]:[skill_check[0].level]/[skill_check[1]] <" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 24
+                        text "-SKILL CHECK-" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 12
+                        text "> [skill_check[0].GetName()!u]:[skill_check[0].level]/[skill_check[1]] <" yalign 0.5 xalign 0.5 style "hover_button_text" size 16
                     
 ################################################################################
 

@@ -56,16 +56,16 @@ screen travel():
                 
             hbox:
                 frame:
-                    style "black_tile"
+                    style "black_tile_border"
                     xsize 60
                     ysize 60
-                    image "travel_guy_icon" xalign 0.5 yalign 0.5
+                    image "travel_guy_icon" xalign 0.5 yalign 0.5 zoom 0.75
                 frame:
                     xfill True
                     ysize 60
-                    style "black_tile"
+                    style "black_tile_underline"
                     $ dots = "." * dot_count
-                    text "TRAVEL[dots]" size 40 yalign 0.5
+                    text "TRAVEL[dots]" size 35 yalign 0.25
             hbox:
                 xalign 0.5
                 yalign 0.5
@@ -97,13 +97,18 @@ screen travel():
                                         #style "hover_button"
                                         action SetScreenVariable("selected_room", room)
                                         hbox:
-                                            frame xsize 60 ysize 60 style "select_button_border":
-                                                image "gui/travel_menu/travel_icons/travel_icon_generic.webp" xalign 0.5 yalign 0.5
-                                            frame xfill True ysize 60 style "hover_button":
+                                            frame xsize 60 ysize 60 style "select_button":
+                                                if room.known == False:
+                                                    text "?" xalign 0.5 yalign 0.5 style "select_button_text"
+                                                elif room.icon and renpy.loadable(room.icon):
+                                                    add room.icon xalign 0.5 yalign 0.5 at select_image
+                                                else:
+                                                    add "gui/travel_menu/travel_icons/travel_icon_generic.webp" xalign 0.5 yalign 0.5 at select_image
+                                            frame xfill True ysize 60 style "select_button":
                                                 text f"{room.name.upper()}":
                                                         xpos 20
                                                         yalign 0.5
-                                                        style "hover_button_text"
+                                                        style "select_button_text"
                                         
                                         #hovered SetScreenVariable("selected_room", room)
                                         #unhovered SetScreenVariable("selected_room", None)
@@ -123,30 +128,49 @@ screen travel():
                         if selected_room:
                             
                             # Thumbnail
-                            if renpy.loadable(selected_room.thumb):
+                            if renpy.loadable(selected_room.thumb) and selected_room.known:
                                 add selected_room.thumb xalign 0.5 yalign 0.5
                             else:
                                 add "travel_static" xalign 0.5 yalign 0.5
                             
                             # Location label (top)
-                            frame:
+                            vbox:
                                 xalign 0.5
                                 yalign 0.05
-                                padding (20, 10)
-                                background Frame("gui/tiles/black_tile.webp", 3, 3)
-                                
-                                text (selected_room.location if selected_room.location else "???"):
-                                    textalign 0.5
-                            
+                                if selected_room.location:
+                                    for line in selected_room.location:
+                                        frame:
+                                            xalign 0.5
+                                            style "black_tile"
+                                            text line:
+                                                xalign 0.5
+                                                yalign 0.5
+                                                style "vhs_gothic"
+                                else:
+                                    frame:
+                                        xalign 0.5
+                                        style "black_tile"
+                                        text "???" textalign 0.5 style "vhs_gothic"
+                                        
                             # Address label (bottom)
-                            frame:
+                            vbox:
                                 xalign 0.5
                                 yalign 0.95
-                                padding (20, 10)
-                                background Frame("gui/tiles/black_tile.webp", 3, 3)
                                 
-                                text (selected_room.address if selected_room.address else "???"):
-                                    textalign 0.5
+                                if selected_room.address:
+                                    for line in selected_room.address:
+                                        frame:
+                                            xalign 0.5
+                                            #yalign 0.5
+                                            style "black_tile"
+                                            text line:
+                                                textalign 0.
+                                                style "vhs_gothic"
+                                else:
+                                    frame:
+                                        xalign 0.5
+                                        style "black_tile"
+                                        text "???" textalign 0.5 style "vhs_gothic"
                         
                         else:
                             # No room selected
@@ -168,7 +192,7 @@ screen travel():
                             style "hover_button"
                             action Return()
                             fixed:
-                                text "<< BACK" xalign 0.5 yalign 0.5 style "hover_button_text"
+                                text "<< BACK" xalign 0.5 yalign 0.5 style "select_button_text"
                         button:
                             xsize 325
                             ysize 50
@@ -183,4 +207,4 @@ screen travel():
                                 ysize 60
                                 xalign 0.5 
                                 yalign 0.5
-                                text "CONFIRM >>" xalign 0.5 yalign 0.5 style "hover_button_text"
+                                text "CONFIRM >>" xalign 0.5 yalign 0.5 style "select_button_text"
