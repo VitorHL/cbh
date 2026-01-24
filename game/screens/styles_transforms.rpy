@@ -113,9 +113,9 @@ style dialogue_entry_important_text:
     font "GFX/fonts/vhs-gothic.ttf"
 
 style check_skill_text:
-    color game_white_color
+    color game_green_color
     outlines [(1, "#000000", 0, 0)]
-    hover_color game_white_selected
+    hover_color game_green_color
     insensitive_color game_dark_red_color
 
 style select_button_text:
@@ -195,8 +195,8 @@ style important_choice_button:
     ypadding 10
 
 style skill_check_border:
-    background layered_frame(border_color=game_white_unhovered, base_alpha=0.0)
-    hover_background layered_frame(border_color=game_white_color, base_alpha=0.0)
+    background layered_frame(border_color=game_green_color, base_alpha=0.0)
+    hover_background layered_frame(border_color=game_green_color, base_alpha=0.0)
     insensitive_background layered_frame(border_color=game_dark_red_color, base_alpha=0.0)
     xpadding 13
     ypadding 13

@@ -28,7 +28,7 @@ label daniel_apartment_label_menu:
     menu:
         "Talk with someone":
             menu:
-                "About the milkshake sack..." (skill_check=[skill_inquiry,10]):
+                "About the milkshake sack..." (skill_check=[skill_inquiry,3]):
                     "Ok"
                 "I don't know much about the boss either." (skill_roll=[skill_communion,14]):
                     #$ skill_check(skill_communion, 14)

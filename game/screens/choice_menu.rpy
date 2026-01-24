@@ -98,103 +98,101 @@ screen choice(items):
                     action item.action
                 
                 # Choice content
-                vbox:
+                hbox:
                     # Skill Roll indicator (inlined)
                     if item_skill_roll:
-                        frame xpos 35:
-                            style "skill_tile"
-                            ypadding 13
-                            xpadding 13
-                            
-                            vbox:
-                                text "-SKILL ROLL-" yalign 0.5 xalign 0.5 style "yellow_text" size 11
+                        vbox:
+                            #background None
+                            xsize 200
+                            frame xalign 0.5:
+                                style "skill_tile"
+                                ypadding 13
+                                xpadding 13
                                 
-                                # Display active buffs for this roll
-                                if len(item_skill_roll) > 2 and item_skill_roll[2]:
-                                    python:
-                                        active_buffs = [b for b in item_skill_roll[2] if b in available_skill_buffs]
+                                vbox:
+                                    text "-SKILL ROLL-" yalign 0.5 xalign 0.5 style "yellow_text" size 14
                                     
-                                    if active_buffs:
-                                        vbox:
-                                            xalign 0.5
-                                            spacing 5
-                                            
-                                            for buff_row in chunk(active_buffs, 2):
-                                                hbox:
-                                                    spacing 40
-                                                    align (0.5, 0.5)
-                                                    
-                                                    for buff in buff_row:
-                                                        if buff.value >= 0:
-                                                            text "[buff.GetName()]: +[buff.value]":
-                                                                yalign 0.5
-                                                                xalign 0.5
-                                                                style "dialogue_entry_text"
-                                                                color "#0adc28"
-                                                                size 14
-                                                        else:
-                                                            text "[buff.GetName()]: [buff.value]":
-                                                                yalign 0.5
-                                                                xalign 0.5
-                                                                style "dialogue_entry_text"
-                                                                color "#dc2020"
-                                                                size 14
-                                
-                                # Display roll chance
-                                if len(item_skill_roll) > 2:
-                                    $ roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
-                                else:
-                                    $ roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1])
-                                
-                                text "< [item_skill_roll[0].GetName()!u]:[roll_chance]% >" yalign 0.5 xalign 0.5 style "yellow_text" size 16
-                    
+                                    # Display active buffs for this roll
+                                    if len(item_skill_roll) > 2 and item_skill_roll[2]:
+                                        python:
+                                            active_buffs = [b for b in item_skill_roll[2] if b in available_skill_buffs]
+                                        
+                                        if active_buffs:
+                                            vbox:
+                                                xalign 0.5
+                                                spacing 5
+                                                
+                                                for buff_row in chunk(active_buffs, 2):
+                                                    hbox:
+                                                        spacing 40
+                                                        align (0.5, 0.5)
+                                                        
+                                                        for buff in buff_row:
+                                                            if buff.value >= 0:
+                                                                text "[buff.GetName()]: +[buff.value]":
+                                                                    yalign 0.5
+                                                                    xalign 0.5
+                                                                    style "dialogue_entry_text"
+                                                                    color "#0adc28"
+                                                                    size 14
+                                                            else:
+                                                                text "[buff.GetName()]: [buff.value]":
+                                                                    yalign 0.5
+                                                                    xalign 0.5
+                                                                    style "dialogue_entry_text"
+                                                                    color "#dc2020"
+                                                                    size 14
+                                    
+                                    # Display roll chance
+                                    if len(item_skill_roll) > 2:
+                                        $ roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
+                                    else:
+                                        $ roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1])
+                                    
+                                    text "< [item_skill_roll[0].GetName()!u]:[roll_chance]% >" yalign 0.5 xalign 0.5 style "yellow_text" size 16
+                        
                     # Skill Check indicator (inlined)
                     if item_skill_check:
-                        frame:
-                            if choice_available:
-                                xpos 35
-                            else:
-                                xalign 0.5
-                            style "skill_check_border"
-                            
                             vbox:
-                                text "-SKILL CHECK-" yalign 0.5 xalign 0.5 style "check_skill_text" size 11
-                                
-                                # Show current level vs required
-                                if choice_available:
-                                    text "< [item_skill_check[0].GetName()!u]:[item_skill_check[0].level]/[item_skill_check[1]] >":
-                                        yalign 0.5
-                                        xalign 0.5
-                                        style "check_skill_text"
-                                        size 16
-                                else:
-                                    # Failed check - show in red
-                                    text "< [item_skill_check[0].GetName()!u]:[item_skill_check[0].level]/[item_skill_check[1]] >":
-                                        yalign 0.5
-                                        xalign 0.5
-                                        style "check_skill_text"
-                                        size 16
+                                #background None
+                                xsize 200
+                                frame:
+                                    xalign 0.5
+                                    style "skill_check_border"
+                                    
+                                    vbox:
+                                        text "-SKILL CHECK-" yalign 0.5 xalign 0.5 style "check_skill_text" size 14
+                                        
+                                        # Show current level vs required                                    
+                                        text "< [item_skill_check[0].GetName()!u]:[item_skill_check[0].level]/[item_skill_check[1]] >":
+                                            yalign 0.5
+                                            xalign 0.5
+                                            style "check_skill_text"
+                                            size 16
                     
-                    # Choice text
-                    frame:
-                        xfill True
-                        background None
-                        if choice_available:
-                            hbox:
-                                text "> ":
-                                    if item_important:
-                                        style "dialogue_entry_text"
-                                    else:
-                                        style "dialogue_entry_text"
-                                text "[item.caption]": 
-                                    if item_important:
-                                        style "dialogue_entry_text"
-                                    else:
-                                        style "dialogue_entry_text"
-                        else:
-                            text "< ??? >" style "dialogue_entry_text" xalign 0.5
-                    if item_important == True:
-                        text "ADVANCE >>>" style "dialogue_entry_important_text" size 14 xpos 38
+                    vbox:
+                        if item_skill_check or item_skill_roll:
+                            yalign 0.5
+                        # Choice text
+                        frame:
+                            xfill True
+                            background None
+                            if choice_available:
+                                hbox:
+                                    text "> ":
+                                        if item_important:
+                                            style "dialogue_entry_text"
+                                        else:
+                                            style "dialogue_entry_text"
+                                    text "[item.caption]": 
+                                        if item_important:
+                                            style "dialogue_entry_text"
+                                        else:
+                                            style "dialogue_entry_text"
+                            else:
+                                text "< LOCKED >" style "dialogue_entry_text" xalign 0.15 yalign 0.5 size 38
+                        if item_important == True:
+                            text "ADVANCE >>>" style "dialogue_entry_important_text" size 14 xpos 38
 
 ################################################################################
 ## Choice Talks Screen (for character conversations)
