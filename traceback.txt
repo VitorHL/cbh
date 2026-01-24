@@ -3,84 +3,111 @@
 While running game code:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
-    call gia_ranch_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/church.rpy", line 10, in script call
-    call church_label_menu
-  File "game/scenes/locations/church.rpy", line 14, in script call
-    call church_label_menu
-  File "game/scenes/locations/church.rpy", line 14, in script call
-    call church_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
-    call gia_ranch_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in script
-    $ run_interaction(kitchen_interaction)
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in <module>
-    $ run_interaction(kitchen_interaction)
-  File "game/core/interactions.rpy", line 33, in run_interaction
-    if not available_interactions or interaction_to_run in available_interactions:
-NameError: name 'available_interactions' is not defined
+  [Previous line repeated 1 more time]
+  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
+    call screen character_interaction(char_gia)
+  File "game/script.rpy", line 111, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 176, in script
+    menu:
+  File "game/screens/choice_menu.rpy", line 9, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 9, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 15, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 19, in execute
+    for i in items:
+  File "game/screens/choice_menu.rpy", line 22, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 37, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 71, in execute
+    frame:
+AttributeError: 'skill_check_buff' object has no attribute 'caption'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
-    call gia_ranch_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
   File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/church.rpy", line 10, in script call
-    call church_label_menu
-  File "game/scenes/locations/church.rpy", line 14, in script call
-    call church_label_menu
-  File "game/scenes/locations/church.rpy", line 14, in script call
-    call church_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/gia_ranch.rpy", line 19, in script call
-    call gia_ranch_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in script
-    $ run_interaction(kitchen_interaction)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in <module>
-    $ run_interaction(kitchen_interaction)
-  File "game/core/interactions.rpy", line 33, in run_interaction
-    if not available_interactions or interaction_to_run in available_interactions:
-NameError: name 'available_interactions' is not defined
+  [Previous line repeated 1 more time]
+  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
+    call screen character_interaction(char_gia)
+  File "game/script.rpy", line 111, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 176, in script
+    menu:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 134, in menu
+    rv = renpy.store.menu(new_items)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 424, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 9, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 9, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 15, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 19, in execute
+    for i in items:
+  File "game/screens/choice_menu.rpy", line 22, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 37, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 71, in execute
+    frame:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2177, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+AttributeError: 'skill_check_buff' object has no attribute 'caption'
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Fri Jan 23 19:27:14 2026
+Fri Jan 23 21:06:32 2026

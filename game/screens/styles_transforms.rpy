@@ -7,6 +7,8 @@ define game_white_selected = "#ffffff"
 define game_white_unhovered = "#afafaf"
 define game_white_inactive = "#4b4b4b"
 define game_black_color = "#191919"
+define game_orange = "#c79532"
+define game_green_color = "#63c763"
 
 # Define recolorable base frames
 init python:
@@ -114,6 +116,14 @@ style select_button_text:
     selected_outlines [(0, game_black_color, 0, 0)]
     insensitive_color game_white_inactive
 
+style orange_text:
+    color game_orange 
+    outlines [(1, game_black_color, 0, 0)]
+
+style green_text:
+    color game_green_color 
+    outlines [(1, game_black_color, 0, 0)]
+
 style hover_button_text:
     color game_white_color
     outlines [(1, game_black_color, 0, 0)]
@@ -173,6 +183,13 @@ style select_button_border:
     selected_background Frame("gui/tiles/white_tile_border.webp", 20, 20)
     # xpadding 15
     # ypadding 15
+style select_border:
+    background layered_frame(border_color=game_white_unhovered, base_alpha=0.0)
+    hover_background layered_frame(border_color=game_white_color, base_alpha=0.0)
+    insensitive_background layered_frame(border_color=game_white_inactive, base_alpha=0.0)
+    selected_background Frame("gui/tiles/white_tile_border.webp", 20, 20)
+    ypadding 10
+    xpadding 20
 
 # Screen Styles -------------------------------------------------------
 
@@ -190,6 +207,16 @@ style black_tile_border:
     background layered_frame()
     xpadding 20
     ypadding 10
+
+style skill_tile:
+    background layered_frame(base_alpha = 0, border_color=game_orange)
+    xpadding 20
+    ypadding 15
+
+style check_tile:
+    background layered_frame(base_alpha = 0, border_color=game_green_color)
+    xpadding 20
+    ypadding 15
 
 style black_tile_underline:
     background layered_frame(border_image = "gui/tiles/tile_underline.webp")

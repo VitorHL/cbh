@@ -35,42 +35,54 @@ screen choice(items):
                 sensitive True
                 style "hover_button"
                 vbox:
+                    if skill_roll != []:
+                        frame xpos 42:
+                            style "skill_tile"
+                            ypadding 13
+                            xpadding 13
+                            vbox:
+                                text "-SKILL ROLL-" yalign 0.5 xalign 0.5 style "orange_text" size 11
+                                if len(skill_roll) > 2:
+                                    default columns = 2
+                                    default buffs_for_this_check = []
+                                    for i in skill_roll[2]:
+                                        python:
+                                            if i in available_skill_buffs:
+                                                buffs_for_this_check.append(i)
+                                    vbox:
+                                        xalign 0.5
+                                        spacing 5
+                                        for i in chunk(buffs_for_this_check, columns):
+                                            hbox:
+                                                spacing 40
+                                                align (0.5, 0.5)
+                                                yalign 0.5
+                                                for buff in i:
+                                                    if buff.value >= 0:
+                                                        text "[buff.GetName()]: +[buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#0adc28" size 14
+                                                    else:
+                                                        text "[buff.GetName()]: -[buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#dc2020" size 14
+                                    
+                                if len(skill_roll) > 2:
+                                    text "< [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1], skill_roll[2])!u]% >" yalign 0.5 xalign 0.5 style "orange_text" size 16
+                                else:
+                                    text "< [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% >" yalign 0.5 xalign 0.5 style "orange_text" size 16
+                    if skill_check != []:
+                        frame xpos 42:
+                            style "check_tile"
+                            vbox:
+                                text "-SKILL CHECK-" yalign 0.5 xalign 0.5 style "green_text" size 11
+                                text "< [skill_check[0].GetName()!u]:[skill_check[0].level]/[skill_check[1]] >" yalign 0.5 xalign 0.5 style "green_text" size 16
                     frame:
                         xfill True
                         background None
-                        text "> [i.caption]" yalign 0.5 style "dialogue_entry_text"
+                        hbox:
+                            text "> " style "dialogue_entry_text"
+                            text "[i.caption]" yalign 0.5 style "dialogue_entry_text"
+                   
+                    
                     #if skill_roll != [] or skill_check != []:
                     #    text "-------------------------" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 14
-                    if skill_roll != []:
-                        text "-SKILL ROLL-" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 12
-                        if len(skill_roll) > 2:
-                            default columns = 2
-                            default buffs_for_this_check = []
-                            for i in skill_roll[2]:
-                                python:
-                                    if i in available_skill_buffs:
-                                        buffs_for_this_check.append(i)
-                            vbox:
-                                xalign 0.5
-                                spacing 5
-                                for i in chunk(buffs_for_this_check, columns):
-                                    hbox:
-                                        spacing 40
-                                        align (0.5, 0.5)
-                                        yalign 0.5
-                                        for buff in i:
-                                            if buff.value >= 0:
-                                                text "[buff.GetName()]: +[buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#0adc28" size 14
-                                            else:
-                                                text "[buff.GetName()]: -[buff.value]" yalign 0.5 xalign 0.5 style "dialogue_entry_text" color "#dc2020" size 14
-                            
-                        if len(skill_roll) > 2:
-                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1], skill_roll[2])!u]% <" yalign 0.5 xalign 0.5 style "hover_button_text" size 16
-                        else:
-                            text "> [skill_roll[0].GetName()!u]:[rollchance(skill_roll[0], skill_roll[1])!u]% <" yalign 0.5 xalign 0.5 style "hover_button_text" size 16
-                    if skill_check != []:
-                        text "-SKILL CHECK-" yalign 0.5 xalign 0.5 style "dialogue_entry_text" size 12
-                        text "> [skill_check[0].GetName()!u]:[skill_check[0].level]/[skill_check[1]] <" yalign 0.5 xalign 0.5 style "hover_button_text" size 16
                     
 ################################################################################
 
