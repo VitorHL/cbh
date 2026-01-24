@@ -6,8 +6,11 @@ define game_white_color = "#c8c8c8"
 define game_white_selected = "#ffffff"
 define game_white_unhovered = "#afafaf"
 define game_white_inactive = "#4b4b4b"
+define game_dark_red_color = "#c73232"
 define game_black_color = "#191919"
-define game_orange = "#c79532"
+define game_orange_color = "#c74e32"
+define game_yellow_color = "#c79532"
+define game_cyan_color = "#c7b695"
 define game_green_color = "#63c763"
 
 # Define recolorable base frames
@@ -66,13 +69,6 @@ transform travel_entry_dot:
         xsize 52
         ysize 52
         
-transform dialogue_entry:
-    on idle:
-        zoom 0.75
-    on hover:
-        zoom 1.0
-    on selected_idle:
-        zoom 1.0
 transform selected_hover:
     on idle:
         zoom 0.75
@@ -100,12 +96,27 @@ style entrytext:
 
 style dialogue_entry_text:
     color game_white_color
-    outlines [(1, game_black_color, 0, 0)]
+    outlines [(1, "#000000", 0, 0)]
     hover_color game_white_selected
     insensitive_color game_white_inactive
     adjust_spacing False
-    size 24
+    size 20
     font "GFX/fonts/vhs-gothic.ttf"
+
+style dialogue_entry_important_text:
+    color game_cyan_color
+    outlines [(1, "#000000", 0, 0)]
+    hover_color game_cyan_color
+    insensitive_color game_cyan_color
+    adjust_spacing False
+    size 20
+    font "GFX/fonts/vhs-gothic.ttf"
+
+style check_skill_text:
+    color game_white_color
+    outlines [(1, "#000000", 0, 0)]
+    hover_color game_white_selected
+    insensitive_color game_dark_red_color
 
 style select_button_text:
     color game_white_unhovered
@@ -116,8 +127,12 @@ style select_button_text:
     selected_outlines [(0, game_black_color, 0, 0)]
     insensitive_color game_white_inactive
 
+style yellow_text:
+    color game_yellow_color 
+    outlines [(1, game_black_color, 0, 0)]
+
 style orange_text:
-    color game_orange 
+    color game_orange_color 
     outlines [(1, game_black_color, 0, 0)]
 
 style green_text:
@@ -160,6 +175,31 @@ style hover_button:
     insensitive_background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_inactive, base_alpha=0.5)
     xpadding 20
     ypadding 10
+
+style choice_menu_button:
+    hover_sound "audio/menu_hover.wav"
+    activate_sound "audio/menu_select.wav"
+    background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_unhovered, base_alpha=0.5)
+    hover_background layered_frame(border_image = "gui/tiles/tile_bracket.webp",border_color=game_white_color, base_alpha=0.75)
+    insensitive_background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_inactive, base_alpha=0.5)
+    xpadding 20
+    ypadding 10
+
+style important_choice_button:
+    hover_sound "audio/menu_hover.wav"
+    activate_sound "audio/menu_select.wav"
+    background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_unhovered, base_alpha=0.5)
+    hover_background layered_frame(border_image = "gui/tiles/tile_bracket.webp",border_color=game_white_color, base_alpha=0.75)
+    insensitive_background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_inactive, base_alpha=0.5)
+    xpadding 20
+    ypadding 10
+
+style skill_check_border:
+    background layered_frame(border_color=game_white_unhovered, base_alpha=0.0)
+    hover_background layered_frame(border_color=game_white_color, base_alpha=0.0)
+    insensitive_background layered_frame(border_color=game_dark_red_color, base_alpha=0.0)
+    xpadding 13
+    ypadding 13
 
 transform select_image:
     on idle:
@@ -209,12 +249,7 @@ style black_tile_border:
     ypadding 10
 
 style skill_tile:
-    background layered_frame(base_alpha = 0, border_color=game_orange)
-    xpadding 20
-    ypadding 15
-
-style check_tile:
-    background layered_frame(base_alpha = 0, border_color=game_green_color)
+    background layered_frame(base_alpha = 0, border_color=game_yellow_color)
     xpadding 20
     ypadding 15
 

@@ -1,7 +1,7 @@
 default notify_messages = []
 
 # Duration the full ATL takes
-default notify_duration = 4.0
+default notify_duration = 5.0
 
 # Max number we store for reviewing in the history screen
 default notify_history_length = 20
@@ -73,42 +73,43 @@ style notify_item_text:
 
 transform notify_appear():
 
-    yzoom 0.0 alpha 0.5
+    alpha 0.0 xpos -25
 
-    linear 1.0 yzoom 1.0 alpha 1.0
+    linear 0.10 alpha 1.0 xpos 0
 
-    pause 2.0
+    pause 5.0
 
-    linear 1.0 yzoom 0.0 alpha 0.0
+    linear 0.10 alpha 0.0 xpos -25
 
     function finish_notify
 
 
 screen notify_item(msg, use_atl=True):
 
-    style_prefix "notify_item"
+    hbox:
+        frame:
+            if use_atl: # ATL not used for history
+                at notify_appear
+            style "black_tile_75"
+            text "*" style "notify_item_text"
+        frame:
 
-    frame:
-
-        if use_atl: # ATL not used for history
-
-            at notify_appear
-
-        # else:
-        #     xpos 0.5
-
-        text msg
+            if use_atl: # ATL not used for history
+                at notify_appear
+            style "black_tile_75"
+            text msg style "notify_item_text"
 
 
 screen notify_container():
 
     fixed:
 
-        pos (5, 50)
+        xpos 75
+        ypos 150
 
         vbox:
 
-            xmaximum 250
+            xmaximum 300
             spacing 5
 
             # We index on the time the notification was added as that
@@ -136,74 +137,4 @@ screen notify_history():
             for msg_info in notify_messages:
 
                 use notify_item(msg_info[0], False)
-
-
-
-
-
-            ###########################################
-            #                                         #
-            #    Once you have seen the example you   #
-            #    can delete everything below here     #
-            #                                         #
-            ###########################################
-
-
-
-label multi_notify_example:
-
-    scene expression "#AAA"
-
-    $ config.notify = add_notify_message
-
-    $ renpy.notify("First test notification")
-    pause
-    $ renpy.run(Notify("Second test, using the Notify action"))
-    pause
-    $ renpy.notify("Third test")
-
-    "Now for a loop of random notifications... (too fast to read fully)"
-    extend "\nBetter if you do not click while running."
-
-    $ random_notifications_idx = 0
-
-    while random_notifications_idx < len(random_notifications):
-
-        $ renpy.notify(random_notifications[random_notifications_idx])
-
-        $ random_notifications_idx += 1
-
-        pause 0.35
-
-    "One more before showing the notify history screen"
-
-    $ renpy.notify(
-        ("This is a rather longer notification "
-        "to check that longer lines work."))
-
-    pause
-
-    show screen notify_history
-
-    pause
-
-    hide screen notify_history
-    
-    $ config.notify = renpy.display_notify
-
-    return
-
-
-default random_notifications = (
-    "You took 38hp damage.",
-    "Elf needs food badly.",
-    "Building complete!",
-    "You found some evidence.",
-    "You were too late to save the kittens.",
-    "Poison damage 3hp plus fatigue.",
-    "The straps on your chainmail top are almost perished.",
-    "You found a silver key.",
-    "You gained one treasure map.",
-    "The vagabond cleric has healed you fully.",
-    "You see a shiny coin just peeking from the sand.")
             

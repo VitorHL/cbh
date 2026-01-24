@@ -3,52 +3,42 @@
 While running game code:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  [Previous line repeated 1 more time]
-  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 111, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 176, in script
+  File "game/scenes/locations/daniel_apartment.rpy", line 28, in script
     menu:
-  File "game/screens/choice_menu.rpy", line 9, in execute
+  File "game/screens/choice_menu.rpy", line 39, in execute
     screen choice(items):
-  File "game/screens/choice_menu.rpy", line 9, in execute
+  File "game/screens/choice_menu.rpy", line 39, in execute
     screen choice(items):
-  File "game/screens/choice_menu.rpy", line 15, in execute
+  File "game/screens/choice_menu.rpy", line 47, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 19, in execute
-    for i in items:
-  File "game/screens/choice_menu.rpy", line 22, in execute
+  File "game/screens/choice_menu.rpy", line 52, in execute
+    for item in items:
+  File "game/screens/choice_menu.rpy", line 73, in execute
     button:
-  File "game/screens/choice_menu.rpy", line 37, in execute
+  File "game/screens/choice_menu.rpy", line 101, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 71, in execute
+  File "game/screens/choice_menu.rpy", line 179, in execute
     frame:
-AttributeError: 'skill_check_buff' object has no attribute 'caption'
+  File "game/screens/choice_menu.rpy", line 182, in execute
+    if choice_available:
+  File "game/screens/choice_menu.rpy", line 183, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 185, in execute
+    text "[item.caption]":
+  File "game/screens/choice_menu.rpy", line 185, in keywords
+    text "[item.caption]":
+  File "game/screens/choice_menu.rpy", line 186, in keywords
+    if item.important:
+  File "game/screens/choice_menu.rpy", line 186, in <module>
+    if item.important:
+AttributeError: 'MenuEntry' object has no attribute 'important'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  [Previous line repeated 1 more time]
-  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 111, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 176, in script
+  File "game/scenes/locations/daniel_apartment.rpy", line 28, in script
     menu:
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
     choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
@@ -76,38 +66,35 @@ Full traceback:
     self.update()
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/screens/choice_menu.rpy", line 9, in execute
+  File "game/screens/choice_menu.rpy", line 39, in execute
     screen choice(items):
-  File "game/screens/choice_menu.rpy", line 9, in execute
+  File "game/screens/choice_menu.rpy", line 39, in execute
     screen choice(items):
-  File "game/screens/choice_menu.rpy", line 15, in execute
+  File "game/screens/choice_menu.rpy", line 47, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 19, in execute
-    for i in items:
-  File "game/screens/choice_menu.rpy", line 22, in execute
+  File "game/screens/choice_menu.rpy", line 52, in execute
+    for item in items:
+  File "game/screens/choice_menu.rpy", line 73, in execute
     button:
-  File "game/screens/choice_menu.rpy", line 37, in execute
+  File "game/screens/choice_menu.rpy", line 101, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 71, in execute
+  File "game/screens/choice_menu.rpy", line 179, in execute
     frame:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-AttributeError: 'skill_check_buff' object has no attribute 'caption'
+  File "game/screens/choice_menu.rpy", line 182, in execute
+    if choice_available:
+  File "game/screens/choice_menu.rpy", line 183, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 185, in execute
+    text "[item.caption]":
+  File "game/screens/choice_menu.rpy", line 185, in keywords
+    text "[item.caption]":
+  File "game/screens/choice_menu.rpy", line 186, in keywords
+    if item.important:
+  File "game/screens/choice_menu.rpy", line 186, in <module>
+    if item.important:
+AttributeError: 'MenuEntry' object has no attribute 'important'
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Fri Jan 23 21:06:32 2026
+Sat Jan 24 16:37:00 2026

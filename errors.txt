@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 73: vbox expects a non-empty block.
-    vbox:
-         ^
+File "game/screens/choice_menu.rpy", line 185: text expects a non-empty block.
+    text "[item.caption]": 
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jan 23 21:31:11 2026
+Sat Jan 24 16:35:27 2026

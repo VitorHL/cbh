@@ -52,6 +52,8 @@ label daniel_apartment_label_menu:
                         "The test was a success"
                     if skill_success == False:
                         "The test was a failure"
+                "Ok, whatever you say."(important=True):
+                    "Alright..."
         "Next Day":
             $ calendar.next_day()
         "Fridge":
