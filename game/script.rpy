@@ -57,7 +57,7 @@ label  after_load:
 return
 
 label start:
-    $set_room( room_edgar_counter )
+    $set_room( room_daniel_apartment )
     show screen vhs_overlay
     show image "gui/overlay/vignette.webp" onlayer vignette
     show image "gui/overlay/scanlines.webp" onlayer effect_overlay
@@ -74,6 +74,9 @@ label start_skills:
     #scene edgar_diner_bg with fade
     call screen skill_screen_start   
     jump start_skills
+
+label start_test_scenario:
+    jump daniel_apartment_label
 
 ###################################################################################################################################################
 # System Labels

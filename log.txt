@@ -1,10 +1,10 @@
-2026-01-24 19:36:48 UTC
+2026-01-27 04:30:10 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
 Early init took 0.08s
 Loading error handling took 0.04s
-Loading script took 0.39s
+Loading script took 0.24s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
 Running init code took 0.05s
@@ -12,7 +12,8 @@ Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Dump and make backups took 0.06s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.05s
@@ -23,14 +24,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.01s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.52s
+Interface start took 0.40s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -46,7 +47,7 @@ Maximum texture size: 4096x4096
 Full traceback:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 28, in script
+  File "game/scenes/locations/daniel_apartment.rpy", line 30, in script
     menu:
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
     choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
@@ -58,85 +59,95 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens/choice_menu.rpy", line 39, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 39, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 47, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 52, in execute
-    for item in items:
-  File "game/screens/choice_menu.rpy", line 73, in execute
-    button:
-  File "game/screens/choice_menu.rpy", line 101, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 179, in execute
-    frame:
-  File "game/screens/choice_menu.rpy", line 182, in execute
-    if choice_available:
-  File "game/screens/choice_menu.rpy", line 183, in execute
-    hbox:
-  File "game/screens/choice_menu.rpy", line 185, in execute
-    text "[item.caption]":
-  File "game/screens/choice_menu.rpy", line 185, in keywords
-    text "[item.caption]":
-  File "game/screens/choice_menu.rpy", line 186, in keywords
-    if item.important:
-  File "game/screens/choice_menu.rpy", line 186, in <module>
-    if item.important:
-AttributeError: 'MenuEntry' object has no attribute 'important'
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1182, in event
+    return handle_click(self.clicked)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1103, in handle_click
+    rv = run(action)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 394, in run
+    new_rv = run(i, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_other.rpy", line 619, in __call__
+    rv = self.callable(*self.args, **self.kwargs)
+  File "game/core/skills.rpy", line 48, in game_skill_roll
+    register_skill_roll_result([roll_id, roll_result])
+  File "game/screens/choice_menu.rpy", line 31, in register_skill_roll_result
+    skill_rolls_made[roll_id] = roll_result
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 90, in do_mutation
+    return method(self, *args, **kwargs)
+TypeError: unhashable type: 'RevertableList'
 
 While running game code:
   File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
     call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 28, in script
+  File "game/scenes/locations/daniel_apartment.rpy", line 30, in script
     menu:
-  File "game/screens/choice_menu.rpy", line 39, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 39, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 47, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 52, in execute
-    for item in items:
-  File "game/screens/choice_menu.rpy", line 73, in execute
-    button:
-  File "game/screens/choice_menu.rpy", line 101, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 179, in execute
-    frame:
-  File "game/screens/choice_menu.rpy", line 182, in execute
-    if choice_available:
-  File "game/screens/choice_menu.rpy", line 183, in execute
-    hbox:
-  File "game/screens/choice_menu.rpy", line 185, in execute
-    text "[item.caption]":
-  File "game/screens/choice_menu.rpy", line 185, in keywords
-    text "[item.caption]":
-  File "game/screens/choice_menu.rpy", line 186, in keywords
-    if item.important:
-  File "game/screens/choice_menu.rpy", line 186, in <module>
-    if item.important:
-AttributeError: 'MenuEntry' object has no attribute 'important'
+  File "renpy/common/00action_other.rpy", line 619, in __call__
+    rv = self.callable(*self.args, **self.kwargs)
+  File "game/core/skills.rpy", line 48, in game_skill_roll
+    register_skill_roll_result([roll_id, roll_result])
+  File "game/screens/choice_menu.rpy", line 31, in register_skill_roll_result
+    skill_rolls_made[roll_id] = roll_result
+TypeError: unhashable type: 'RevertableList'
 Resetting cache.
-Early init took 56.61s
+Early init took 167.20s
 Loading error handling took 0.03s
+Loading script took 0.17s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.43s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 303.89s
+Loading error handling took 0.02s
 Loading script took 0.20s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
@@ -160,91 +171,7 @@ Build styles took 0.01s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.44s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 177.27s
-Loading error handling took 0.02s
-Loading script took 0.18s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
 Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 271.32s
-Loading error handling took 0.02s
-Loading script took 0.18s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
@@ -260,10 +187,17 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
 Resetting cache.
-Early init took 373.17s
+Early init took 325.33s
 Loading error handling took 0.02s
-Loading script took 0.21s
+Loading script took 0.17s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -272,10 +206,10 @@ Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.07s
+Initial gc took 0.08s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -286,8 +220,8 @@ Build styles took 0.01s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.41s
@@ -303,726 +237,12 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 474.80s
+Early init took 358.80s
 Loading error handling took 0.02s
-Loading script took 0.21s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.49s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 484.22s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 510.27s
-Loading error handling took 0.02s
-Loading script took 0.22s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 522.69s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 583.45s
-Loading error handling took 0.02s
-Loading script took 0.21s
+Loading script took 0.19s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
 Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 617.32s
-Loading error handling took 0.03s
-Loading script took 0.21s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 648.13s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 677.10s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.46s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 725.78s
-Loading error handling took 0.02s
-Loading script took 0.21s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.41s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 733.64s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 758.11s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.41s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 767.43s
-Loading error handling took 0.02s
-Loading script took 0.25s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 814.73s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 904.28s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.46s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 940.99s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 989.67s
-Loading error handling took 0.02s
-Loading script took 0.19s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3724.63s
-Loading error handling took 0.03s
-Loading script took 0.29s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.48s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3749.27s
-Loading error handling took 0.02s
-Loading script took 0.19s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
@@ -1046,427 +266,7 @@ Prepare screens took 0.12s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.44s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3879.70s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.44s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4069.29s
-Loading error handling took 0.02s
-Loading script took 0.18s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.47s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4143.70s
-Loading error handling took 0.02s
-Loading script took 0.19s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4159.05s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4192.57s
-Loading error handling took 0.02s
-Loading script took 0.18s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.02s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4259.47s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.45s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4326.38s
-Loading error handling took 0.02s
-Loading script took 0.19s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4402.23s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4416.10s
-Loading error handling took 0.02s
-Loading script took 0.19s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.42s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4505.66s
-Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.45s
+Interface start took 0.50s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

@@ -20,7 +20,7 @@ init python:
 
 ########################
 
-    def game_skill_roll(skill, difficulty, skill_buffs = []):
+    def game_skill_roll(skill, difficulty, skill_buffs = [], roll_id=None):
         global skill_success, available_skill_buffs , used_skill_buffs
         
         dice1 = random.randint(1, 6)
@@ -40,7 +40,12 @@ init python:
                     used_skill_buffs.append(buff)
         total = total + sum_buffs
 
-        skill_success = total >= difficulty
+        # Determine success
+        roll_result = total >= difficulty
+        skill_success = roll_result
+
+        # Record the Result
+        register_skill_roll_result(roll_id, roll_result)
 
         renpy.call("skill_test_label", total, difficulty, dice1, dice2, dice3, skill,skill_buffs )
 

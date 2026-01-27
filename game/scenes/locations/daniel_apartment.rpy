@@ -31,8 +31,6 @@ label daniel_apartment_label_menu:
                 "About the milkshake sack..." (skill_check=[skill_inquiry,3]):
                     "Ok"
                 "I don't know much about the boss either." (skill_roll=[skill_communion,14]):
-                    #$ skill_check(skill_communion, 14)
-                    #show screen dice_roll(1,1)
                     if skill_success == True:
                         "The test was a success"
                     if skill_success == False:

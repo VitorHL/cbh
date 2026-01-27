@@ -237,5 +237,5 @@ screen skill_screen_start():
                         ysize 50
                         style "hover_button"
                         sensitive att_pts_available == 0 and att_pts_spent > 0
-                        action Show( "game_confirm_box", None, [Function(apply_skill_points), Jump("daniel_apartment_label")], "This cannot be changed later", Fade )
+                        action Show( "game_confirm_box", None, [Function(apply_skill_points), Jump("start_test_scenario")], "This cannot be changed later", Fade )
                         text "CONFIRM" xalign 0.5 yalign 0.5 style "dialogue_entry_text"

@@ -23,7 +23,7 @@ define room_edgar_counter = game_room(
     room_travels = ["room_gas_station", "room_edgar_kitchen", "room_edgar_storeroom"]
 )
 define room_edgar_kitchen = game_room(
-    game_label = "kitchen_label", 
+    game_label = "kitchen_label_menu", 
     name = LOC_room_edgar_kitchen,
     thumb = "gfx/interface/thumbnail_edgar_kitchen_bg.webp",
     location = location_room_edgar_diner,

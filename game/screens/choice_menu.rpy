@@ -22,15 +22,24 @@ init python:
             add_xp(xp_per_skill_check, xp_gain_skill_check_loc)
             return True
         return False
-    
-    def generate_skill_check_id(caption, skill, difficulty):
+
+    def register_skill_roll_result(roll_id, roll_result=False):
         """
-        Generates a unique identifier for a skill check based on its properties.
+        Registers that a skill roll has been made.
+        """
+        global skill_rolls_made
+        skill_rolls_made[roll_id] = roll_result
+
+    def generate_choice_id(caption, skill, difficulty):
+        """
+        Generates a unique identifier for a skill check/roll based on its properties.
         """
         return (caption, skill.GetName(), difficulty)
 
 # Track which skill checks have already awarded XP (persists across saves)
 default awarded_skill_checks = set()
+# Track which skill rolls have been made
+default skill_rolls_made = {}
 
 ################################################################################
 ## Main Choice Screen
@@ -53,6 +62,7 @@ screen choice(items):
             # Extract skill parameters from menu item
             $ item_skill_roll = item.kwargs.get("skill_roll", [])
             $ item_skill_check = item.kwargs.get("skill_check", [])
+            $ item_skill_roll_mode = item.kwargs.get("skill_roll_mode", 0 ) 
             
             # Check if the item is marked as important choice
             $ item_important = item.kwargs.get("important", False)
@@ -67,8 +77,12 @@ screen choice(items):
                     choice_available = item_skill_check[0].level >= item_skill_check[1]
                     
                     # Award XP for seeing this skill check (only once per unique check)
-                    check_id = generate_skill_check_id(item.caption, item_skill_check[0], item_skill_check[1])
+                    check_id = generate_choice_id(item.caption, item_skill_check[0], item_skill_check[1])
                     award_skill_check_xp_once(check_id)
+                # Skill rolls can be limited based on previous rolls
+                elif item_skill_roll:
+                    roll_id = generate_choice_id(item.caption, item_skill_roll[0], item_skill_roll[1])
+                #    choice_available = roll_id not in skill_rolls_made or item_skill_roll_mode >= 1
             
             button:
                 xalign 0.5
@@ -82,17 +96,26 @@ screen choice(items):
                 
                 # Set up the action based on skill type
                 if item_skill_roll:
-                    # Skill roll: always available, but success is random
-                    if len(item_skill_roll) > 2:
-                        action [
-                            Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1], item_skill_roll[2]),
-                            item.action
-                        ]
+                    if roll_id not in skill_rolls_made or item_skill_roll_mode >= 1:
+                        # Skill roll choice
+                        if len(item_skill_roll) > 2:
+                            # Roll with buffs
+                            action [
+                                Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1], item_skill_roll[2]),
+                                item.action
+                            ]
+                        else:
+                            # Roll without buffs
+                            action [
+                                Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1]),
+                                item.action
+                            ]
                     else:
+                        
                         action [
-                            Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1]),
+                            SetVariable("skill_success", skill_rolls_made.get(roll_id, False)), # Get previous roll result
                             item.action
-                        ]
+                            ]
                 else:
                     # Regular choice or skill check (XP already awarded on display)
                     action item.action
@@ -215,7 +238,7 @@ screen choice_talks(items, args=[character, None]):
             $ game_label = item.kwargs.get("game_label", None)
             
             button:
-                at dialogue_entry
+                #at dialogue_entry
                 xalign 0.5
                 xsize 800
                 action Call(game_label, character)
@@ -230,7 +253,7 @@ screen choice_talks(items, args=[character, None]):
         
         # Back button
         button:
-            at dialogue_entry
+            #at dialogue_entry
             xalign 0.5
             xsize 800
             action Call("char_interaction", character)

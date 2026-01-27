@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 156: vbox expects a non-empty block.
-    vbox:
-         ^
+The label storeroom_label is defined twice, at File "game/scenes/locations/edgars_diner.rpy", line 20:
+label storeroom_label:
+and File "game/scenes/test_scenes/late_shift.rpy", line 911:
+label storeroom_label:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jan 24 18:19:20 2026
+Sun Jan 25 03:48:10 2026
