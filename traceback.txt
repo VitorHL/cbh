@@ -1,24 +1,88 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 30, in script
+  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
+    call screen character_interaction(char_gia)
+  File "game/script.rpy", line 97, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 110, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 212, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 97, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 110, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 219, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 97, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 92, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 121, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 173, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 121, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 186, in script
     menu:
-  File "renpy/common/00action_other.rpy", line 619, in __call__
-    rv = self.callable(*self.args, **self.kwargs)
-  File "game/core/skills.rpy", line 48, in game_skill_roll
-    register_skill_roll_result([roll_id, roll_result])
-  File "game/screens/choice_menu.rpy", line 31, in register_skill_roll_result
-    skill_rolls_made[roll_id] = roll_result
-TypeError: unhashable type: 'RevertableList'
+  File "game/screens/choice_menu.rpy", line 70, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 70, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 78, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 83, in execute
+    for item in items:
+  File "game/screens/choice_menu.rpy", line 115, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 157, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 161, in execute
+    if item_skill_roll:
+  File "game/screens/choice_menu.rpy", line 162, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 196, in execute
+    if len(item_skill_roll) > 2 and item_skill_roll[2]:
+  File "game/screens/choice_menu.rpy", line 200, in execute
+    if active_buffs:
+  File "game/screens/choice_menu.rpy", line 201, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 205, in execute
+    python:
+  File "game/screens/choice_menu.rpy", line 222, in <module>
+    from renpy.text.textsupport import DispText
+ImportError: cannot import name 'DispText' from 'renpy.text.textsupport' (built-in)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 30, in script
+  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
+    call screen character_interaction(char_gia)
+  File "game/script.rpy", line 97, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 110, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 212, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 97, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 110, in script call
+    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+  File "game/script.rpy", line 219, in script call
+    call show_char_item(mode,character,selected_slot)
+  File "game/script.rpy", line 97, in script call
+    call screen inventory_screen(mode, character, selected_slot)
+  File "game/script.rpy", line 92, in script call
+    call screen character_interaction(character)
+  File "game/script.rpy", line 121, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 173, in script call
+    call char_conversation_list(character)
+  File "game/script.rpy", line 121, in script call
+    $ generate_character_talks(character)
+  File "game/script.rpy", line 186, in script
     menu:
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
     choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
@@ -30,39 +94,51 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1182, in event
-    return handle_click(self.clicked)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1103, in handle_click
-    rv = run(action)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 394, in run
-    new_rv = run(i, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 401, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00action_other.rpy", line 619, in __call__
-    rv = self.callable(*self.args, **self.kwargs)
-  File "game/core/skills.rpy", line 48, in game_skill_roll
-    register_skill_roll_result([roll_id, roll_result])
-  File "game/screens/choice_menu.rpy", line 31, in register_skill_roll_result
-    skill_rolls_made[roll_id] = roll_result
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 90, in do_mutation
-    return method(self, *args, **kwargs)
-TypeError: unhashable type: 'RevertableList'
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 70, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 70, in execute
+    screen choice(items):
+  File "game/screens/choice_menu.rpy", line 78, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 83, in execute
+    for item in items:
+  File "game/screens/choice_menu.rpy", line 115, in execute
+    button:
+  File "game/screens/choice_menu.rpy", line 157, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 161, in execute
+    if item_skill_roll:
+  File "game/screens/choice_menu.rpy", line 162, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 196, in execute
+    if len(item_skill_roll) > 2 and item_skill_roll[2]:
+  File "game/screens/choice_menu.rpy", line 200, in execute
+    if active_buffs:
+  File "game/screens/choice_menu.rpy", line 201, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 205, in execute
+    python:
+  File "game/screens/choice_menu.rpy", line 222, in <module>
+    from renpy.text.textsupport import DispText
+ImportError: cannot import name 'DispText' from 'renpy.text.textsupport' (built-in)
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Jan 27 01:30:26 2026
+Tue Jan 27 09:12:29 2026

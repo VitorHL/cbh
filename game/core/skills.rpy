@@ -49,6 +49,8 @@ init python:
 
         renpy.call_in_new_context("skill_test_label", total, difficulty, dice1, dice2, dice3, skill,skill_buffs )
 
+        
+
 ##########################
 
     def add_skill_buff(skill_buff):
@@ -106,3 +108,42 @@ init python:
             self.limit = limit
         def GetName(self):
             return get_var_suffix(self, "loc")
+
+######################################################################################################################################################
+
+    def get_difficulty_descriptor(DC):
+        """
+        Returns a difficulty descriptor based on success chance percentage.
+        """
+        difficulty_ranges = [
+            (3, 5, "TRIVIAL"),
+            (6, 8, "EASY"),
+            (9, 11, "MODERATE"),
+            (12, 14, "CHALLENGING"),
+            (15, 17, "DIFFICULT"),
+            (18, 18, "HEROIC"),
+        ]
+        
+        for min_val, max_val, descriptor in difficulty_ranges:
+            if min_val <= DC <= max_val:
+                return descriptor
+        
+        return "UNKNOWN"  # Fallback, should never happen
+
+    def get_difficulty_color(DC):
+        """
+        Returns a color based on difficulty level.
+        """
+        descriptor = get_difficulty_descriptor(DC)
+        
+        color_map = {
+            "TRIVIAL": "#95c795",
+            "EASY": "#a0c089",
+            "MODERATE": "#abb87d",
+            "CHALLENGING": "#b6af71",
+            "DIFFICULT": "#c1a665",
+            "HEROIC": "#c76363",
+            "UNKNOWN": "#808080"  # gray fallback
+        }
+    
+        return color_map.get(descriptor, "#808080")

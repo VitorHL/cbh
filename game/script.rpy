@@ -63,6 +63,13 @@ label start:
     show image "gui/overlay/scanlines.webp" onlayer effect_overlay
     show grain_effect onlayer effect_overlay
     #show screen top_bar
+    $ game_iventory.append(burgar)
+    $ game_iventory.append(fries)
+    $ game_iventory.append(coke)
+    $ add_skill_buff(buff_coffee_offered)
+    $ add_skill_buff(buff_listened_to_val)
+    $ add_skill_buff(buff_shared_concern)
+    $ add_skill_buff(buff_noticed_matt)
     jump choose_mode_label
 
 label choose_mode_label:
@@ -177,7 +184,7 @@ label char_gia_talk_relationship(character):
     "It is over Daniel... There is nothing you can do to reapair the things now."
     "Maybe we can talk about it later, but not really now."
     menu:
-        "I want to still discuss it though." (skill_roll=[skill_sentiment,18,[showed_burguer,showed_coke,talked_about_val]]):
+        "I want to still discuss it though." (skill_roll=[skill_sentiment,18,[showed_burguer,showed_coke,talked_about_val,buff_coffee_offered,buff_listened_to_val,buff_shared_concern,buff_noticed_matt]]):
             if skill_success == True:
                 "The test was a success"
                 "Victory!"

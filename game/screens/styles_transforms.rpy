@@ -6,12 +6,12 @@ define game_white_color = "#c8c8c8"
 define game_white_selected = "#ffffff"
 define game_white_unhovered = "#afafaf"
 define game_white_inactive = "#4b4b4b"
-define game_dark_red_color = "#c73232"
+define game_dark_red_color = "#c76363"
 define game_black_color = "#191919"
 define game_orange_color = "#c74e32"
 define game_yellow_color = "#c79532"
-define game_cyan_color = "#c7b695"
-define game_green_color = "#63c763"
+define game_cyan_color = "#c7a663"
+define game_green_color = "#95c795"
 
 # Define recolorable base frames
 init python:
@@ -131,10 +131,12 @@ style dialogue_entry_success_text:
     font "GFX/fonts/vhs-gothic.ttf"
 
 style check_skill_text:
+    font "GFX/fonts/vhs-gothic.ttf"
     color game_green_color
     outlines [(1, "#000000", 0, 0)]
     hover_color game_green_color
     insensitive_color game_dark_red_color
+    size 20
 
 style select_button_text:
     color game_white_unhovered

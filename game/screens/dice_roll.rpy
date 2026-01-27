@@ -100,19 +100,12 @@ screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill, skill_buffs
                         yalign 0.5
                         xalign 0.5
                         spacing 10
-                        #bottom_margin 0
-                        default columns = 2
-                        for i in chunk(skill_buffs, columns):
-                            hbox:
-                                spacing 40
-                                align (0.5, 0.5)
-                                #yalign 0.5
-                                for buff in i:
-                                    if buff in available_skill_buffs:
-                                        if buff.value >= 0:
-                                            text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
-                                        else:
-                                            text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#dc2020" size 24
+                
+                        for buff in skill_buffs:
+                            if buff.value >= 0:
+                                text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
+                            else:
+                                text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#dc2020" size 24
 
                 text "-----------------" style "title_text" xalign 0.5 yalign 0.5
         frame:
@@ -217,17 +210,11 @@ screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs=[]):
                         spacing 10
                         #bottom_margin 0
                         default columns = 2
-                        for i in chunk(skill_buffs, columns):
-                            hbox:
-                                spacing 40
-                                align (0.5, 0.5)
-                                #yalign 0.5
-                                for buff in i:
-                                    if buff in available_skill_buffs:
-                                        if buff.value >= 0:
-                                            text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
-                                        else:
-                                            text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#dc2020" size 24
+                        for buff in skill_buffs:
+                            if buff.value >= 0:
+                                text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
+                            else:
+                                text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#dc2020" size 24
                                         
                 text "-----------------" style "title_text" xalign 0.5 yalign 0.5
         frame:

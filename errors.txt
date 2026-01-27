@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 126: The if statement is not a valid child of the button statement.
-    style "important_choice_button" if item_important else "menu_button"
-                                      ^
+File "game/screens/choice_menu.rpy", line 196: vbox expects a non-empty block.
+    if len(item_skill_roll) > 2 and item_skill_roll[2]:
+                                                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jan 27 02:45:09 2026
+Tue Jan 27 08:56:43 2026

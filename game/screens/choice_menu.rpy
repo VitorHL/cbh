@@ -152,102 +152,135 @@ screen choice(items):
                     action item.action
                 
                 # Choice content
-                hbox:
+                
+                    
+                vbox:
+                    #if item_skill_check or item_skill_roll:
+                    #    yalign 0.5
                     # Skill Roll indicator (inlined)
                     if item_skill_roll:
                         vbox:
                             #background None
-                            xsize 200
-                            frame xalign 0.5:
-                                style "skill_tile"
-                                ypadding 13
-                                xpadding 13
+                            #xsize 200
+                            xpos 38
+                    
+                            # Display roll chance
+                            python:
+                                # Calculate roll chance
+                                if len(item_skill_roll) > 2:
+                                    roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
+                                else:
+                                    roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1])
+                                
+                                # Build the display text
+                                skill_name = item_skill_roll[0].GetName().upper()
+                                
+                                if not roll_already_made:
+                                    roll_status = "{}%".format(roll_chance)
+                                elif roll_was_success:
+                                    roll_status = "{color=#63c763}SUCCESS!{/color}"
+                                else:
+                                    roll_status = "{color=#c73232}FAILED!{/color}"
+                            hbox:
                                 
                                 vbox:
-                                    text "-SKILL ROLL-" yalign 0.5 xalign 0.5 style "yellow_text" size 14
+                                    text "[skill_name] ROLL" style "dialogue_entry_important_text" size 14 color "#c7b695"
                                     
-                                    # Display active buffs for this roll
-                                    if len(item_skill_roll) > 2 and item_skill_roll[2]:
-                                        python:
-                                            active_buffs = [b for b in item_skill_roll[2] if b in available_skill_buffs]
+                                text ":" style "dialogue_entry_important_text" size 14 xalign 1.0 color "#c7b695"
+                                text  [roll_status] style "dialogue_entry_important_text" size 14 xalign 1.0
+                                text "([get_difficulty_descriptor(item_skill_roll[1])])" style "dialogue_entry_important_text" size 12 yalign 0.5 color Color(get_difficulty_color(item_skill_roll[1]))
+                                
+
+                            
+                            # Display active buffs for this roll
+                            if len(item_skill_roll) > 2 and item_skill_roll[2]:
+                                python:
+                                    active_buffs = [b for b in item_skill_roll[2] if b in available_skill_buffs]
+                                
+                                if active_buffs:
+                                    vbox:
+                                        xsize 724
+                                        spacing 2
                                         
-                                        if active_buffs:
-                                            vbox:
-                                                xalign 0.5
-                                                spacing 5
+                                        python:
+                                            # Better character width estimation
+                                            # Adjust multiplier based on your font (6-8 pixels per char is typical for size 12)
+                                            avg_char_width = 9  # Adjust this value
+                                            max_line_chars = int(724 / avg_char_width)
+                                            
+                                            lines = []
+                                            current_line = []
+                                            current_chars = 0
+                                            
+                                            for i, buff in enumerate(active_buffs):
+                                                sign = '+' if buff.value >= 0 else ''
+                                                buff_text = buff.GetName() + ":" + sign + str(buff.value)
                                                 
-                                                for buff_row in chunk(active_buffs, 2):
-                                                    hbox:
-                                                        spacing 40
-                                                        align (0.5, 0.5)
-                                                        
-                                                        for buff in buff_row:
-                                                            if buff.value >= 0:
-                                                                text "[buff.GetName()]: +[buff.value]":
-                                                                    yalign 0.5
-                                                                    xalign 0.5
-                                                                    style "dialogue_entry_text"
-                                                                    color "#0adc28"
-                                                                    size 14
-                                                            else:
-                                                                text "[buff.GetName()]: [buff.value]":
-                                                                    yalign 0.5
-                                                                    xalign 0.5
-                                                                    style "dialogue_entry_text"
-                                                                    color "#dc2020"
-                                                                    size 14
-                                    
-                                    # Display roll chance
-                                    if len(item_skill_roll) > 2:
-                                        $ roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
-                                    else:
-                                        $ roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1])
-                                    
-                                    text "< [item_skill_roll[0].GetName()!u]:[roll_chance]% >" yalign 0.5 xalign 0.5 style "yellow_text" size 16
-                        
+                                                # Count characters including comma and space
+                                                item_chars = len(buff_text)
+                                                if current_line:
+                                                    item_chars += 2  # ", "
+                                                
+                                                # Check if this buff fits on current line
+                                                # Leave some margin (10 chars) for safety
+                                                if current_line and current_chars + item_chars > max_line_chars - 10:
+                                                    lines.append(current_line[:])
+                                                    current_line = []
+                                                    current_chars = 0
+                                                
+                                                current_line.append((buff, buff.value >= 0))
+                                                current_chars += len(buff_text) + (2 if current_line else 0)
+                                            
+                                            if current_line:
+                                                lines.append(current_line)
+                                        
+                                        for line in lines:
+                                            hbox:
+                                                spacing 0
+                                                for j, (buff, is_positive) in enumerate(line):
+                                                    $ sign = '+' if buff.value >= 0 else ''
+                                                    $ color = "#63c763" if buff.value > 0 else "#c73232"
+                                                    
+                                                    if j > 0:
+                                                        text ", " style "dialogue_entry_important_text" size 12
+                                                    
+                                                    text "[buff.GetName()]:[sign][buff.value]":
+                                                        style "dialogue_entry_important_text"
+                                                        size 12
+                                                        color color
+            
                     # Skill Check indicator (inlined)
                     if item_skill_check:
                             vbox:
-                                #background None
-                                xsize 200
-                                frame:
-                                    xalign 0.5
-                                    style "skill_check_border"
-                                    
-                                    vbox:
-                                        text "-SKILL CHECK-" yalign 0.5 xalign 0.5 style "check_skill_text" size 14
-                                        
-                                        # Show current level vs required                                    
-                                        text "< [item_skill_check[0].GetName()!u]:[item_skill_check[0].level]/[item_skill_check[1]] >":
-                                            yalign 0.5
-                                            xalign 0.5
-                                            style "check_skill_text"
-                                            size 16
-                    
-                    vbox:
-                        if item_skill_check or item_skill_roll:
-                            yalign 0.5
-                        # Choice text
-                        frame:
-                            xfill True
-                            background None
-                            if choice_available:
+                                xsize 724  # Adjust to fit within your button width minus margins
+                                xpos 38
                                 hbox:
-                                    if roll_already_made:
-                                        if roll_was_success:
-                                            $ entry_text_style = "dialogue_entry_success_text"
-                                        else:
-                                            $ entry_text_style = "dialogue_entry_failed_text"
+                                    # Show current level vs required                                    
+                                    text "[item_skill_check[0].GetName()!u] CHECK: [item_skill_check[0].level]/[item_skill_check[1]]" size 14 style "check_skill_text"
+                                    if choice_available == True:
+                                        text "(SUCCESS)" style "dialogue_entry_important_text" size 12 yalign 0.5 color "#63c763"
                                     else:
-                                        $ entry_text_style = "dialogue_entry_text"
-
-                                    text "> " style entry_text_style
-                                    text "[item.caption]" style entry_text_style
-
+                                        text "(FAILED)" style "dialogue_entry_important_text" size 12 yalign 0.5 color "#c73232"
+                    # Choice text
+                    frame:
+                        xfill True
+                        background None
+                    
+                        hbox:
+                            if roll_already_made:
+                                if roll_was_success:
+                                    $ entry_text_style = "dialogue_entry_success_text"
+                                else:
+                                    $ entry_text_style = "dialogue_entry_failed_text"
                             else:
-                                text "< LOCKED >" style "dialogue_entry_text" xalign 0.15 yalign 0.5 size 38
-                        if item_important == True:
-                            text "ADVANCE >>>" style "dialogue_entry_important_text" size 14 xpos 38
+                                $ entry_text_style = "dialogue_entry_text"
+
+                            text "> " style entry_text_style
+                            $ choice_caption = "[item.caption]" if choice_available else "???"
+                            text [choice_caption] style entry_text_style
+                    
+                    if item_important == True:
+                        text "ADVANCE >>>" style "dialogue_entry_important_text" size 14 xpos 38 color game_yellow_color
 
 ################################################################################
 ## Choice Talks Screen (for character conversations)

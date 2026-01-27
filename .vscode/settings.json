@@ -141,6 +141,24 @@
                 "settings": {
                     "foreground": "#dc2020"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#c73232",
+                "settings": {
+                    "foreground": "#c73232"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#63c763",
+                "settings": {
+                    "foreground": "#63c763"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#c7b695",
+                "settings": {
+                    "foreground": "#c7b695"
+                }
             }
         ]
     }
