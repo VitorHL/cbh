@@ -317,7 +317,7 @@ label val_broadcast_conversation:
         "\"Val, we've talked about this...\"":
             Val "I know, I know, you think it's just radio interference. But this is different, Daniel. This is really different."
             
-        "Listen carefully" (skill_roll=[skill_acuity, 10]):
+        "Listen carefully" (skill_roll=[skill_acuity, 8]):
             if skill_success:
                 "You focus on Val's words, but also on her body language. The way she keeps touching her bag. The slight tremor in her hands."
                 "This isn't her usual enthusiasm. She's scared."
@@ -340,7 +340,7 @@ label val_broadcast_conversation:
             "She glances at Matt's booth."
             Val "I made you a copy. It's in the tape I gave you."
             
-        "\"Have you told anyone else?\"" (skill_roll=[skill_inquiry, 12]):
+        "\"Have you told anyone else?\"" (skill_roll=[skill_inquiry, 10]):
             if skill_success:
                 Val "I... tried calling my contact at the university. The one who studies radio phenomena."
                 Val "He didn't pick up."
@@ -409,7 +409,7 @@ label char_claire_small_talk(character):
             Claire "Just... watchful. Writing things down. He does that sometimes when he's working on something."
             "She shrugs, but the gesture seems forced."
             
-        "\"You seem tired.\"" (skill_roll=[skill_communion, 10, [buff_shared_concern]]):
+        "\"You seem tired.\"" (skill_roll=[skill_communion, 8, [buff_shared_concern]]):
             if skill_success:
                 show Claire front_shy happy
                 Claire "Is it that obvious?"
@@ -466,7 +466,7 @@ label claire_talk_matt(character):
             Claire "He's my partner. We have to be."
             "Something in her tone suggests that's not quite the whole truth."
             
-        "\"Does he always take so many notes?\"" (skill_roll=[skill_insight, 12, [buff_noticed_matt]]):
+        "\"Does he always take so many notes?\"" (skill_roll=[skill_insight, 10, [buff_noticed_matt]]):
             # Note: buff_noticed_matt is NEGATIVE, making this harder if Matt caught you watching
             if skill_success:
                 show Claire front_shy happy
@@ -495,7 +495,7 @@ label claire_talk_relationship(character):
     "The word hangs between you like something fragile."
     
     menu:
-        "\"I've been thinking about... where we stand.\"" (skill_roll=[skill_sentiment, 14, [buff_shared_concern, buff_coffee_offered]]):
+        "\"I've been thinking about... where we stand.\"" (skill_roll=[skill_sentiment, 10, [buff_shared_concern, buff_coffee_offered]]):
             if skill_success:
                 show Claire front_shy happy
                 Claire "Me too."
@@ -604,7 +604,7 @@ label kitchen_strange_noise:
     "Something else."
     
     menu:
-        "Investigate the freezer" (skill_roll=[skill_resolve, 10]):
+        "Investigate the freezer" (skill_roll=[skill_resolve, 8]):
             if skill_success:
                 "You approach the freezer door. The handle is cold—colder than it should be."
                 "You pull it open."
@@ -688,7 +688,7 @@ label boss_evening_call:
     Boss "Just put it in the storeroom and forget you ever saw it."
     
     menu:
-        "\"What kind of delivery?\"" (skill_roll=[skill_inquiry, 15]):
+        "\"What kind of delivery?\"" (skill_roll=[skill_inquiry, 12]):
             if skill_success:
                 Boss "..."
                 "A long pause. Unusual for him."
@@ -745,7 +745,7 @@ label end_late_shift:
         "Close up early and go to Val's" (important=True):
             "The Boss will be furious. But some things are more important than deliveries you're not supposed to ask about."
             
-        "Check the storeroom one more time" (skill_roll=[skill_acuity, 12]):
+        "Check the storeroom one more time" (skill_roll=[skill_acuity, 10]):
             if skill_success:
                 "You push open the storeroom door."
                 "Everything is where it should be. Except..."

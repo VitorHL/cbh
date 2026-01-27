@@ -3,26 +3,6 @@
 While running game code:
   File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 97, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 110, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 212, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 97, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 110, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 219, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 97, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 92, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 121, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 173, in script call
-    call char_conversation_list(character)
   File "game/script.rpy", line 121, in script call
     $ generate_character_talks(character)
   File "game/script.rpy", line 186, in script
@@ -43,43 +23,19 @@ While running game code:
     if item_skill_roll:
   File "game/screens/choice_menu.rpy", line 162, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 196, in execute
-    if len(item_skill_roll) > 2 and item_skill_roll[2]:
-  File "game/screens/choice_menu.rpy", line 200, in execute
-    if active_buffs:
-  File "game/screens/choice_menu.rpy", line 201, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 205, in execute
+  File "game/screens/choice_menu.rpy", line 168, in execute
     python:
-  File "game/screens/choice_menu.rpy", line 222, in <module>
-    from renpy.text.textsupport import DispText
-ImportError: cannot import name 'DispText' from 'renpy.text.textsupport' (built-in)
+  File "game/screens/choice_menu.rpy", line 171, in <module>
+    roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
+  File "game/core/skills.rpy", line 90, in rollchance
+    for buff in skill_buffs:
+TypeError: 'skill_check_buff' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
     call screen character_interaction(char_gia)
-  File "game/script.rpy", line 97, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 110, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 212, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 97, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 110, in script call
-    $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
-  File "game/script.rpy", line 219, in script call
-    call show_char_item(mode,character,selected_slot)
-  File "game/script.rpy", line 97, in script call
-    call screen inventory_screen(mode, character, selected_slot)
-  File "game/script.rpy", line 92, in script call
-    call screen character_interaction(character)
-  File "game/script.rpy", line 121, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 173, in script call
-    call char_conversation_list(character)
   File "game/script.rpy", line 121, in script call
     $ generate_character_talks(character)
   File "game/script.rpy", line 186, in script
@@ -126,19 +82,15 @@ Full traceback:
     if item_skill_roll:
   File "game/screens/choice_menu.rpy", line 162, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 196, in execute
-    if len(item_skill_roll) > 2 and item_skill_roll[2]:
-  File "game/screens/choice_menu.rpy", line 200, in execute
-    if active_buffs:
-  File "game/screens/choice_menu.rpy", line 201, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 205, in execute
+  File "game/screens/choice_menu.rpy", line 168, in execute
     python:
-  File "game/screens/choice_menu.rpy", line 222, in <module>
-    from renpy.text.textsupport import DispText
-ImportError: cannot import name 'DispText' from 'renpy.text.textsupport' (built-in)
+  File "game/screens/choice_menu.rpy", line 171, in <module>
+    roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
+  File "game/core/skills.rpy", line 90, in rollchance
+    for buff in skill_buffs:
+TypeError: 'skill_check_buff' object is not iterable
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Jan 27 09:12:29 2026
+Tue Jan 27 12:29:53 2026

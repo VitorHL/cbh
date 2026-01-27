@@ -123,12 +123,12 @@ label char_conversation_list(character):
 
 
 
-label skill_test_label(total, difficulty, dice1, dice2, dice3, skill, skill_buffs=[]):
-    show screen dice_roll_anim(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
+label skill_test_label(total, difficulty, dice1, dice2, skill, skill_buffs=[]):
+    show screen dice_roll_anim(total, difficulty, dice1, dice2, skill, skill_buffs)
     pause 1.5
     hide screen dice_roll_anim
-    $ add_xp(xp_per_skill_roll,xp_gain_skill_test_loc)
-    show screen dice_roll(total, difficulty, dice1, dice2, dice3, skill,skill_buffs)
+    $ add_xp(xp_per_skill_roll, xp_gain_skill_test_loc)
+    show screen dice_roll(total, difficulty, dice1, dice2, skill, skill_buffs)
     pause
     hide screen dice_roll
     return

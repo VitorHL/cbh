@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 196: vbox expects a non-empty block.
-    if len(item_skill_roll) > 2 and item_skill_roll[2]:
-                                                       ^
+File "game/core/skills.rpy", line 63: expected an indented block
+    if skill_buff not in store.available_skill_buffs and skill_buff not in store.used_skill_buffs:
+     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jan 27 08:56:43 2026
+Tue Jan 27 12:24:40 2026
