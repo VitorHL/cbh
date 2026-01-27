@@ -29,12 +29,34 @@ init python:
         """
         global skill_rolls_made
         skill_rolls_made[roll_id] = roll_result
+        
+        # Debug output
+        print("=" * 50)
+        print("SKILL ROLL REGISTERED")
+        print(f"  Roll ID: {roll_id}")
+        print(f"  Result: {roll_result}")
+        print(f"  All rolls: {skill_rolls_made}")
+        print("=" * 50)
 
     def generate_choice_id(caption, skill, difficulty):
         """
         Generates a unique identifier for a skill check/roll based on its properties.
         """
-        return (caption, skill.GetName(), difficulty)
+        choice_id = (caption, skill.GetName(), difficulty)
+        
+        # Debug output
+        print("-" * 50)
+        print("CHOICE ID GENERATED")
+        print(f"  Caption: {caption}")
+        print(f"  Skill: {skill.GetName()}")
+        print(f"  Difficulty: {difficulty}")
+        print(f"  Generated ID: {choice_id}")
+        print(f"  ID in skill_rolls_made: {choice_id in skill_rolls_made}")
+        if choice_id in skill_rolls_made:
+            print(f"  Stored result: {skill_rolls_made[choice_id]}")
+        print("-" * 50)
+        
+        return choice_id
 
 # Track which skill checks have already awarded XP (persists across saves)
 default awarded_skill_checks = set()
@@ -66,6 +88,12 @@ screen choice(items):
             
             # Check if the item is marked as important choice
             $ item_important = item.kwargs.get("important", False)
+
+            # Generate roll_id early if it's a skill roll
+            $ roll_id = generate_choice_id(item.caption, item_skill_roll[0], item_skill_roll[1]) if item_skill_roll else None
+            # Check if this roll was already made
+            $ roll_already_made = roll_id in skill_rolls_made if roll_id else False
+            $ roll_was_success = skill_rolls_made.get(roll_id) if roll_already_made else None
             
             # Determine if this choice should be available and handle XP
             python:
@@ -80,8 +108,8 @@ screen choice(items):
                     check_id = generate_choice_id(item.caption, item_skill_check[0], item_skill_check[1])
                     award_skill_check_xp_once(check_id)
                 # Skill rolls can be limited based on previous rolls
-                elif item_skill_roll:
-                    roll_id = generate_choice_id(item.caption, item_skill_roll[0], item_skill_roll[1])
+                #elif item_skill_roll:
+                #    roll_id = generate_choice_id(item.caption, item_skill_roll[0], item_skill_roll[1])
                 #    choice_available = roll_id not in skill_rolls_made or item_skill_roll_mode >= 1
             
             button:
@@ -89,8 +117,11 @@ screen choice(items):
                 xsize 800
                 selected False
                 sensitive choice_available
-                if item_important:
-                    style "important_choice_button"
+                if roll_already_made:
+                    if roll_was_success:
+                        style "choice_success_menu_button"
+                    else:
+                        style "choice_failed_menu_button"
                 else:
                     style "choice_menu_button"
                 
@@ -101,13 +132,13 @@ screen choice(items):
                         if len(item_skill_roll) > 2:
                             # Roll with buffs
                             action [
-                                Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1], item_skill_roll[2]),
+                                Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1], item_skill_roll[2], roll_id),
                                 item.action
                             ]
                         else:
                             # Roll without buffs
                             action [
-                                Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1]),
+                                Function(game_skill_roll, item_skill_roll[0], item_skill_roll[1], [], roll_id),
                                 item.action
                             ]
                     else:
@@ -202,16 +233,17 @@ screen choice(items):
                             background None
                             if choice_available:
                                 hbox:
-                                    text "> ":
-                                        if item_important:
-                                            style "dialogue_entry_text"
+                                    if roll_already_made:
+                                        if roll_was_success:
+                                            $ entry_text_style = "dialogue_entry_success_text"
                                         else:
-                                            style "dialogue_entry_text"
-                                    text "[item.caption]": 
-                                        if item_important:
-                                            style "dialogue_entry_text"
-                                        else:
-                                            style "dialogue_entry_text"
+                                            $ entry_text_style = "dialogue_entry_failed_text"
+                                    else:
+                                        $ entry_text_style = "dialogue_entry_text"
+
+                                    text "> " style entry_text_style
+                                    text "[item.caption]" style entry_text_style
+
                             else:
                                 text "< LOCKED >" style "dialogue_entry_text" xalign 0.15 yalign 0.5 size 38
                         if item_important == True:

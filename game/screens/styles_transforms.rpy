@@ -112,6 +112,24 @@ style dialogue_entry_important_text:
     size 20
     font "GFX/fonts/vhs-gothic.ttf"
 
+style dialogue_entry_failed_text:
+    color game_dark_red_color
+    outlines [(1, "#000000", 0, 0)]
+    hover_color game_dark_red_color
+    insensitive_color game_dark_red_color
+    adjust_spacing False
+    size 20
+    font "GFX/fonts/vhs-gothic.ttf"
+
+style dialogue_entry_success_text:
+    color game_green_color
+    outlines [(1, "#000000", 0, 0)]
+    hover_color game_green_color
+    insensitive_color game_green_color
+    adjust_spacing False
+    size 20
+    font "GFX/fonts/vhs-gothic.ttf"
+
 style check_skill_text:
     color game_green_color
     outlines [(1, "#000000", 0, 0)]
@@ -191,6 +209,24 @@ style important_choice_button:
     background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_unhovered, base_alpha=0.5)
     hover_background layered_frame(border_image = "gui/tiles/tile_bracket.webp",border_color=game_white_color, base_alpha=0.75)
     insensitive_background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_white_inactive, base_alpha=0.5)
+    xpadding 20
+    ypadding 10
+
+style choice_failed_menu_button:
+    hover_sound "audio/menu_hover.wav"
+    activate_sound "audio/menu_select.wav"
+    background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_dark_red_color, base_alpha=0.5)
+    hover_background layered_frame(border_image = "gui/tiles/tile_bracket.webp",border_color=game_dark_red_color, base_alpha=0.75)
+    insensitive_background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_dark_red_color, base_alpha=0.5)
+    xpadding 20
+    ypadding 10
+
+style choice_success_menu_button:
+    hover_sound "audio/menu_hover.wav"
+    activate_sound "audio/menu_select.wav"
+    background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_green_color, base_alpha=0.5)
+    hover_background layered_frame(border_image = "gui/tiles/tile_bracket.webp",border_color=game_green_color, base_alpha=0.75)
+    insensitive_background layered_frame(border_image = "gui/tiles/tile_bracket.webp", border_color=game_green_color, base_alpha=0.5)
     xpadding 20
     ypadding 10
 

@@ -47,7 +47,7 @@ init python:
         # Record the Result
         register_skill_roll_result(roll_id, roll_result)
 
-        renpy.call("skill_test_label", total, difficulty, dice1, dice2, dice3, skill,skill_buffs )
+        renpy.call_in_new_context("skill_test_label", total, difficulty, dice1, dice2, dice3, skill,skill_buffs )
 
 ##########################
 

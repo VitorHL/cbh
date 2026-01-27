@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label storeroom_label is defined twice, at File "game/scenes/locations/edgars_diner.rpy", line 20:
-label storeroom_label:
-and File "game/scenes/test_scenes/late_shift.rpy", line 911:
-label storeroom_label:
-
+File "game/screens/choice_menu.rpy", line 126: The if statement is not a valid child of the button statement.
+    style "important_choice_button" if item_important else "menu_button"
+                                      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jan 25 03:48:10 2026
+Tue Jan 27 02:45:09 2026

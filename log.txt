@@ -1,22 +1,21 @@
-2026-01-27 04:30:10 UTC
+2026-01-27 04:55:02 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
 Early init took 0.08s
 Loading error handling took 0.04s
-Loading script took 0.24s
+Loading script took 0.38s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.05s
+Running init code took 0.06s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.05s
+Initial gc took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -24,116 +23,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.40s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 30, in script
-    menu:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 134, in menu
-    rv = renpy.store.menu(new_items)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 424, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1182, in event
-    return handle_click(self.clicked)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1103, in handle_click
-    rv = run(action)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 394, in run
-    new_rv = run(i, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 401, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00action_other.rpy", line 619, in __call__
-    rv = self.callable(*self.args, **self.kwargs)
-  File "game/core/skills.rpy", line 48, in game_skill_roll
-    register_skill_roll_result([roll_id, roll_result])
-  File "game/screens/choice_menu.rpy", line 31, in register_skill_roll_result
-    skill_rolls_made[roll_id] = roll_result
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\revertable.py", line 90, in do_mutation
-    return method(self, *args, **kwargs)
-TypeError: unhashable type: 'RevertableList'
-
-While running game code:
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 30, in script
-    menu:
-  File "renpy/common/00action_other.rpy", line 619, in __call__
-    rv = self.callable(*self.args, **self.kwargs)
-  File "game/core/skills.rpy", line 48, in game_skill_roll
-    register_skill_roll_result([roll_id, roll_result])
-  File "game/screens/choice_menu.rpy", line 31, in register_skill_roll_result
-    skill_rolls_made[roll_id] = roll_result
-TypeError: unhashable type: 'RevertableList'
-Resetting cache.
-Early init took 167.20s
-Loading error handling took 0.03s
-Loading script took 0.17s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
 Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.43s
+Interface start took 0.41s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -145,10 +42,217 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ("I don't know much about the boss either.", 'communion', 14)
+  Result: False
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
 Resetting cache.
-Early init took 303.89s
-Loading error handling took 0.02s
-Loading script took 0.20s
+Early init took 2544.00s
+Loading error handling took 0.04s
+Loading script took 0.27s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -171,11 +275,11 @@ Build styles took 0.01s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.45s
+Interface start took 0.44s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -187,17 +291,141 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  Result: False
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False, ("Hey, don't speak about Val like that!", 'inquiry', 18): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
 Resetting cache.
-Early init took 325.33s
+Early init took 2737.02s
 Loading error handling took 0.02s
-Loading script took 0.17s
+Loading script took 0.22s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -206,10 +434,10 @@ Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.06s
+Dump and make backups took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.08s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -220,8 +448,294 @@ Build styles took 0.01s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
+Prepare screens took 0.13s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.43s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  Result: True
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False, ("Hey, don't speak about Val like that!", 'inquiry', 18): False, ('I would prefer to not say my reasons.', 'acuity', 5): True}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+Resetting cache.
+Early init took 3007.26s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/screens/choice_menu.rpy", line 126: The if statement is not a valid child of the button statement.
+    style "important_choice_button" if item_important else "menu_button"
+                                      ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3045.09s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.41s
@@ -236,13 +750,280 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  Result: True
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False, ("Hey, don't speak about Val like that!", 'inquiry', 18): False, ('I would prefer to not say my reasons.', 'acuity', 5): True, ("I don't have time for it, just say where you left it.", 'sentiment', 14): True}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
 Resetting cache.
-Early init took 358.80s
+Early init took 3532.15s
 Loading error handling took 0.02s
-Loading script took 0.19s
+Loading script took 0.18s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.04s
+Running init code took 0.05s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
@@ -262,11 +1043,11 @@ Build styles took 0.01s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.12s
+Prepare screens took 0.11s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.50s
+Interface start took 0.46s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -278,3 +1059,1300 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+Can't find a place to rollback to. Not rolling back.
+Can't find a place to rollback to. Not rolling back.
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ("I don't know much about the boss either.", 'communion', 14)
+  Result: False
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  Result: False
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False, ("I don't have time for it, just say where you left it.", 'sentiment', 14): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  Result: True
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False, ("I don't have time for it, just say where you left it.", 'sentiment', 14): False, ('I would prefer to not say my reasons.', 'acuity', 5): True}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  Result: False
+  All rolls: {("I don't know much about the boss either.", 'communion', 14): False, ("I don't have time for it, just say where you left it.", 'sentiment', 14): False, ('I would prefer to not say my reasons.', 'acuity', 5): True, ("Hey, don't speak about Val like that!", 'inquiry', 18): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: About the milkshake sack...
+  Skill: inquiry
+  Difficulty: 3
+  Generated ID: ('About the milkshake sack...', 'inquiry', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't know much about the boss either.
+  Skill: communion
+  Difficulty: 14
+  Generated ID: ("I don't know much about the boss either.", 'communion', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I don't have time for it, just say where you left it.
+  Skill: sentiment
+  Difficulty: 14
+  Generated ID: ("I don't have time for it, just say where you left it.", 'sentiment', 14)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I would prefer to not say my reasons.
+  Skill: acuity
+  Difficulty: 5
+  Generated ID: ('I would prefer to not say my reasons.', 'acuity', 5)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Hey, don't speak about Val like that!
+  Skill: inquiry
+  Difficulty: 18
+  Generated ID: ("Hey, don't speak about Val like that!", 'inquiry', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I want to still discuss it though.
+  Skill: sentiment
+  Difficulty: 18
+  Generated ID: ('I want to still discuss it though.', 'sentiment', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('I want to still discuss it though.', 'sentiment', 18)
+  Result: False
+  All rolls: {('I want to still discuss it though.', 'sentiment', 18): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I want to still discuss it though.
+  Skill: sentiment
+  Difficulty: 18
+  Generated ID: ('I want to still discuss it though.', 'sentiment', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I want to still discuss it though.
+  Skill: sentiment
+  Difficulty: 18
+  Generated ID: ('I want to still discuss it though.', 'sentiment', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I want to still discuss it though.
+  Skill: sentiment
+  Difficulty: 18
+  Generated ID: ('I want to still discuss it though.', 'sentiment', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I want to still discuss it though.
+  Skill: sentiment
+  Difficulty: 18
+  Generated ID: ('I want to still discuss it though.', 'sentiment', 18)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
