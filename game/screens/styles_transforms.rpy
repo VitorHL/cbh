@@ -11,6 +11,7 @@ define game_black_color = "#191919"
 define game_orange_color = "#c74e32"
 define game_yellow_color = "#c79532"
 define game_cyan_color = "#c7a663"
+define game_cyan_color = "#c7a663"
 define game_green_light_color = "#95c795"
 
 define game_red_strong_color = "#c73232"
@@ -177,7 +178,7 @@ style desc_text:
 
 style title_text:
     size 50
-    color "#ffffff"
+    color game_white_color
     outlines [(2, game_black_color, 0, 0)]
 
 style vhs_gothic:

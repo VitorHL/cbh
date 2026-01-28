@@ -49,6 +49,7 @@ image grain_effect:
 label  before_main_menu:
     show grain_effect onlayer effect_overlay
     show image "gui/overlay/scanlines.webp" onlayer effect_overlay
+    #show image "gui/overlay/screen_overlay.webp" onlayer effect_overlay
 return
 
 label  after_load:
@@ -57,11 +58,12 @@ label  after_load:
 return
 
 label start:
-    $set_room( room_daniel_apartment )
+    #$set_room( room_daniel_apartment )
     show screen vhs_overlay
     show image "gui/overlay/vignette.webp" onlayer vignette
     show image "gui/overlay/scanlines.webp" onlayer effect_overlay
     show grain_effect onlayer effect_overlay
+    #show image "gui/overlay/screen_overlay.webp" onlayer effect_overlay
     #show screen top_bar
     $ game_iventory.append(burgar)
     $ game_iventory.append(fries)
@@ -83,7 +85,7 @@ label start_skills:
     jump start_skills
 
 label start_test_scenario:
-    jump daniel_apartment_label
+    jump test_scenario_setup
 
 ###################################################################################################################################################
 # System Labels

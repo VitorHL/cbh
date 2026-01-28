@@ -45,9 +45,9 @@ screen dice_roll_anim(total, difficulty, dice1, dice2, skill, skill_buffs):
             style "black_tile_75"
             ypadding 0
             xalign 0.5
-            xsize 515
-            vbox:
-                text "-----------------" style "title_text" xalign 0.5 yalign 0.5
+            xsize 385
+            vbox xalign 0.5:
+                text "-------------" style "title_text" xalign 0.5 yalign 0.5
                 hbox:
                     spacing 7
                     xalign 0.5
@@ -75,21 +75,21 @@ screen dice_roll_anim(total, difficulty, dice1, dice2, skill, skill_buffs):
                     frame:
                         ysize 30
                         background None
-                        text "[skill_tag_dict[skill.GetName()]]:[skill.level]" style "title_text" color "#dc910a" xalign 0.5 yalign 0.5
+                        text "[skill_tag_dict[skill.GetName()]]:[skill.level]" style "title_text" color game_yellow_color xalign 0.5 yalign 0.5
 
-                if len(skill_buffs) > 0 and any(skill in available_skill_buffs for skill in skill_buffs):    
+                if len(skill_buffs) > 0 and any(buff in available_skill_buffs for buff in skill_buffs):    
                     vbox:
                         yalign 0.5
                         xalign 0.5
                         spacing 10
-                
                         for buff in skill_buffs:
-                            if buff.value >= 0:
-                                text "[buff.GetName()]: +[buff.value]" ypos 10 xalign 0.5 style "title_text" color "#0adc28" size 24
-                            else:
-                                text "[buff.GetName()]: [buff.value]" ypos 10 xalign 0.5 style "title_text" color "#dc2020" size 24
+                            if buff in available_skill_buffs:
+                                if buff.value >= 0:
+                                    text "[buff.GetName()]:+[buff.value]" ypos 15 xalign 0.5 style "vhs_gothic" color game_green_strong_color size 16
+                                else:
+                                    text "[buff.GetName()]:[buff.value]" ypos 15 xalign 0.5 style "vhs_gothic" color game_red_strong_color size 16
 
-                text "-----------------" style "title_text" xalign 0.5 yalign 0.5
+                text "-------------" style "title_text" xalign 0.5 yalign 0.5
         frame:
             style "black_tile_border_75"
             ypos 10
@@ -147,7 +147,7 @@ screen dice_roll(total, difficulty, dice1, dice2, skill, skill_buffs=[]):
             ypadding 0
             xalign 0.5
             xsize 385
-            vbox xalign 0.5:
+            vbox xalign 0.5 :
                 text "-------------" style "title_text" xalign 0.5 yalign 0.5
                 hbox:
                     spacing 7
@@ -184,16 +184,17 @@ screen dice_roll(total, difficulty, dice1, dice2, skill, skill_buffs=[]):
                 elif is_boxcars:
                     text "BOXCARS - AUTO SUCCESS!" style "title_text" color game_green_strong_color size 20 xalign 0.5
                 
-                if len(skill_buffs) > 0 and any(skill in available_skill_buffs for skill in skill_buffs):    
+                if len(skill_buffs) > 0 and any(buff in available_skill_buffs for buff in skill_buffs):    
                     vbox:
                         yalign 0.5
                         xalign 0.5
                         spacing 10
                         for buff in skill_buffs:
-                            if buff.value >= 0:
-                                text "[buff.GetName()]:+[buff.value]" ypos 10 xalign 0.5 style "vhs_gothic" color game_green_strong_color size 16
-                            else:
-                                text "[buff.GetName()]:[buff.value]" ypos 10 xalign 0.5 style "vhs_gothic" color game_red_strong_color size 16
+                            if buff in available_skill_buffs:
+                                if buff.value >= 0:
+                                    text "[buff.GetName()]:+[buff.value]" ypos 15 xalign 0.5 style "vhs_gothic" color game_green_strong_color size 16
+                                else:
+                                    text "[buff.GetName()]:[buff.value]" ypos 15 xalign 0.5 style "vhs_gothic" color game_red_strong_color size 16
                                         
                 text "-------------" style "title_text" xalign 0.5 yalign 0.5
         frame:
@@ -210,9 +211,9 @@ screen dice_roll(total, difficulty, dice1, dice2, skill, skill_buffs=[]):
                     ysize 60
                     background None
                     if total >= difficulty and not is_snake_eyes:
-                        text "{:02d}".format(total) style "title_text" color "#0adc28" size 60 at dice_result_final xalign 0.5 yalign 0.5
+                        text "{:02d}".format(total) style "title_text" color game_green_strong_color size 60 at dice_result_final xalign 0.5 yalign 0.5
                     else:
-                        text "{:02d}".format(total) style "title_text" color "#dc2020" size 60 at dice_result_final xalign 0.5 yalign 0.5
+                        text "{:02d}".format(total) style "title_text" color game_red_strong_color size 60 at dice_result_final xalign 0.5 yalign 0.5
                 frame:
                     xsize 60
                     ysize 60

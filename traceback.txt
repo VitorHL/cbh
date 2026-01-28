@@ -1,96 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 121, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 186, in script
-    menu:
-  File "game/screens/choice_menu.rpy", line 70, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 70, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 78, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 83, in execute
-    for item in items:
-  File "game/screens/choice_menu.rpy", line 115, in execute
-    button:
-  File "game/screens/choice_menu.rpy", line 157, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 161, in execute
-    if item_skill_roll:
-  File "game/screens/choice_menu.rpy", line 162, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 168, in execute
-    python:
-  File "game/screens/choice_menu.rpy", line 171, in <module>
-    roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
-  File "game/core/skills.rpy", line 90, in rollchance
-    for buff in skill_buffs:
-TypeError: 'skill_check_buff' object is not iterable
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 58, in script
+    $ run_interaction(kitchen_interaction)
+  File "game/scenes/locations/daniel_apartment.rpy", line 58, in <module>
+    $ run_interaction(kitchen_interaction)
+  File "game/core/interactions.rpy", line 33, in run_interaction
+    if not available_interactions or interaction_to_run in available_interactions:
+NameError: name 'available_interactions' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/locations/daniel_apartment.rpy", line 24, in script call
-    call screen character_interaction(char_gia)
-  File "game/script.rpy", line 121, in script call
-    $ generate_character_talks(character)
-  File "game/script.rpy", line 186, in script
-    menu:
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1632, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 134, in menu
-    rv = renpy.store.menu(new_items)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\menuexports.py", line 424, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens/choice_menu.rpy", line 70, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 70, in execute
-    screen choice(items):
-  File "game/screens/choice_menu.rpy", line 78, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 83, in execute
-    for item in items:
-  File "game/screens/choice_menu.rpy", line 115, in execute
-    button:
-  File "game/screens/choice_menu.rpy", line 157, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 161, in execute
-    if item_skill_roll:
-  File "game/screens/choice_menu.rpy", line 162, in execute
-    vbox:
-  File "game/screens/choice_menu.rpy", line 168, in execute
-    python:
-  File "game/screens/choice_menu.rpy", line 171, in <module>
-    roll_chance = rollchance(item_skill_roll[0], item_skill_roll[1], item_skill_roll[2])
-  File "game/core/skills.rpy", line 90, in rollchance
-    for buff in skill_buffs:
-TypeError: 'skill_check_buff' object is not iterable
+  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
+    call daniel_apartment_label_menu
+  File "game/scenes/locations/daniel_apartment.rpy", line 58, in script
+    $ run_interaction(kitchen_interaction)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenes/locations/daniel_apartment.rpy", line 58, in <module>
+    $ run_interaction(kitchen_interaction)
+  File "game/core/interactions.rpy", line 33, in run_interaction
+    if not available_interactions or interaction_to_run in available_interactions:
+NameError: name 'available_interactions' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Jan 27 12:29:53 2026
+Tue Jan 27 13:44:05 2026

@@ -116,19 +116,20 @@ init python:
         Returns a difficulty descriptor based on DC for 2d6 system.
         """
         difficulty_ranges = [
-            (2, 5, "TRIVIAL"),      # Very easy
-            (6, 7, "EASY"),         # Easy  
-            (8, 9, "MODERATE"),     # Medium
-            (10, 11, "CHALLENGING"), # Hard
-            (12, 13, "DIFFICULT"),  # Very hard
-            (14, 16, "HEROIC"),     # Near impossible without buffs
+            (2, 6, "TRIVIAL"),      # Very easy
+            (7, 8, "EASY"),         # Easy  
+            (9, 10, "MODERATE"),     # Medium
+            (11, 12, "CHALLENGING"), # Hard
+            (13, 14, "HARD"),  # Very hard
+            (15, 16, "VERY HARD"),     # Near impossible without buffs
+            (17, 18, "EXTREME")
         ]
         
         for min_val, max_val, descriptor in difficulty_ranges:
             if min_val <= DC <= max_val:
                 return descriptor
         
-        return "IMPOSSIBLE" if DC > 16 else "TRIVIAL"
+        return "HEROIC" if DC > 16 else "TRIVIAL"
 
     def get_difficulty_color(DC):
         """
@@ -138,11 +139,13 @@ init python:
         
         color_map = {
             "TRIVIAL": "#95c795",
-            "EASY": "#a0c089",
-            "MODERATE": "#abb87d",
-            "CHALLENGING": "#b6af71",
-            "DIFFICULT": "#c1a665",
-            "HEROIC": "#c76363",
+            "EASY": "#9fc084",
+            "MODERATE": "#a9b973",
+            "CHALLENGING": "#b2b362",
+            "HARD": "#b59f6e",
+            "VERY HARD": "#c78254",
+            "EXTREME": "#c76363",
+            "HEROIC": "#c73232",
             "UNKNOWN": "#808080"  # gray fallback
         }
     
