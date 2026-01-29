@@ -170,16 +170,15 @@ style hover_button_text:
     insensitive_color game_white_inactive
 
 style desc_text:
-    font "GFX/fonts/video_cond_light.otf"
-    size 24
-    justify True 
-    kerning 1 
-    line_spacing 2
+    font "GFX/fonts/vhs-gothic.ttf"
+    size 14
+    #justify True 
+    outlines [(1, "#000000", 0, 0)]
 
 style title_text:
-    size 50
+    size 35
     color game_white_color
-    outlines [(2, game_black_color, 0, 0)]
+    outlines [(1, "#000000", 0, 0)]
 
 style vhs_gothic:
     adjust_spacing False
@@ -285,6 +284,12 @@ style black_tile_hollow:
     xpadding 10
     ypadding 10
 
+style black_tile_hollow_transparent:
+    background layered_frame( base_image="gui/tiles/black_tile_hollow_transparent.webp", base_alpha=0.75 )
+    #background Frame("gui/tiles/black_tile_hollow_transparent.webp", 20, 20,)
+    xpadding 10
+    ypadding 10
+
 style black_tile_border:
     background layered_frame()
     xpadding 20
@@ -316,7 +321,6 @@ style black_tile_border_75:
     ypadding 10
 
 style border_white:
-    background Frame("gui/tiles/border_white.webp", 7, 7)
+    background Transform(Frame("gui/tiles/tile_border.webp", 20, 20), matrixcolor=TintMatrix(game_white_color))
     xpadding 10
     ypadding 10
-

@@ -18,6 +18,11 @@ init python:
         def GetQuote(self):
             return get_var_suffix(self, "quote")
 
+        def GetQuoteSource(self):
+            return get_var_suffix(self, "source")
+
+        def GetIcon(self):
+            return get_var_suffix(self, "icon")
 ########################
 
     def game_skill_roll(skill, difficulty, skill_buffs = [], roll_id=None):

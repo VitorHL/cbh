@@ -1,46 +1,122 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in script
-    $ run_interaction(kitchen_interaction)
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in <module>
-    $ run_interaction(kitchen_interaction)
-  File "game/core/interactions.rpy", line 33, in run_interaction
-    if not available_interactions or interaction_to_run in available_interactions:
-NameError: name 'available_interactions' is not defined
+  File "game/script.rpy", line 84, in script
+    call screen skill_screen_start
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/screens/start_screen.rpy", line 58, in execute
+    screen skill_screen_start():
+  File "game/screens/start_screen.rpy", line 58, in execute
+    screen skill_screen_start():
+  File "game/screens/start_screen.rpy", line 74, in execute
+    vbox xalign 0.5 yalign 0.5:
+  File "game/screens/start_screen.rpy", line 80, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 82, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 86, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 123, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 125, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 129, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 140, in execute
+    frame ysize 332:
+  File "game/screens/start_screen.rpy", line 142, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 144, in execute
+    for skill in game_skills[3:]:
+  File "game/screens/start_screen.rpy", line 145, in execute
+    button:
+  File "game/screens/start_screen.rpy", line 155, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 156, in execute
+    frame:
+  File "game/screens/start_screen.rpy", line 161, in execute
+    image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())) xalign 0.5 yalign 0.5 at select_image
+Exception: DynamicImage "gui/attributes/['skill_resolve']_icon.webp": could not find image. ('gui/attributes/skill_resolve_icon.webp')
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/locations/daniel_apartment.rpy", line 26, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 61, in script call
-    call daniel_apartment_label_menu
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in script
-    $ run_interaction(kitchen_interaction)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scenes/locations/daniel_apartment.rpy", line 58, in <module>
-    $ run_interaction(kitchen_interaction)
-  File "game/core/interactions.rpy", line 33, in run_interaction
-    if not available_interactions or interaction_to_run in available_interactions:
-NameError: name 'available_interactions' is not defined
+  File "game/script.rpy", line 84, in script
+    call screen skill_screen_start
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/start_screen.rpy", line 58, in execute
+    screen skill_screen_start():
+  File "game/screens/start_screen.rpy", line 58, in execute
+    screen skill_screen_start():
+  File "game/screens/start_screen.rpy", line 74, in execute
+    vbox xalign 0.5 yalign 0.5:
+  File "game/screens/start_screen.rpy", line 80, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 82, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 86, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 123, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 125, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 129, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 140, in execute
+    frame ysize 332:
+  File "game/screens/start_screen.rpy", line 142, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 144, in execute
+    for skill in game_skills[3:]:
+  File "game/screens/start_screen.rpy", line 145, in execute
+    button:
+  File "game/screens/start_screen.rpy", line 155, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 156, in execute
+    frame:
+  File "game/screens/start_screen.rpy", line 161, in execute
+    image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())) xalign 0.5 yalign 0.5 at select_image
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\sl2\sldisplayables.py", line 453, in sl2add
+    d = renpy.easy.displayable(d, scope=scope)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\easy.py", line 119, in displayable
+    return renpy.display.image.DynamicImage(d, scope=scope)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 598, in __init__
+    self.find_target(scope)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 683, in find_target
+    raise Exception(error)
+Exception: DynamicImage "gui/attributes/['skill_resolve']_icon.webp": could not find image. ('gui/attributes/skill_resolve_icon.webp')
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Tue Jan 27 13:44:05 2026
+Thu Jan 29 00:48:39 2026
