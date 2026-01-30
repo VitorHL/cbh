@@ -114,6 +114,8 @@ screen skill_screen_start():
                                             xfill True
                                             ysize 250
                                             style "select_button_border"
+                                            if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])):
+                                                            image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 #at select_image
                                         frame:
                                             xfill True
                                             ysize 50
@@ -154,11 +156,13 @@ screen skill_screen_start():
                                                 action [SetScreenVariable("selected_skill", skill)]
                                                 vbox:
                                                     frame:
-                                                        xfill True
+                                                        xsize 238
                                                         ysize 250
                                                         style "select_button_border"
-                                                        if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals()))):
-                                                            image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())) xalign 0.5 yalign 0.5 at select_image 
+                                                        if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])) and selected_skill != skill:
+                                                            image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 at select_image
+                                                        if renpy.loadable("gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0])) and selected_skill == skill:
+                                                            image "gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 #at skill_anim
                                                     frame:
                                                         xfill True
                                                         ysize 50

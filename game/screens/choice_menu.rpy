@@ -273,7 +273,7 @@ screen choice(items):
                                 else:
                                     $ entry_text_style = "dialogue_entry_failed_text"
                             else:
-                                $ entry_text_style = "dialogue_entry_text"
+                                $ entry_text_style = "select_button_text"
 
                             text "> " style entry_text_style
                             $ choice_caption = "[item.caption]" if choice_available else "???"
@@ -342,9 +342,9 @@ screen character_interaction(character):
         yalign 0.5
         
         # Character name header
-        frame:
-            background Transform(Frame("gui/tiles/white_tile.webp", 3, 3))
-            text "[character.name!u]" size 45 xalign 0.5 yalign 0.5 color "#000000"
+        frame style "white_tile":
+            xpadding 40
+            text "[character.name!u]" size 45 xalign 0.5 yalign 0.5 color game_black_color font "GFX/fonts/vhs-gothic.ttf"
         
         # Interaction buttons
         vbox spacing 10:
@@ -355,11 +355,11 @@ screen character_interaction(character):
                 activate_sound "audio/menu_select.wav"
                 action Call(character.small_talk_game_label, character)
                 hbox spacing 5:
-                    frame xsize 64 ysize 64:
+                    frame xsize 80 ysize 80:
                         style "hover_button"
-                    frame xsize 320 ysize 64:
+                    frame xsize 340 ysize 80:
                         style "hover_button"
-                        text "SMALL TALK" yalign 0.5 size 45 style "dialogue_entry_text"
+                        text "SMALL TALK" yalign 0.5 size 50 style "select_button_text"
             
             # Conversation button
             button:
@@ -372,7 +372,7 @@ screen character_interaction(character):
                         style "hover_button"
                     frame xsize 320 ysize 64:
                         style "hover_button"
-                        text "CONVERSATION" yalign 0.5 size 45 style "dialogue_entry_text"
+                        text "CONVERSATION" yalign 0.5 size 45 style "select_button_text"
             
             # Show Item button
             button:
@@ -385,7 +385,7 @@ screen character_interaction(character):
                         style "hover_button"
                     frame xsize 320 ysize 64:
                         style "hover_button"
-                        text "SHOW ITEM" yalign 0.5 size 45 style "dialogue_entry_text"
+                        text "SHOW ITEM" yalign 0.5 size 45 style "select_button_text"
             
             # Go Back button
             button:
@@ -398,7 +398,7 @@ screen character_interaction(character):
                         style "hover_button"
                     frame xsize 320 ysize 64:
                         style "hover_button"
-                        text "< GO BACK" yalign 0.5 size 45 style "dialogue_entry_text"
+                        text "< GO BACK" yalign 0.5 size 45 style "select_button_text"
 
 ################################################################################
 ## Inventory Screen
@@ -548,7 +548,7 @@ screen inventory_screen(mode=0, character=None, selected_slot=None):
                                 else:
                                     action Return()
                                 
-                                text "< GO BACK" yalign 0.5 style "dialogue_entry_text"
+                                text "< GO BACK" yalign 0.5 style "select_button_text"
                             
                             # Inspect/Show button
                             button:
@@ -562,8 +562,8 @@ screen inventory_screen(mode=0, character=None, selected_slot=None):
                                 if mode == 0:
                                     if slot_value is not None:
                                         action Call(game_iventory[slot_value].game_label)
-                                    text "INSPECT" yalign 0.5 style "dialogue_entry_text"
+                                    text "INSPECT" yalign 0.5 style "select_button_text"
                                 else:
                                     if slot_value is not None:
                                         action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
-                                    text "SHOW" yalign 0.5 style "dialogue_entry_text"
+                                    text "SHOW" yalign 0.5 style "select_button_text"

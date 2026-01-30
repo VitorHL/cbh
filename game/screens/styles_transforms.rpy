@@ -61,7 +61,18 @@ init python:
             fit_first=True
         )
 
-
+transform skill_anim:
+    yalign 0.45
+    rotate -2.5
+    parallel:
+        ease 1.25 rotate 2.5
+        ease 1.25 rotate -2.
+        ease 1.25 rotate 2.5
+        ease 1.25 rotate -2.5
+    parallel:
+        ease 2.5 yalign 0.55
+        ease 2.5 yalign 0.45
+    repeat
 
 # Screen Transforms -------------------------------------------------------
 
@@ -273,6 +284,11 @@ style select_border:
     xpadding 20
 
 # Screen Styles -------------------------------------------------------
+
+style white_tile:
+    background Frame("gui/tiles/white_tile.webp", 20, 20,)
+    xpadding 10
+    ypadding 10
 
 style black_tile:
     background Frame("gui/tiles/black_tile.webp", 20, 20,)

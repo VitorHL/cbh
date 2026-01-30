@@ -17,27 +17,27 @@ While running game code:
     fixed:
   File "game/screens/start_screen.rpy", line 86, in execute
     vbox:
-  File "game/screens/start_screen.rpy", line 123, in execute
-    hbox:
   File "game/screens/start_screen.rpy", line 125, in execute
-    fixed:
-  File "game/screens/start_screen.rpy", line 129, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 140, in execute
-    frame ysize 332:
-  File "game/screens/start_screen.rpy", line 142, in execute
     hbox:
-  File "game/screens/start_screen.rpy", line 144, in execute
-    for skill in game_skills[3:]:
-  File "game/screens/start_screen.rpy", line 145, in execute
-    button:
-  File "game/screens/start_screen.rpy", line 155, in execute
+  File "game/screens/start_screen.rpy", line 127, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 131, in execute
     vbox:
-  File "game/screens/start_screen.rpy", line 156, in execute
+  File "game/screens/start_screen.rpy", line 142, in execute
+    frame ysize 332:
+  File "game/screens/start_screen.rpy", line 144, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 146, in execute
+    for skill in game_skills[3:]:
+  File "game/screens/start_screen.rpy", line 147, in execute
+    button:
+  File "game/screens/start_screen.rpy", line 157, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 158, in execute
     frame:
-  File "game/screens/start_screen.rpy", line 161, in execute
-    image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())) xalign 0.5 yalign 0.5 at select_image
-Exception: DynamicImage "gui/attributes/['skill_resolve']_icon.webp": could not find image. ('gui/attributes/skill_resolve_icon.webp')
+  File "game/screens/start_screen.rpy", line 162, in execute
+    if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])):
+TypeError: 'game_skill' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -86,37 +86,31 @@ Full traceback:
     fixed:
   File "game/screens/start_screen.rpy", line 86, in execute
     vbox:
-  File "game/screens/start_screen.rpy", line 123, in execute
-    hbox:
   File "game/screens/start_screen.rpy", line 125, in execute
-    fixed:
-  File "game/screens/start_screen.rpy", line 129, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 140, in execute
-    frame ysize 332:
-  File "game/screens/start_screen.rpy", line 142, in execute
     hbox:
-  File "game/screens/start_screen.rpy", line 144, in execute
-    for skill in game_skills[3:]:
-  File "game/screens/start_screen.rpy", line 145, in execute
-    button:
-  File "game/screens/start_screen.rpy", line 155, in execute
+  File "game/screens/start_screen.rpy", line 127, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 131, in execute
     vbox:
-  File "game/screens/start_screen.rpy", line 156, in execute
+  File "game/screens/start_screen.rpy", line 142, in execute
+    frame ysize 332:
+  File "game/screens/start_screen.rpy", line 144, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 146, in execute
+    for skill in game_skills[3:]:
+  File "game/screens/start_screen.rpy", line 147, in execute
+    button:
+  File "game/screens/start_screen.rpy", line 157, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 158, in execute
     frame:
-  File "game/screens/start_screen.rpy", line 161, in execute
-    image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())) xalign 0.5 yalign 0.5 at select_image
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\sl2\sldisplayables.py", line 453, in sl2add
-    d = renpy.easy.displayable(d, scope=scope)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\easy.py", line 119, in displayable
-    return renpy.display.image.DynamicImage(d, scope=scope)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 598, in __init__
-    self.find_target(scope)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\image.py", line 683, in find_target
-    raise Exception(error)
-Exception: DynamicImage "gui/attributes/['skill_resolve']_icon.webp": could not find image. ('gui/attributes/skill_resolve_icon.webp')
+  File "game/screens/start_screen.rpy", line 162, in execute
+    if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\sl2\slast.py", line 1234, in execute
+    d = transform(d)
+TypeError: 'game_skill' object is not callable
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Thu Jan 29 00:48:39 2026
+Thu Jan 29 08:37:57 2026
