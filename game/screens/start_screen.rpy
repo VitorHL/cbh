@@ -111,11 +111,13 @@ screen skill_screen_start():
                                     action [SetScreenVariable("selected_skill", skill)]
                                     vbox:
                                         frame:
-                                            xfill True
+                                            xsize 238
                                             ysize 250
                                             style "select_button_border"
-                                            if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])):
-                                                            image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 #at select_image
+                                            if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])) and selected_skill != skill:
+                                                image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 at select_image
+                                            if renpy.loadable("gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0])) and selected_skill == skill:
+                                                image "gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 #at skill_anim
                                         frame:
                                             xfill True
                                             ysize 50
@@ -123,52 +125,46 @@ screen skill_screen_start():
                                             $ current_skill = skill.level + skill.invested
                                             text "[skill.GetName()!u]:[current_skill]" xalign 0.5 style "select_button_text" size 29 ypos 17
                     hbox:
-                        spacing 20
-                        fixed:
-                            #background None
-                            ysize 775
-                            xsize 760
-                            vbox:
-                                hbox:
-                                    frame:
-                                        style "black_tile_border"
-                                        xsize 60
-                                        ysize 60
-                                    frame:
-                                        style "black_tile_underline"
-                                        xfill True
-                                        ysize 60
-                                        text "EMOTIONAL" style "title_text" yalign 0.25
-                                frame ysize 332:
-                                    style "black_tile_hollow_transparent"
-                                    hbox:
-                                        spacing -5
-                                        for skill in game_skills[3:]:
-                                            button:
-                                                xsize 250
-                                                ysize 300
-                                                #yalign 0.5
-                                                #xalign 0.5
-                                                hover_sound "audio/menu_hover.wav"
-                                                activate_sound "audio/menu_select.wav"
-                                                sensitive True
-                                                selected selected_skill == skill
-                                                action [SetScreenVariable("selected_skill", skill)]
-                                                vbox:
-                                                    frame:
-                                                        xsize 238
-                                                        ysize 250
-                                                        style "select_button_border"
-                                                        if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])) and selected_skill != skill:
-                                                            image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 at select_image
-                                                        if renpy.loadable("gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0])) and selected_skill == skill:
-                                                            image "gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 #at skill_anim
-                                                    frame:
-                                                        xfill True
-                                                        ysize 50
-                                                        style "select_button"
-                                                        $ current_skill = skill.level + skill.invested
-                                                        text "[skill.GetName()!u]:[current_skill]" xalign 0.5 style "select_button_text" size 29 ypos 17
+                        frame:
+                            style "black_tile_border"
+                            xsize 60
+                            ysize 60
+                        frame:
+                            style "black_tile_underline"
+                            xfill True
+                            ysize 60
+                            text "EMOTIONAL" style "title_text" yalign 0.25
+                    frame ysize 332:
+                        style "black_tile_hollow_transparent"
+                        hbox:
+                            spacing -5
+                            for skill in game_skills[3:]:
+                                button:
+                                    xsize 250
+                                    ysize 300
+                                    #yalign 0.5
+                                    #xalign 0.5
+                                    hover_sound "audio/menu_hover.wav"
+                                    activate_sound "audio/menu_select.wav"
+                                    sensitive True
+                                    selected selected_skill == skill
+                                    action [SetScreenVariable("selected_skill", skill)]
+                                    vbox:
+                                        frame:
+                                            xsize 238
+                                            ysize 250
+                                            style "select_button_border"
+                                            if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])) and selected_skill != skill:
+                                                image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 at select_image
+                                            if renpy.loadable("gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0])) and selected_skill == skill:
+                                                image "gui/attributes/{}_icon_selected.webp".format(get_var_name(skill,globals())[0]) xalign 0.5 yalign 0.5 #at skill_anim
+                                        frame:
+                                            xfill True
+                                            ysize 50
+                                            style "select_button"
+                                            $ current_skill = skill.level + skill.invested
+                                            text "[skill.GetName()!u]:[current_skill]" xalign 0.5 style "select_button_text" size 29 ypos 17
+        
             vbox:
                 xsize 384
                 hbox:

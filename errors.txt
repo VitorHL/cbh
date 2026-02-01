@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/start_screen.rpy", line 161: Line is indented, but the preceding style statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    image "gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())) xalign 0.5 yalign 0.5 at select_image 
-    ^
+File "game/screens/start_screen.rpy", line 125: hbox expects a non-empty block.
+    hbox:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jan 29 00:48:31 2026
+Fri Jan 30 22:03:06 2026
