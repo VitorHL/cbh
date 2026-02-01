@@ -5149,3 +5149,69 @@ SKILL ROLL REGISTERED
   Result: True
   All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True, ('"Lights? What kind?"', 'inquiry', 8): False, ('"Does he always take so many notes?"', 'insight', 10): False, ('"I\'ve been thinking about... where we stand."', 'sentiment', 10): True, ('I want to still discuss it though.', 'sentiment', 18): True}
 ==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: I want to still discuss it though.
+  Skill: sentiment
+  Difficulty: 18
+  Generated ID: ('I want to still discuss it though.', 'sentiment', 18)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "You seem tired."
+  Skill: communion
+  Difficulty: 8
+  Generated ID: ('"You seem tired."', 'communion', 8)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Does he always take so many notes?"
+  Skill: insight
+  Difficulty: 10
+  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
+  ID in skill_rolls_made: True
+  Stored result: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "I've been thinking about... where we stand."
+  Skill: sentiment
+  Difficulty: 10
+  Generated ID: ('"I\'ve been thinking about... where we stand."', 'sentiment', 10)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "I've been thinking about... where we stand."
+  Skill: sentiment
+  Difficulty: 10
+  Generated ID: ('"I\'ve been thinking about... where we stand."', 'sentiment', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Does he always take so many notes?"
+  Skill: insight
+  Difficulty: 10
+  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Lights? What kind?"
+  Skill: inquiry
+  Difficulty: 8
+  Generated ID: ('"Lights? What kind?"', 'inquiry', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s

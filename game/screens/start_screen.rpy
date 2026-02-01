@@ -260,8 +260,6 @@ screen skill_screen_start():
 
 screen skills():
     tag menu
-    
-    default selected_skill = None
 
     use game_menu(_("Skills"), scroll=None):
         
