@@ -197,6 +197,10 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
+        # ADD THIS LINE - Skills menu button (only show in game, not main menu)
+        if not main_menu:
+            textbutton _("Skills") action ShowMenu("skills")
+
         textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
@@ -229,7 +233,7 @@ style navigation_button:
     properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
-    properties gui.button_text_properties("navigation_button")
+    properties gui.text_properties("navigation_button")
 
 
 ## Main Menu screen ############################################################

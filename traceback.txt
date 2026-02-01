@@ -1,59 +1,57 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 84, in script
-    call screen skill_screen_start
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens/start_screen.rpy", line 58, in execute
-    screen skill_screen_start():
-  File "game/screens/start_screen.rpy", line 58, in execute
-    screen skill_screen_start():
-  File "game/screens/start_screen.rpy", line 74, in execute
-    vbox xalign 0.5 yalign 0.5:
-  File "game/screens/start_screen.rpy", line 80, in execute
-    hbox:
-  File "game/screens/start_screen.rpy", line 82, in execute
-    fixed:
-  File "game/screens/start_screen.rpy", line 86, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 125, in execute
-    hbox:
-  File "game/screens/start_screen.rpy", line 127, in execute
-    fixed:
-  File "game/screens/start_screen.rpy", line 131, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 142, in execute
-    frame ysize 332:
-  File "game/screens/start_screen.rpy", line 144, in execute
-    hbox:
-  File "game/screens/start_screen.rpy", line 146, in execute
-    for skill in game_skills[3:]:
-  File "game/screens/start_screen.rpy", line 147, in execute
-    button:
-  File "game/screens/start_screen.rpy", line 157, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 158, in execute
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/screens/start_screen.rpy", line 261, in execute
+    screen skills():
+  File "game/screens/start_screen.rpy", line 261, in execute
+    screen skills():
+  File "game/screens/start_screen.rpy", line 266, in execute
+    use game_menu(_("Skills"), scroll=None):
+  File "game/screens.rpy", line 310, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 310, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 319, in execute
     frame:
-  File "game/screens/start_screen.rpy", line 162, in execute
-    if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])):
-TypeError: 'game_skill' object is not callable
+  File "game/screens.rpy", line 322, in execute
+    hbox:
+  File "game/screens.rpy", line 328, in execute
+    frame:
+  File "game/screens.rpy", line 331, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 362, in execute
+    transclude
+  File "game/screens/start_screen.rpy", line 266, in execute
+    use game_menu(_("Skills"), scroll=None):
+  File "game/screens/start_screen.rpy", line 273, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 275, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 278, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 285, in execute
+    frame:
+  File "game/screens/start_screen.rpy", line 285, in keywords
+    frame:
+  File "game/screens/start_screen.rpy", line 287, in <module>
+    xfill true
+NameError: name 'true' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 84, in script
-    call screen skill_screen_start
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
@@ -74,43 +72,43 @@ Full traceback:
     self.update()
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/screens/start_screen.rpy", line 58, in execute
-    screen skill_screen_start():
-  File "game/screens/start_screen.rpy", line 58, in execute
-    screen skill_screen_start():
-  File "game/screens/start_screen.rpy", line 74, in execute
-    vbox xalign 0.5 yalign 0.5:
-  File "game/screens/start_screen.rpy", line 80, in execute
-    hbox:
-  File "game/screens/start_screen.rpy", line 82, in execute
-    fixed:
-  File "game/screens/start_screen.rpy", line 86, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 125, in execute
-    hbox:
-  File "game/screens/start_screen.rpy", line 127, in execute
-    fixed:
-  File "game/screens/start_screen.rpy", line 131, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 142, in execute
-    frame ysize 332:
-  File "game/screens/start_screen.rpy", line 144, in execute
-    hbox:
-  File "game/screens/start_screen.rpy", line 146, in execute
-    for skill in game_skills[3:]:
-  File "game/screens/start_screen.rpy", line 147, in execute
-    button:
-  File "game/screens/start_screen.rpy", line 157, in execute
-    vbox:
-  File "game/screens/start_screen.rpy", line 158, in execute
+  File "game/screens/start_screen.rpy", line 261, in execute
+    screen skills():
+  File "game/screens/start_screen.rpy", line 261, in execute
+    screen skills():
+  File "game/screens/start_screen.rpy", line 266, in execute
+    use game_menu(_("Skills"), scroll=None):
+  File "game/screens.rpy", line 310, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 310, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 319, in execute
     frame:
-  File "game/screens/start_screen.rpy", line 162, in execute
-    if renpy.loadable("gui/attributes/{}_icon.webp".format(get_var_name(skill,globals())[0])):
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\sl2\slast.py", line 1234, in execute
-    d = transform(d)
-TypeError: 'game_skill' object is not callable
+  File "game/screens.rpy", line 322, in execute
+    hbox:
+  File "game/screens.rpy", line 328, in execute
+    frame:
+  File "game/screens.rpy", line 331, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 362, in execute
+    transclude
+  File "game/screens/start_screen.rpy", line 266, in execute
+    use game_menu(_("Skills"), scroll=None):
+  File "game/screens/start_screen.rpy", line 273, in execute
+    vbox:
+  File "game/screens/start_screen.rpy", line 275, in execute
+    fixed:
+  File "game/screens/start_screen.rpy", line 278, in execute
+    hbox:
+  File "game/screens/start_screen.rpy", line 285, in execute
+    frame:
+  File "game/screens/start_screen.rpy", line 285, in keywords
+    frame:
+  File "game/screens/start_screen.rpy", line 287, in <module>
+    xfill true
+NameError: name 'true' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 dice test 1.0
-Thu Jan 29 08:37:57 2026
+Sun Feb  1 08:56:41 2026

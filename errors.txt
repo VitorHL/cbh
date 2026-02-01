@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/start_screen.rpy", line 125: hbox expects a non-empty block.
-    hbox:
-         ^
+File "game/screens/start_screen.rpy", line 299: end of line expected.
+    text "[player_xp]" style "title_text" xalign 0.5: size 24
+                                                      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jan 30 22:03:06 2026
+Sun Feb  1 09:03:08 2026
