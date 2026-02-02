@@ -300,3 +300,360 @@ CHOICE ID GENERATED
   Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
   ID in skill_rolls_made: False
 --------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Better than answering domestics on Maple."
+  Skill: insight
+  Difficulty: 3
+  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Better than answering domestics on Maple."
+  Skill: insight
+  Difficulty: 3
+  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Better than answering domestics on Maple."
+  Skill: insight
+  Difficulty: 3
+  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+Resetting cache.
+Early init took 1113.61s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.13s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.51s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Is this about the broadcast?"
+  Skill: inquiry
+  Difficulty: 2
+  Generated ID: ('"Is this about the broadcast?"', 'inquiry', 2)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Is this about the broadcast?"
+  Skill: inquiry
+  Difficulty: 2
+  Generated ID: ('"Is this about the broadcast?"', 'inquiry', 2)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Is this about the broadcast?"
+  Skill: inquiry
+  Difficulty: 2
+  Generated ID: ('"Is this about the broadcast?"', 'inquiry', 2)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Is this about the broadcast?"
+  Skill: inquiry
+  Difficulty: 2
+  Generated ID: ('"Is this about the broadcast?"', 'inquiry', 2)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Listen carefully
+  Skill: acuity
+  Difficulty: 8
+  Generated ID: ('Listen carefully', 'acuity', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: Listen carefully
+  Skill: acuity
+  Difficulty: 8
+  Generated ID: ('Listen carefully', 'acuity', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('Listen carefully', 'acuity', 8)
+  Result: True
+  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Play me the recording."
+  Skill: resolve
+  Difficulty: 3
+  Generated ID: ('"Play me the recording."', 'resolve', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Have you told anyone else?"
+  Skill: inquiry
+  Difficulty: 10
+  Generated ID: ('"Have you told anyone else?"', 'inquiry', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Play me the recording."
+  Skill: resolve
+  Difficulty: 3
+  Generated ID: ('"Play me the recording."', 'resolve', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Have you told anyone else?"
+  Skill: inquiry
+  Difficulty: 10
+  Generated ID: ('"Have you told anyone else?"', 'inquiry', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Play me the recording."
+  Skill: resolve
+  Difficulty: 3
+  Generated ID: ('"Play me the recording."', 'resolve', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Have you told anyone else?"
+  Skill: inquiry
+  Difficulty: 10
+  Generated ID: ('"Have you told anyone else?"', 'inquiry', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('"Have you told anyone else?"', 'inquiry', 10)
+  Result: False
+  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "You seem tired."
+  Skill: communion
+  Difficulty: 8
+  Generated ID: ('"You seem tired."', 'communion', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "You seem tired."
+  Skill: communion
+  Difficulty: 8
+  Generated ID: ('"You seem tired."', 'communion', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('"You seem tired."', 'communion', 8)
+  Result: True
+  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Lights? What kind?"
+  Skill: inquiry
+  Difficulty: 8
+  Generated ID: ('"Lights? What kind?"', 'inquiry', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Lights? What kind?"
+  Skill: inquiry
+  Difficulty: 8
+  Generated ID: ('"Lights? What kind?"', 'inquiry', 8)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('"Lights? What kind?"', 'inquiry', 8)
+  Result: True
+  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True, ('"Lights? What kind?"', 'inquiry', 8): True}
+==================================================
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Does he always take so many notes?"
+  Skill: insight
+  Difficulty: 10
+  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Does he always take so many notes?"
+  Skill: insight
+  Difficulty: 10
+  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Does he always take so many notes?"
+  Skill: insight
+  Difficulty: 10
+  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+==================================================
+SKILL ROLL REGISTERED
+  Roll ID: ('"Does he always take so many notes?"', 'insight', 10)
+  Result: False
+  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True, ('"Lights? What kind?"', 'inquiry', 8): True, ('"Does he always take so many notes?"', 'insight', 10): False}
+==================================================
+Resetting cache.
+Early init took 1777.80s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.57s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "You seem tired."
+  Skill: communion
+  Difficulty: 8
+  Generated ID: ('"You seem tired."', 'communion', 8)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "You seem tired."
+  Skill: communion
+  Difficulty: 8
+  Generated ID: ('"You seem tired."', 'communion', 8)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "You seem tired."
+  Skill: communion
+  Difficulty: 8
+  Generated ID: ('"You seem tired."', 'communion', 8)
+  ID in skill_rolls_made: True
+  Stored result: True
+--------------------------------------------------
+Resetting cache.
+Early init took 2908.32s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.51s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096

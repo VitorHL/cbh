@@ -278,7 +278,7 @@ screen skills():
                     frame xsize 110 ysize 110:
                         style "black_tile_border"
                         vbox xalign 0.5 yalign 0.5:
-                            text "LEVEL:" xalign 0.5 style "title_text" size 20 color game_yellow_color
+                            text "LEVEL" xalign 0.5 style "title_text" size 20 color game_yellow_color
                             text "{:02d}".format(player_level) xalign 0.5  style "title_text" size 50 color game_cyan_color
                     frame:
                         yalign 0.5
