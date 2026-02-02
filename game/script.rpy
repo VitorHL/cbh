@@ -23,6 +23,11 @@ default clean_mode = True
 
 default skill_success = False
 
+# Clock variables (saved with game)
+default clock_hours = 0
+default clock_minutes = 0
+default clock_seconds = 0
+
 image grain_effect:
     "gui/overlay/grain/grain_00.webp"
     pause 0.06

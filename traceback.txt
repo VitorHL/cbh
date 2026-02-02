@@ -1,114 +1,112 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "game/screens/start_screen.rpy", line 261, in execute
+After initialization, but before game start.
+  File "game/screens/start_screen.rpy", line 261, in prepare_screen
     screen skills():
-  File "game/screens/start_screen.rpy", line 261, in execute
+  File "game/screens/start_screen.rpy", line 261, in prepare
     screen skills():
-  File "game/screens/start_screen.rpy", line 266, in execute
-    use game_menu(_("Skills"), scroll=None):
-  File "game/screens.rpy", line 310, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 310, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 319, in execute
-    frame:
-  File "game/screens.rpy", line 322, in execute
-    hbox:
-  File "game/screens.rpy", line 328, in execute
-    frame:
-  File "game/screens.rpy", line 331, in execute
-    if scroll == "viewport":
-  File "game/screens.rpy", line 362, in execute
-    transclude
-  File "game/screens/start_screen.rpy", line 266, in execute
-    use game_menu(_("Skills"), scroll=None):
-  File "game/screens/start_screen.rpy", line 273, in execute
+  File "game/screens/start_screen.rpy", line 264, in prepare
+    use game_menu(_("Skills"), scroll=None, content_yalign=0.0):
+  File "game/screens/start_screen.rpy", line 264, in prepare
+    use game_menu(_("Skills"), scroll=None, content_yalign=0.0):
+  File "game/screens/start_screen.rpy", line 271, in prepare
     vbox:
-  File "game/screens/start_screen.rpy", line 275, in execute
+  File "game/screens/start_screen.rpy", line 271, in prepare
+    vbox:
+  File "game/screens/start_screen.rpy", line 273, in prepare
     fixed:
-  File "game/screens/start_screen.rpy", line 278, in execute
+  File "game/screens/start_screen.rpy", line 273, in prepare
+    fixed:
+  File "game/screens/start_screen.rpy", line 276, in prepare
     hbox:
-  File "game/screens/start_screen.rpy", line 285, in execute
+  File "game/screens/start_screen.rpy", line 276, in prepare
+    hbox:
+  File "game/screens/start_screen.rpy", line 283, in prepare
     frame:
-  File "game/screens/start_screen.rpy", line 285, in keywords
+  File "game/screens/start_screen.rpy", line 283, in prepare
     frame:
-  File "game/screens/start_screen.rpy", line 287, in <module>
-    xfill true
-NameError: name 'true' is not defined
+  File "game/screens/start_screen.rpy", line 287, in prepare
+    vbox:
+  File "game/screens/start_screen.rpy", line 287, in prepare
+    vbox:
+  File "game/screens/start_screen.rpy", line 305, in prepare
+    frame:
+  File "game/screens/start_screen.rpy", line 305, in prepare
+    frame:
+  File "game/screens/start_screen.rpy", line 309, in prepare
+    hbox:
+  File "game/screens/start_screen.rpy", line 309, in prepare
+    hbox:
+  File "game/screens/start_screen.rpy", line 313, in prepare
+    bar value player_xp range xp_progression[player_level + 1] xsize 550 ysize 10 yalign 0.5:
+  File "game/screens/start_screen.rpy", line 313, in prepare
+    bar value player_xp range xp_progression[player_level + 1] xsize 550 ysize 10 yalign 0.5:
+  File "game/screens/start_screen.rpy", line 314, in <module>
+    left_bar Solid([game_yellow_color])    # Filled portion (green)
+Exception: Not a color: ['#c79532']
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens/start_screen.rpy", line 261, in execute
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 1027, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens/start_screen.rpy", line 261, in prepare_screen
     screen skills():
-  File "game/screens/start_screen.rpy", line 261, in execute
+  File "game/screens/start_screen.rpy", line 261, in prepare
     screen skills():
-  File "game/screens/start_screen.rpy", line 266, in execute
-    use game_menu(_("Skills"), scroll=None):
-  File "game/screens.rpy", line 310, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 310, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 319, in execute
-    frame:
-  File "game/screens.rpy", line 322, in execute
-    hbox:
-  File "game/screens.rpy", line 328, in execute
-    frame:
-  File "game/screens.rpy", line 331, in execute
-    if scroll == "viewport":
-  File "game/screens.rpy", line 362, in execute
-    transclude
-  File "game/screens/start_screen.rpy", line 266, in execute
-    use game_menu(_("Skills"), scroll=None):
-  File "game/screens/start_screen.rpy", line 273, in execute
+  File "game/screens/start_screen.rpy", line 264, in prepare
+    use game_menu(_("Skills"), scroll=None, content_yalign=0.0):
+  File "game/screens/start_screen.rpy", line 264, in prepare
+    use game_menu(_("Skills"), scroll=None, content_yalign=0.0):
+  File "game/screens/start_screen.rpy", line 271, in prepare
     vbox:
-  File "game/screens/start_screen.rpy", line 275, in execute
+  File "game/screens/start_screen.rpy", line 271, in prepare
+    vbox:
+  File "game/screens/start_screen.rpy", line 273, in prepare
     fixed:
-  File "game/screens/start_screen.rpy", line 278, in execute
+  File "game/screens/start_screen.rpy", line 273, in prepare
+    fixed:
+  File "game/screens/start_screen.rpy", line 276, in prepare
     hbox:
-  File "game/screens/start_screen.rpy", line 285, in execute
+  File "game/screens/start_screen.rpy", line 276, in prepare
+    hbox:
+  File "game/screens/start_screen.rpy", line 283, in prepare
     frame:
-  File "game/screens/start_screen.rpy", line 285, in keywords
+  File "game/screens/start_screen.rpy", line 283, in prepare
     frame:
-  File "game/screens/start_screen.rpy", line 287, in <module>
-    xfill true
-NameError: name 'true' is not defined
+  File "game/screens/start_screen.rpy", line 287, in prepare
+    vbox:
+  File "game/screens/start_screen.rpy", line 287, in prepare
+    vbox:
+  File "game/screens/start_screen.rpy", line 305, in prepare
+    frame:
+  File "game/screens/start_screen.rpy", line 305, in prepare
+    frame:
+  File "game/screens/start_screen.rpy", line 309, in prepare
+    hbox:
+  File "game/screens/start_screen.rpy", line 309, in prepare
+    hbox:
+  File "game/screens/start_screen.rpy", line 313, in prepare
+    bar value player_xp range xp_progression[player_level + 1] xsize 550 ysize 10 yalign 0.5:
+  File "game/screens/start_screen.rpy", line 313, in prepare
+    bar value player_xp range xp_progression[player_level + 1] xsize 550 ysize 10 yalign 0.5:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens/start_screen.rpy", line 314, in <module>
+    left_bar Solid([game_yellow_color])    # Filled portion (green)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\imagelike.py", line 51, in __init__
+    self.color = renpy.easy.color(color)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\color.py", line 207, in __new__
+    raise Exception("Not a color: %r" % (color,))
+Exception: Not a color: ['#c79532']
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
-dice test 1.0
-Sun Feb  1 08:56:41 2026
+Coppernell Hill 1.0
+Mon Feb  2 05:59:59 2026

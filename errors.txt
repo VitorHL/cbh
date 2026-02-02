@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/start_screen.rpy", line 299: end of line expected.
-    text "[player_xp]" style "title_text" xalign 0.5: size 24
-                                                      ^
+File "game/screens/styles_transforms.rpy", line 13: expected statement.
+    game_yrllow_really_dark_color = "#403010"
+                                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Feb  1 09:03:08 2026
+Mon Feb  2 06:01:06 2026

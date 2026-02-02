@@ -273,7 +273,7 @@ screen choice(items):
                                 else:
                                     $ entry_text_style = "dialogue_entry_failed_text"
                             else:
-                                $ entry_text_style = "select_button_text"
+                                $ entry_text_style = "dialogue_entry_text"
 
                             text "> " style entry_text_style
                             $ choice_caption = "[item.caption]" if choice_available else "???"

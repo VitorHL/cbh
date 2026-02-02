@@ -4,6 +4,9 @@
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
 ## may want to uncomment them when appropriate.
 
+# Game Configuration
+define config.game_menu_action = ShowMenu('skills')
+
 
 ## Basics ######################################################################
 
@@ -12,7 +15,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("dice test")
+define config.name = _("Coppernell Hill")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -79,7 +82,7 @@ define config.exit_transition = dissolve
 
 ## Between screens of the game menu.
 
-define config.intra_transition = dissolve
+define config.intra_transition = None
 
 
 ## A transition that is used after a game has been loaded.

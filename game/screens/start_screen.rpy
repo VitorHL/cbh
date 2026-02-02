@@ -261,7 +261,7 @@ screen skill_screen_start():
 screen skills():
     tag menu
 
-    use game_menu(_("Skills"), scroll=None):
+    use game_menu(_("Skills"), scroll=None, content_yalign=0.0):
         
 
 
@@ -269,7 +269,7 @@ screen skills():
         # Literal Copy of the starting skill screen
         #############################################
         vbox:
-            spacing 20
+            spacing 10
             fixed:
                 xsize 760
                 ysize 110
@@ -310,7 +310,9 @@ screen skills():
                                     xalign 0.5
                                     spacing 10
                                     text "{:02d}%".format(int((player_xp / xp_progression[player_level + 1]) * 100)) size 20 style "title_text"
-                                    bar value player_xp range xp_progression[player_level + 1] xsize 550 ysize 10 yalign 0.5
+                                    bar value player_xp range xp_progression[player_level + 1] xsize 550 ysize 10 yalign 0.5:
+                                        left_bar Solid(game_yellow_color)    # Filled portion (green)
+                                        right_bar Solid(game_black_color)   # Empty portion (dark)
             default selected_skill = None
             default spent_skill_points = 0
             default selected_skill_level = None

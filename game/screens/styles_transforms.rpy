@@ -10,7 +10,7 @@ define game_red_light_color = "#c76363"
 define game_black_color = "#191919"
 define game_orange_color = "#c74e32"
 define game_yellow_color = "#c79532"
-define game_cyan_color = "#c7a663"
+define game_yrllow_really_dark_color = "#403010"
 define game_cyan_color = "#c7a663"
 define game_green_light_color = "#95c795"
 
@@ -162,6 +162,17 @@ style select_button_text:
     selected_outlines [(0, game_black_color, 0, 0)]
     insensitive_color game_white_inactive
 
+style pause_menu_button_text:
+    size 20
+    font "GFX/fonts/vhs-gothic.ttf"
+    color game_white_unhovered
+    outlines [(1, "#000000", 0, 0)]
+    hover_color game_white_selected
+    #hover_outlines [(0, game_black_color, 0, 0)]
+    selected_color game_black_color
+    selected_outlines [(0, game_black_color, 0, 0)]
+    insensitive_color game_white_inactive
+
 style yellow_text:
     color game_yellow_color 
     outlines [(1, "#000000", 0, 0)]
@@ -269,6 +280,16 @@ style select_button:
     selected_background layered_frame(border_color=game_black_color, border_image ="gui/tiles/tile_border_thin.webp", base_image="gui/tiles/white_tile.webp", base_alpha=0.9)
     # xpadding 15
     # ypadding 15
+
+style select_button_menu:
+    hover_sound "audio/menu_hover.wav"
+    activate_sound "audio/menu_select.wav"
+    background None
+    hover_background None
+    selected_background layered_frame(border_color=game_black_color, border_image ="gui/tiles/tile_border_thin.webp", base_image="gui/tiles/white_tile.webp", base_alpha=0.9)
+    xpadding 20
+    ypadding 15
+
 style select_button_border:
     background Frame("gui/tiles/black_tile_border.webp", 20, 20,)
     hover_background Frame("gui/tiles/black_tile_border_dark.webp", 20, 20)

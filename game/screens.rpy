@@ -307,72 +307,128 @@ style main_menu_version:
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
-screen game_menu(title, scroll=None, yinitial=0.0):
-
-    #   style_prefix "game_menu"
-
-    # if main_menu:
-    #     add gui.main_menu_background
-    # else:
-    #     add gui.game_menu_background
-
+screen game_menu(title, scroll=None, yinitial=0.0, content_yalign=0.5):
+    # content_yalign parameter lets each screen control its vertical position
+    
+    style_prefix "game_menu"
+    
+    # Full screen darkened background
     frame:
-        #style "game_menu_outer_frame"
-        background None
-        hbox:
-
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
-
-            frame:
-                style "game_menu_content_frame"
-
-                if scroll == "viewport":
-
-                    viewport:
-                        yinitial yinitial
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
-                        vbox:
-                            transclude
-
-                elif scroll == "vpgrid":
-
-                    vpgrid:
-                        cols 1
-                        yinitial yinitial
-
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
+        xfill True
+        yfill True
+        background Transform("black", alpha=0.7)
+    
+    # Main layout container
+    hbox:
+        xfill True
+        yfill True
+        
+        # Left side: Navigation panel
+        frame:
+            xsize 320
+            ysize 1016
+            background Frame("gui/tiles/black_tile_75.webp", 20, 20)
+            xpos 32
+            xpadding 20
+            ypadding 30
+            yalign 0.5
+            
+            vbox:
+                xalign 0.5
+                yalign 0.5
+                spacing 0
+                
+                text "<MENU>" style "text_title" xalign 0.5
+                text "------------" style "text_title" xalign 0.5
+                button style "select_button_menu" xsize 250:
+                    text ">ATTRIBUTES" style "pause_menu_button_text"
+                    action ShowMenu("skills")
+                button style "select_button_menu" xsize 250:
+                    text ">IVENTORY" style "pause_menu_button_text"
+                    #action ShowMenu("history")
+                button style "select_button_menu" xsize 250:
+                    text ">ENCYCLOPEDIA" style "pause_menu_button_text"
+                    #action ShowMenu("history")
+                button style "select_button_menu" xsize 250:
+                    text ">HISTORY" style "pause_menu_button_text"
+                    action ShowMenu("history")
+                text "------------" style "text_title" xalign 0.5
+                button style "select_button_menu" xsize 250:
+                    text ">SAVE" style "pause_menu_button_text"
+                    action ShowMenu("save")
+                button style "select_button_menu" xsize 250:
+                    text ">LOAD" style "pause_menu_button_text"
+                    action ShowMenu("load")
+                button style "select_button_menu" xsize 250:
+                    text ">OPTIONS" style "pause_menu_button_text"
+                    action ShowMenu("preferences")
+                text "------------" style "text_title" xalign 0.5
+                if _in_replay:
+                    textbutton _("End Replay") action EndReplay(confirm=True)
+                else:
+                    textbutton _("Main Menu") action MainMenu()
+                
+                textbutton _("Return") action Return()
+        
+        # Right side: Content area
+        frame:
+            style "game_menu_content_frame"
+            xfill True
+            yfill True
+            
+            if scroll == "viewport":
+                viewport:
+                    yinitial yinitial
+                    scrollbars "vertical"
+                    mousewheel True
+                    draggable True
+                    pagekeys True
+                    side_yfill True
+                    
+                    vbox:
+                        xalign 0.5
+                        transclude
+                        
+            elif scroll == "vpgrid":
+                vpgrid:
+                    cols 1
+                    yinitial yinitial
+                    scrollbars "vertical"
+                    mousewheel True
+                    draggable True
+                    pagekeys True
+                    side_yfill True
+                    
+                    transclude
+            
+            else:
+                # No scroll - this is where your skills screen goes
+                # Content can now be properly aligned
+                fixed:
+                    xfill True
+                    yfill True
+                    
+                    frame:
+                        background None
+                        xalign 0.5
+                        yalign content_yalign  # Uses the parameter!
+                        
                         transclude
 
-                else:
 
-                    transclude
+# Updated styles to match your VHS aesthetic
+style game_menu_navigation_frame:
+    xsize 320
+    ysize 1016
+    background Frame("gui/tiles/black_tile_75.webp", 20, 20)
+    xpos 32
+    xpadding 20
+    ypadding 30
 
-    use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
-
-    if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
-
+style game_menu_content_frame:
+    background None
+    xpadding 20
+    ypadding 20
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
@@ -392,15 +448,6 @@ style game_menu_outer_frame:
     top_padding 180
 
     background "gui/overlay/game_menu.png"
-
-style game_menu_navigation_frame:
-    xsize 420
-    yfill True
-
-style game_menu_content_frame:
-    left_margin 60
-    right_margin 30
-    top_margin 15
 
 style game_menu_viewport:
     xsize 1380
