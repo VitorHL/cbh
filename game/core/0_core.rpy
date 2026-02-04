@@ -34,3 +34,7 @@ init python:
                     renpy.show(character_sprite_basename + " " + " ".join(attrs_without_talk))
                     renpy.restart_interaction()
         return char_callback
+
+    # Function that ends a character reaction to an item
+    def end_char_reaction(character, item_slot):
+        renpy.call( "show_char_item", character, item_slot )

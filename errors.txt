@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/choice_menu.rpy", line 409: 'tag' is not a keyword argument or valid child of the screen statement.
-    tag menu
-       ^
+File "game/screens/inventory.rpy", line 51: expected a keyword argument, colon, or end of line.
+    frame "white_border" xsize 60 ysize 60
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Feb  4 03:51:27 2026
+Wed Feb  4 10:12:07 2026

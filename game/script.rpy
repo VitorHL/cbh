@@ -86,7 +86,7 @@ label choose_mode_label:
 
 label start_skills:
     #scene edgar_diner_bg with fade
-    call screen skill_screen_start   
+    call screen skills(True)   
     jump start_skills
 
 label start_test_scenario:
@@ -99,34 +99,27 @@ label char_interaction(character):
     call screen character_interaction(character)
     return
 
-label show_char_item(mode, character, selected_slot=None):
+label show_char_item(character, selected_slot=None):
     # Calls the iventory screen to show item to character either in the interaction menu or mid conversation
-    call screen inventory_screen(mode, character, selected_slot)
+    call screen inventory_screen(character, screen_mode = "show_item", selected_item=selected_slot)
     return
 
-
-
-label char_item_reaction(item, mode, character, selected_slot):
+label char_item_reaction(item, character, selected_slot):
     # Trigger the character reaction to the player showing a item
     if item in character.interested_items:
         if item in character.relevant_itens and character not in item.characters_shown:
             $ add_xp(xp_per_item_shown, xp_gain_shown_item_loc)
             $ item.characters_shown.append(character)
-        $ renpy.call( character.interested_items[item], character )# call character.interested_items(item)
+        $ renpy.call( character.interested_items[item], character, selected_slot )# call character.interested_items(item)
     else:
         #call character.generic _show_label
-        $ renpy.call (character.generic_show_label, character)
+        $ renpy.call (character.generic_show_label, character, selected_slot)
     return
     
-
-
-
 label char_conversation_list(character):
     # Generates a list of entries to the conversation tab
     $ generate_character_talks(character)
     return
-
-
 
 label skill_test_label(total, difficulty, dice1, dice2, skill, skill_buffs=[]):
     show screen dice_roll_anim(total, difficulty, dice1, dice2, skill, skill_buffs)

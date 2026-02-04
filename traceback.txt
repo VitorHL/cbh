@@ -5,25 +5,31 @@ While running game code:
     $ ui.interact()
   File "renpy/common/00gamemenu.rpy", line 174, in <module>
     $ ui.interact()
-  File "game/screens/choice_menu.rpy", line 407, in execute
-    screen inventory_screen(**kwargs):
-  File "game/screens/choice_menu.rpy", line 407, in execute
-    screen inventory_screen(**kwargs):
-  File "game/screens/choice_menu.rpy", line 421, in execute
-    hbox:
-  File "game/screens/choice_menu.rpy", line 462, in execute
+  File "game/screens/inventory.rpy", line 5, in execute
+    screen inventory_screen(character=None, **kwargs):
+  File "game/screens/inventory.rpy", line 5, in execute
+    screen inventory_screen(character=None, **kwargs):
+  File "game/screens/inventory.rpy", line 18, in execute
+    fixed yalign 0.5:
+  File "game/screens/inventory.rpy", line 25, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 511, in execute
-    if screen_mode != "default":
-  File "game/screens/choice_menu.rpy", line 517, in execute
-    if screen_mode == "show_item":
-  File "game/screens/choice_menu.rpy", line 518, in execute
-    button xfill True ysize 50 style "hover_button":
-  File "game/screens/choice_menu.rpy", line 518, in keywords
-    button xfill True ysize 50 style "hover_button":
-  File "game/screens/choice_menu.rpy", line 520, in <module>
-    action Hide(self)
-NameError: name 'self' is not defined
+  File "game/screens/inventory.rpy", line 26, in execute
+    hbox:
+  File "game/screens/inventory.rpy", line 28, in execute
+    frame background None xpadding 0 ypadding 0:
+  File "game/screens/inventory.rpy", line 30, in execute
+    vbox:
+  File "game/screens/inventory.rpy", line 41, in execute
+    frame style "black_tile_hollow_transparent" ysize 330 xfill True:
+  File "game/screens/inventory.rpy", line 42, in execute
+    hbox:
+  File "game/screens/inventory.rpy", line 44, in execute
+    frame style "black_tile_75" xfill true yfill true
+  File "game/screens/inventory.rpy", line 44, in keywords
+    frame style "black_tile_75" xfill true yfill true
+  File "game/screens/inventory.rpy", line 44, in <module>
+    frame style "black_tile_75" xfill true yfill true
+NameError: name 'true' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -56,27 +62,33 @@ Full traceback:
     self.update()
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/screens/choice_menu.rpy", line 407, in execute
-    screen inventory_screen(**kwargs):
-  File "game/screens/choice_menu.rpy", line 407, in execute
-    screen inventory_screen(**kwargs):
-  File "game/screens/choice_menu.rpy", line 421, in execute
-    hbox:
-  File "game/screens/choice_menu.rpy", line 462, in execute
+  File "game/screens/inventory.rpy", line 5, in execute
+    screen inventory_screen(character=None, **kwargs):
+  File "game/screens/inventory.rpy", line 5, in execute
+    screen inventory_screen(character=None, **kwargs):
+  File "game/screens/inventory.rpy", line 18, in execute
+    fixed yalign 0.5:
+  File "game/screens/inventory.rpy", line 25, in execute
     vbox:
-  File "game/screens/choice_menu.rpy", line 511, in execute
-    if screen_mode != "default":
-  File "game/screens/choice_menu.rpy", line 517, in execute
-    if screen_mode == "show_item":
-  File "game/screens/choice_menu.rpy", line 518, in execute
-    button xfill True ysize 50 style "hover_button":
-  File "game/screens/choice_menu.rpy", line 518, in keywords
-    button xfill True ysize 50 style "hover_button":
-  File "game/screens/choice_menu.rpy", line 520, in <module>
-    action Hide(self)
-NameError: name 'self' is not defined
+  File "game/screens/inventory.rpy", line 26, in execute
+    hbox:
+  File "game/screens/inventory.rpy", line 28, in execute
+    frame background None xpadding 0 ypadding 0:
+  File "game/screens/inventory.rpy", line 30, in execute
+    vbox:
+  File "game/screens/inventory.rpy", line 41, in execute
+    frame style "black_tile_hollow_transparent" ysize 330 xfill True:
+  File "game/screens/inventory.rpy", line 42, in execute
+    hbox:
+  File "game/screens/inventory.rpy", line 44, in execute
+    frame style "black_tile_75" xfill true yfill true
+  File "game/screens/inventory.rpy", line 44, in keywords
+    frame style "black_tile_75" xfill true yfill true
+  File "game/screens/inventory.rpy", line 44, in <module>
+    frame style "black_tile_75" xfill true yfill true
+NameError: name 'true' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 Coppernell Hill 1.0
-Wed Feb  4 03:52:19 2026
+Wed Feb  4 09:50:31 2026

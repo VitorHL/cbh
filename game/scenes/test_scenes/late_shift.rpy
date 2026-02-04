@@ -529,7 +529,7 @@ label claire_talk_relationship(character):
 # ITEM SHOWING LABELS (Character Reaction Tests)
 #=============================================================================
 
-label claire_shown_thermos(character):
+label claire_shown_thermos(character, item_slot=None):
     show Claire front_shy happy
     
     Claire "Oh! My thermos. I've been looking for that."
@@ -545,10 +545,10 @@ label claire_shown_thermos(character):
     # Remove from inventory
     $ game_iventory.remove(coffee_thermos)
     
-    call screen character_interaction(character)
+    $ end_char_reaction(character, item_slot)
     return
 
-label claire_shown_polaroid(character):
+label claire_shown_polaroid(character, item_slot=None):
     show Claire front_shy
     
     "Claire takes the polaroid, studying it with a cop's eye."
@@ -571,10 +571,10 @@ label claire_shown_polaroid(character):
     
     Claire "Be careful with that stuff, Daniel. Some things are better left alone."
     
-    call screen character_interaction(character)
+    $ end_char_reaction(character, item_slot)
     return
 
-label claire_show_generic(character):
+label claire_show_generic(character, item_slot=None):
     show Claire front_shy
     
     Claire "What's that?"
@@ -583,7 +583,7 @@ label claire_show_generic(character):
     
     Claire "I should probably get back to Matt. He's giving me that look."
     
-    call screen character_interaction(character)
+    $ end_char_reaction(character, item_slot)
     return
 
 #=============================================================================

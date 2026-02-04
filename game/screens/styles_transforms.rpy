@@ -39,6 +39,8 @@ init python:
         base_image = kwargs.get('base_image', "gui/tiles/black_tile.webp")
         border_image = kwargs.get('border_image', "gui/tiles/tile_border.webp")
         borders = kwargs.get('borders', (20, 20))
+
+        mid_bg_alpha = kwargs.get('mid_alpha', 0.0)
         
         # Create the base layer
         base_layer = Transform(
@@ -47,6 +49,8 @@ init python:
             alpha=base_alpha
         )
         
+        mid_layer = Transform(Frame("gui/tiles/black_tile_middle.webp", *borders), alpha=mid_bg_alpha )
+
         # Create the border layer
         border_layer = Transform(
             Frame(border_image, *borders),
@@ -57,6 +61,7 @@ init python:
         # Use Fixed to layer them properly
         return Fixed(
             base_layer,
+            mid_layer,
             border_layer,
             fit_first=True
         )
@@ -317,7 +322,7 @@ style black_tile:
     ypadding 10
 
 style black_tile_hollow:
-    background Frame("gui/tiles/black_tile_hollow.webp", 20, 20,)
+    background layered_frame( base_image="gui/tiles/black_tile_hollow.webp", mid_alpha=0.5 )
     xpadding 10
     ypadding 10
 
