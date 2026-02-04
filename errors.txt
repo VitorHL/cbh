@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/styles_transforms.rpy", line 13: expected statement.
-    game_yrllow_really_dark_color = "#403010"
-                                  ^
+File "game/screens/choice_menu.rpy", line 409: 'tag' is not a keyword argument or valid child of the screen statement.
+    tag menu
+       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Feb  2 06:01:06 2026
+Wed Feb  4 03:51:27 2026

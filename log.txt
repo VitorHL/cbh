@@ -1,20 +1,37 @@
-2026-02-02 09:01:05 UTC
+2026-02-04 06:28:43 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.08s
-Loading error handling took 0.04s
-Loading script took 0.52s
+Early init took 0.07s
+Loading error handling took 0.03s
+Loading script took 0.43s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-
-File "game/screens/styles_transforms.rpy", line 13: expected statement.
-    game_yrllow_really_dark_color = "#403010"
-                                  ^
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.11s
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.43s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -27,12 +44,37 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 14.48s
-Loading error handling took 0.02s
-Loading script took 0.19s
+Early init took 102.95s
+Loading error handling took 0.04s
+Loading script took 0.29s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+
+File "game/screens/choice_menu.rpy", line 413: 'tag' is not a keyword argument or valid child of the screen statement.
+    tag menu
+       ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.12s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 136.20s
+Loading error handling took 0.04s
+Loading script took 0.21s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.07s
+Running init code took 0.04s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
@@ -56,7 +98,7 @@ Prepare screens took 0.11s
 Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.46s
+Interface start took 0.43s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -68,39 +110,67 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1526, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 285, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1182, in event
+    return handle_click(self.clicked)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 1103, in handle_click
+    rv = run(action)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_menu.rpy", line 117, in __call__
+    raise Exception("%r is not a screen or a label." % orig_screen)
+Exception: 'Inventory' is not a screen or a label.
+
+While running game code:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "renpy/common/00action_menu.rpy", line 117, in __call__
+    raise Exception("%r is not a screen or a label." % orig_screen)
+Exception: 'Inventory' is not a screen or a label.
 Resetting cache.
-Early init took 66.86s
+Early init took 162.30s
 Loading error handling took 0.02s
-Loading script took 0.24s
-Loading save slot metadata took 0.04s
+Loading script took 0.27s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.05s
+Running init code took 0.04s
 Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
+Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
@@ -118,11 +188,261 @@ Build styles took 0.01s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.04s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.48s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(character=None,**kwargs):
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(character=None,**kwargs):
+  File "game/screens/choice_menu.rpy", line 419, in execute
+    hbox xalign 0.5 yalign 0.5:
+  File "game/screens/choice_menu.rpy", line 455, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 504, in execute
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 504, in keywords
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 506, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 506, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 507, in <module>
+    action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+NameError: name 'mode' is not defined
+
+While running game code:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(character=None,**kwargs):
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(character=None,**kwargs):
+  File "game/screens/choice_menu.rpy", line 419, in execute
+    hbox xalign 0.5 yalign 0.5:
+  File "game/screens/choice_menu.rpy", line 455, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 504, in execute
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 504, in keywords
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 506, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 506, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 507, in <module>
+    action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+NameError: name 'mode' is not defined
+Resetting cache.
+Early init took 223.50s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/screens/choice_menu.rpy", line 416: reached end of line when expecting ':'.
+    if screen_mode != "default"
+                               ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 234.18s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
 Prepare screens took 0.12s
 Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.50s
+Interface start took 0.44s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 368.60s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/screens/choice_menu.rpy", line 425: expected a keyword argument or end of line.
+    yalign 0.5:
+              ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.12s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 374.83s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.44s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 562.20s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.48s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -156,62 +476,6 @@ CHOICE ID GENERATED
   Skill: acuity
   Difficulty: 2
   Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: Notice how Matt positions himself
-  Skill: acuity
-  Difficulty: 2
-  Generated ID: ('Notice how Matt positions himself', 'acuity', 2)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Long shift?"
-  Skill: communion
-  Difficulty: 8
-  Generated ID: ('"Long shift?"', 'communion', 8)
   ID in skill_rolls_made: False
 --------------------------------------------------
 --------------------------------------------------
@@ -260,112 +524,6 @@ CHOICE ID GENERATED
   Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
   ID in skill_rolls_made: False
 --------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Better than answering domestics on Maple."
-  Skill: insight
-  Difficulty: 3
-  Generated ID: ('"Better than answering domestics on Maple."', 'insight', 3)
-  ID in skill_rolls_made: False
---------------------------------------------------
-Resetting cache.
-Early init took 1113.61s
-Loading error handling took 0.02s
-Loading script took 0.23s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.51s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'Radeon RX 590 Series'
-Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
 --------------------------------------------------
 CHOICE ID GENERATED
   Caption: "Is this about the broadcast?"
@@ -468,101 +626,84 @@ CHOICE ID GENERATED
   Generated ID: ('"Have you told anyone else?"', 'inquiry', 10)
   ID in skill_rolls_made: False
 --------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Play me the recording."
+  Skill: resolve
+  Difficulty: 3
+  Generated ID: ('"Play me the recording."', 'resolve', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Have you told anyone else?"
+  Skill: inquiry
+  Difficulty: 10
+  Generated ID: ('"Have you told anyone else?"', 'inquiry', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Play me the recording."
+  Skill: resolve
+  Difficulty: 3
+  Generated ID: ('"Play me the recording."', 'resolve', 3)
+  ID in skill_rolls_made: False
+--------------------------------------------------
+--------------------------------------------------
+CHOICE ID GENERATED
+  Caption: "Have you told anyone else?"
+  Skill: inquiry
+  Difficulty: 10
+  Generated ID: ('"Have you told anyone else?"', 'inquiry', 10)
+  ID in skill_rolls_made: False
+--------------------------------------------------
 ==================================================
 SKILL ROLL REGISTERED
   Roll ID: ('"Have you told anyone else?"', 'inquiry', 10)
   Result: False
   All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False}
 ==================================================
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "You seem tired."
-  Skill: communion
-  Difficulty: 8
-  Generated ID: ('"You seem tired."', 'communion', 8)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "You seem tired."
-  Skill: communion
-  Difficulty: 8
-  Generated ID: ('"You seem tired."', 'communion', 8)
-  ID in skill_rolls_made: False
---------------------------------------------------
-==================================================
-SKILL ROLL REGISTERED
-  Roll ID: ('"You seem tired."', 'communion', 8)
-  Result: True
-  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True}
-==================================================
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Lights? What kind?"
-  Skill: inquiry
-  Difficulty: 8
-  Generated ID: ('"Lights? What kind?"', 'inquiry', 8)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Lights? What kind?"
-  Skill: inquiry
-  Difficulty: 8
-  Generated ID: ('"Lights? What kind?"', 'inquiry', 8)
-  ID in skill_rolls_made: False
---------------------------------------------------
-==================================================
-SKILL ROLL REGISTERED
-  Roll ID: ('"Lights? What kind?"', 'inquiry', 8)
-  Result: True
-  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True, ('"Lights? What kind?"', 'inquiry', 8): True}
-==================================================
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Does he always take so many notes?"
-  Skill: insight
-  Difficulty: 10
-  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Does he always take so many notes?"
-  Skill: insight
-  Difficulty: 10
-  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
-  ID in skill_rolls_made: False
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "Does he always take so many notes?"
-  Skill: insight
-  Difficulty: 10
-  Generated ID: ('"Does he always take so many notes?"', 'insight', 10)
-  ID in skill_rolls_made: False
---------------------------------------------------
-==================================================
-SKILL ROLL REGISTERED
-  Roll ID: ('"Does he always take so many notes?"', 'insight', 10)
-  Result: False
-  All rolls: {('"Long shift?"', 'communion', 8): True, ('Listen carefully', 'acuity', 8): True, ('"Have you told anyone else?"', 'inquiry', 10): False, ('"You seem tired."', 'communion', 8): True, ('"Lights? What kind?"', 'inquiry', 8): True, ('"Does he always take so many notes?"', 'insight', 10): False}
-==================================================
+
+Full traceback:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 777, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'character'
+
+While running game code:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+TypeError: missing a required argument: 'character'
 Resetting cache.
-Early init took 1777.80s
+Early init took 895.25s
 Loading error handling took 0.02s
-Loading script took 0.18s
-Loading save slot metadata took 0.04s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.05s
+Running init code took 0.04s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Dump and make backups took 0.06s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.09s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -570,14 +711,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.01s
-Load screen analysis took 0.06s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.57s
+Interface start took 0.47s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -589,37 +730,636 @@ Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "You seem tired."
-  Skill: communion
-  Difficulty: 8
-  Generated ID: ('"You seem tired."', 'communion', 8)
-  ID in skill_rolls_made: True
-  Stored result: True
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "You seem tired."
-  Skill: communion
-  Difficulty: 8
-  Generated ID: ('"You seem tired."', 'communion', 8)
-  ID in skill_rolls_made: True
-  Stored result: True
---------------------------------------------------
---------------------------------------------------
-CHOICE ID GENERATED
-  Caption: "You seem tired."
-  Skill: communion
-  Difficulty: 8
-  Generated ID: ('"You seem tired."', 'communion', 8)
-  ID in skill_rolls_made: True
-  Stored result: True
---------------------------------------------------
+
+Full traceback:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 777, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'character'
+
+While running game code:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+TypeError: missing a required argument: 'character'
 Resetting cache.
-Early init took 2908.32s
+Early init took 919.01s
 Loading error handling took 0.02s
-Loading script took 0.17s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 777, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'character'
+
+While running game code:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+TypeError: missing a required argument: 'character'
+Resetting cache.
+Early init took 931.50s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.49s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 941.02s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 777, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'character'
+
+While running game code:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+TypeError: missing a required argument: 'character'
+Resetting cache.
+Early init took 948.89s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.47s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1011.24s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 777, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'mode'
+
+While running game code:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script call
+    call screen character_interaction(char_claire)
+  File "game/script.rpy", line 102, in script
+    label show_char_item(mode, character, selected_slot=None):
+TypeError: missing a required argument: 'mode'
+Resetting cache.
+Early init took 1032.77s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.47s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1175.15s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.47s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1183.13s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1305.15s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script
+    call screen character_interaction(char_claire)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 422, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 463, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 512, in execute
+    if screen_mode != "default":
+  File "game/screens/choice_menu.rpy", line 513, in execute
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 513, in keywords
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 515, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 515, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 516, in <module>
+    action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+NameError: name 'mode' is not defined
+
+While running game code:
+  File "game/scenes/test_scenes/late_shift.rpy", line 130, in script call
+    call edgar_counter_menu
+  File "game/scenes/test_scenes/late_shift.rpy", line 392, in script
+    call screen character_interaction(char_claire)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 422, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 463, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 512, in execute
+    if screen_mode != "default":
+  File "game/screens/choice_menu.rpy", line 513, in execute
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 513, in keywords
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 515, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 515, in keywords
+    if slot_value is not None:
+  File "game/screens/choice_menu.rpy", line 516, in <module>
+    action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+NameError: name 'mode' is not defined
+Resetting cache.
+Early init took 1363.21s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/screens/choice_menu.rpy", line 409: 'tag' is not a keyword argument or valid child of the screen statement.
+    tag menu
+       ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1387.43s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.46s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1413.49s
+Loading error handling took 0.02s
+Loading script took 0.22s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -627,6 +1367,165 @@ Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.44s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 421, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 462, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 511, in execute
+    if screen_mode != "default":
+  File "game/screens/choice_menu.rpy", line 517, in execute
+    if screen_mode == "show_item":
+  File "game/screens/choice_menu.rpy", line 518, in execute
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 518, in keywords
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 520, in <module>
+    action Hide(self)
+NameError: name 'self' is not defined
+
+While running game code:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 407, in execute
+    screen inventory_screen(**kwargs):
+  File "game/screens/choice_menu.rpy", line 421, in execute
+    hbox:
+  File "game/screens/choice_menu.rpy", line 462, in execute
+    vbox:
+  File "game/screens/choice_menu.rpy", line 511, in execute
+    if screen_mode != "default":
+  File "game/screens/choice_menu.rpy", line 517, in execute
+    if screen_mode == "show_item":
+  File "game/screens/choice_menu.rpy", line 518, in execute
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 518, in keywords
+    button xfill True ysize 50 style "hover_button":
+  File "game/screens/choice_menu.rpy", line 520, in <module>
+    action Hide(self)
+NameError: name 'self' is not defined
+Resetting cache.
+Early init took 1430.47s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.14s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'Radeon RX 590 Series'
+Version: b'4.6.0 Compatibility Profile Context 24.3.1.240216'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1697.87s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Vitor\\AppData\\Roaming/RenPy/backups\\cbh':
 Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -638,14 +1537,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.01s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.12s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.05s
+Prepare screens took 0.11s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.51s
+Interface start took 0.50s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

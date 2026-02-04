@@ -336,7 +336,7 @@ screen choice_talks(items, args=[character, None]):
 ################################################################################
 
 screen character_interaction(character):
-    
+    tag menu
     vbox spacing 20:
         xalign 0.1
         yalign 0.5
@@ -379,7 +379,7 @@ screen character_interaction(character):
                 yalign 0.5
                 hover_sound "audio/menu_hover.wav"
                 activate_sound "audio/menu_select.wav"
-                action Call("show_char_item", 1, character)
+                action Show("inventory_screen", character = character, screen_mode = "show_item")
                 hbox spacing 5:
                     frame xsize 64 ysize 64:
                         style "hover_button"
@@ -404,166 +404,124 @@ screen character_interaction(character):
 ## Inventory Screen
 ################################################################################
 
-screen inventory_screen(mode=0, character=None, selected_slot=None):
-    
-    default slot_value = selected_slot
-    
-    frame:
-        xfill True
-        yfill True
-        background Transform("black", alpha=0.5)
+screen inventory_screen(**kwargs):
+    tag menu
+    default character = kwargs.get("character", None)
+    default screen_mode = kwargs.get("screen_mode","default")
+    default slot_value = None
+
+    if screen_mode == "default":
         
-        hbox spacing 20:
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.5
-            ypos 0.5
-            
-            # Left panel: Item grid
-            frame:
-                xanchor 0.5
-                xpos 0.5
-                background None
-                
-                vbox spacing 5:
-                    # Header
-                    frame:
-                        xalign 0.5
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3))
-                        text "INVENTORY" size 45 xalign 0.5 yalign 0.5
-                    
-                    # Divider
-                    frame:
-                        ysize 5
-                        xsize 592
-                        xalign 0.5
-                        background Frame("gui/tiles/white_tile.webp", 3, 3)
-                    
-                    # Item grid (5x4 = 20 slots)
-                    grid 5 4 spacing 15 xalign 0.5:
-                        for slot in range(20):
-                            fixed:
+        use game_menu(_("inventory"), scroll=None, content_yalign=0.0)
+    
+    if screen_mode != "default":
+        #Dark background
+        frame xfill True yfill True background Transform("black", alpha=0.7)
+
+    hbox: 
+        if screen_mode != "default":
+            xalign 0.5 
+        else:
+            xalign 0.6
+        yalign 0.5
+        vbox:
+            ysize 775
+            xsize 760
+            hbox:
+                frame:
+                    style "black_tile_border"
+                    xsize 60
+                    ysize 60
+                frame:
+                    style "black_tile_underline"
+                    xfill True
+                    ysize 60
+                    text "IVENTORY" style "title_text" yalign 0.25
+            frame xfill True yfill True:
+                style "black_tile_hollow"
+                grid 5 5 spacing 15 xalign 0.5 yalign 0.5:
+                    for slot in range(25):
+                        fixed:
+                            ysize 128
+                            xsize 128
+                            
+                            button:
+                                at selected_hover
                                 ysize 128
                                 xsize 128
+                                xalign 0.5
+                                yalign 0.5
+                                action SetScreenVariable("slot_value", slot)
+                                sensitive len(game_iventory) > slot
+                                selected (slot_value == slot)
+                                style "hover_button"
                                 
-                                button:
-                                    at selected_hover
-                                    ysize 128
-                                    xsize 128
-                                    xalign 0.5
-                                    yalign 0.5
-                                    action SetScreenVariable("slot_value", slot)
-                                    sensitive len(game_iventory) > slot
-                                    selected (slot_value == slot)
-                                    style "hover_button"
-                                    
-                                    if len(game_iventory) > slot:
-                                        image "[game_iventory[slot].icon]" xalign 0.5 yalign 0.5
+                                if len(game_iventory) > slot:
+                                    image "[game_iventory[slot].icon]" xalign 0.5 yalign 0.5
                     
-                    # Bottom divider
-                    frame:
-                        ysize 5
-                        xsize 592
-                        xalign 0.5
-                        background Frame("gui/tiles/white_tile.webp", 3, 3)
-            
-            # Right panel: Item details
+        vbox:
+            xsize 384
+            hbox:
+                frame:
+                    style "black_tile"
+                    xsize 60
+                    ysize 60
+                    text "*" xalign 0.5
+                frame:
+                    style "black_tile"
+                    xsize 264
+                    ysize 60
+                    text "ITEMS" xalign 0.5 style "title_text" yalign 0.25
+                frame:
+                    style "black_tile"
+                    xsize 60
+                    ysize 60
+                    text "*" xalign 0.5
+
             frame:
-                xsize 384
-                xanchor 0.5
-                xpos 0.5
-                background None
-                
-                vbox spacing 5:
-                    # Item name header
-                    frame:
-                        xalign 0.5
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3))
-                        
-                        if slot_value is not None:
-                            text "[game_iventory[slot_value].name!u]" size 45 xalign 0.5
-                        else:
-                            text "SELECT ITEM" size 45 xalign 0.5
-                    
-                    # Divider
-                    frame:
-                        ysize 5
-                        xfill True
-                        xalign 0.5
-                        background Frame("gui/tiles/white_tile.webp", 3, 3)
-                    
-                    # Item icon display
-                    frame:
-                        xalign 0.5
-                        xfill True
-                        ysize 128
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3), alpha=0.5)
-                        
-                        if slot_value is not None:
-                            image "[game_iventory[slot_value].icon]" xalign 0.5 yalign 0.5
-                    
-                    # Divider
-                    frame:
-                        ysize 5
-                        xfill True
-                        xalign 0.5
-                        background Frame("gui/tiles/white_tile.webp", 3, 3)
-                    
-                    # Item description
-                    frame:
-                        xalign 0.5
-                        xfill True
-                        ysize 384
-                        background Transform(Frame("gui/tiles/black_tile.webp", 3, 3))
-                        
-                        if slot_value is not None:
-                            text "[game_iventory[slot_value].desc]" style "desc_text"
-                    
-                    # Divider
-                    frame:
-                        ysize 5
-                        xfill True
-                        xalign 0.5
-                        background Frame("gui/tiles/white_tile.webp", 3, 3)
-                    
-                    # Action buttons
-                    frame:
-                        xfill True
-                        ysize 48
-                        background None
-                        
-                        hbox spacing 3:
-                            align (0.5, 0.5)
-                            
-                            # Back button
-                            button:
-                                xalign 0.5
-                                yalign 0.5
-                                hover_sound "audio/menu_hover.wav"
-                                activate_sound "audio/menu_select.wav"
-                                style "hover_button"
-                                
-                                if mode == 1:
-                                    action Call("char_interaction", character)
-                                else:
-                                    action Return()
-                                
-                                text "< GO BACK" yalign 0.5 style "select_button_text"
-                            
-                            # Inspect/Show button
-                            button:
-                                xalign 0.5
-                                yalign 0.5
-                                sensitive slot_value is not None
-                                hover_sound "audio/menu_hover.wav"
-                                activate_sound "audio/menu_select.wav"
-                                style "hover_button"
-                                
-                                if mode == 0:
+                            style "black_tile_75"
+                            xfill True
+                            vbox xalign 0.5 yalign 0.5:
+                                text "-----------------" style "title_text" xalign 0.5
+                                frame:
+                                    background None
+                                    xfill True
+                                    ysize 35
                                     if slot_value is not None:
-                                        action Call(game_iventory[slot_value].game_label)
-                                    text "INSPECT" yalign 0.5 style "select_button_text"
-                                else:
-                                    if slot_value is not None:
-                                        action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
-                                    text "SHOW" yalign 0.5 style "select_button_text"
+                                        text "[game_iventory[slot_value].name!u]" xalign 0.5 yalign 0.5 style "title_text" size 30
+                                text "-----------------" style "title_text" xalign 0.5
+
+
+            frame:
+                style "black_tile_75"
+                xfill True
+                ysize 384
+                vbox:
+                    text "-----------------" style "title_text" xalign 0.5
+                    xalign 0.5
+                    fixed:
+                        xfill True
+                        yfill True
+                        vbox:
+                            if slot_value is not None:
+                                text "[game_iventory[slot_value].desc]" style "desc_text"
+                        text "-----------------" style "title_text" xalign 0.5 yalign 1.0
+                            
+            # Action buttons
+            if screen_mode != "default":
+                button xfill True ysize 50 style "hover_button":
+                    sensitive slot_value is not None
+                    if slot_value is not None:
+                        action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+                    text "SHOW ITEM" xalign 0.5 yalign 0.5 style "select_button_text"
+                if screen_mode == "show_item": 
+                    button xfill True ysize 50 style "hover_button":
+                        text "< Return" xalign 0.5 yalign 0.5 style "select_button_text" 
+                        action Hide()
+            else:
+                button xfill True ysize 50 style "hover_button":
+                    sensitive slot_value is not None
+                    #if slot_value is not None:
+                    #    action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+                    text "INSPECT ITEM" xalign 0.5 yalign 0.5 style "select_button_text"
+            

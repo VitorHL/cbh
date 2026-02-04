@@ -102,8 +102,6 @@ label char_interaction(character):
 label show_char_item(mode, character, selected_slot=None):
     # Calls the iventory screen to show item to character either in the interaction menu or mid conversation
     call screen inventory_screen(mode, character, selected_slot)
-    # if mode == 1:
-    #     call screen character_interaction(character)
     return
 
 
