@@ -7,14 +7,22 @@ screen inventory_screen(character=None, **kwargs):
     #default character = kwargs.get("character", None)
     default screen_mode = kwargs.get("screen_mode","default")
     default slot_value = kwargs.get( "selected_item", None)
+    default dot_count = 0
 
     if screen_mode == "default":
         
         use game_menu(_("inventory"), scroll=None, content_yalign=0.0)
     
-    if screen_mode != "default":
+    else:
         #Dark background
         frame xfill True yfill True background Transform("black", alpha=0.7)
+        #Cannot open the menu while the inventory is open
+        key "game_menu" action NullAction()
+    
+    if slot_value == None:
+        # Timer to animate dots (fires every 0.5 seconds)
+        timer 0.5 repeat True action SetScreenVariable("dot_count", (dot_count + 1) % 4)
+
     fixed yalign 0.5:
         if screen_mode != "default":
             xalign 0.5 
@@ -42,19 +50,22 @@ screen inventory_screen(character=None, **kwargs):
                             frame background None ypadding 0 xpadding 0 ypos 10 xalign 0.5:
                                 vbox:
                                     if slot_value is not None:
-                                        text "[game_iventory[slot_value].name!u]" style "title_text"
+                                        text "[game_inventory[slot_value].name!u]" style "title_text" color game_yellow_color
                                     else:
-                                        text "SELECT ITEM" style "title_text"
+                                        $ dots = "." * dot_count
+                                        text "SELECT ITEM[dots]" style "title_text" color game_yellow_color
                                     text "----------------------------------" style "title_text"
                                     hbox:
                                         spacing 20
-                                        frame style "border_white" xsize 220 ysize 220
+                                        frame style "border_white" xsize 220 ysize 220:
+                                            if slot_value != None:
+                                                add "[game_inventory[slot_value].huge_icon]" xalign 0.5 yalign 0.5
                                         fixed xsize 470:
                                             vbox:
                                                 spacing 10
                                                 text "DESCRIPTION:" style "desc_text" color game_cyan_color size 16
                                                 if slot_value is not None:
-                                                    text "[game_iventory[slot_value].desc]" style "desc_text"
+                                                    text "[game_inventory[slot_value].desc]" style "desc_text"
                                                 else:
                                                     text "???" style "desc_text"
                             
@@ -85,13 +96,13 @@ screen inventory_screen(character=None, **kwargs):
                             button xfill True ysize 50 style "hover_button":
                                     sensitive slot_value is not None and screen_mode == "default"
                                     #if slot_value is not None:
-                                    #    action Call("char_item_reaction", game_iventory[slot_value], mode, character, slot_value)
+                                    #    action Call("char_item_reaction", game_inventory[slot_value], mode, character, slot_value)
                                     text "INSPECT ITEM" xalign 0.5 yalign 0.5 style "select_button_text"
 
                             button xfill True ysize 50 style "hover_button":
                                     sensitive slot_value is not None and screen_mode != "default"
                                     if slot_value is not None and screen_mode != "default":
-                                        action Call("char_item_reaction", game_iventory[slot_value], character, slot_value)
+                                        action Call("char_item_reaction", game_inventory[slot_value], character, slot_value)
                                     text "SHOW ITEM" xalign 0.5 yalign 0.5 style "select_button_text"
 
                             button xfill True ysize 50 style "hover_button":
@@ -109,7 +120,7 @@ screen inventory_screen(character=None, **kwargs):
                         style "black_tile_underline"
                         xfill True
                         ysize 60
-                        text "IVENTORY" style "title_text" yalign 0.25
+                        text "INVENTORY" style "title_text" yalign 0.25
                 frame style "black_tile_hollow_transparent" xfill True yfill True:
                     grid 8 2 spacing 10 xalign 0.5 yalign 0.5:
                         for slot in range(16):
@@ -124,10 +135,10 @@ screen inventory_screen(character=None, **kwargs):
                                     xalign 0.5
                                     yalign 0.5
                                     action SetScreenVariable("slot_value", slot)
-                                    sensitive len(game_iventory) > slot
+                                    sensitive len(game_inventory) > slot
                                     selected (slot_value == slot)
                                     style "hover_button"
                                     
-                                    if len(game_iventory) > slot:
-                                        image "[game_iventory[slot].icon]" xalign 0.5 yalign 0.5
+                                    if len(game_inventory) > slot:
+                                        image "[game_inventory[slot].icon]" xalign 0.5 yalign 0.5
                     

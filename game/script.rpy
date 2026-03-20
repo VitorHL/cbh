@@ -65,14 +65,14 @@ return
 label start:
     #$set_room( room_daniel_apartment )
     show screen vhs_overlay
-    show image "gui/overlay/vignette.webp" onlayer vignette
-    show image "gui/overlay/scanlines.webp" onlayer effect_overlay
-    show grain_effect onlayer effect_overlay
+    #show image "gui/overlay/vignette.webp" onlayer vignette
+    #show image "gui/overlay/scanlines.webp" onlayer effect_overlay
+    #show grain_effect onlayer effect_overlay
     #show image "gui/overlay/screen_overlay.webp" onlayer effect_overlay
     #show screen top_bar
-    $ game_iventory.append(burgar)
-    $ game_iventory.append(fries)
-    $ game_iventory.append(coke)
+    $ game_inventory.append(burgar)
+    $ game_inventory.append(fries)
+    $ game_inventory.append(coke)
     $ add_skill_buff(buff_coffee_offered)
     $ add_skill_buff(buff_listened_to_val)
     $ add_skill_buff(buff_shared_concern)
@@ -100,7 +100,7 @@ label char_interaction(character):
     return
 
 label show_char_item(character, selected_slot=None):
-    # Calls the iventory screen to show item to character either in the interaction menu or mid conversation
+    # Calls the inventory screen to show item to character either in the interaction menu or mid conversation
     call screen inventory_screen(character, screen_mode = "show_item", selected_item=selected_slot)
     return
 

@@ -9,26 +9,7 @@
 # ITEMS FOR THIS SCENARIO
 #=============================================================================
 
-default polaroid_photo = game_item(
-    "gui/items/polaroid.webp",
-    "Strange Polaroid",
-    "A polaroid Val gave you. The image shows the old Heartland Motors building at night, but there's something wrong with the shadows. They seem to bend toward the camera.",
-    "inspect_polaroid"
-)
 
-default coffee_thermos = game_item(
-    "gui/items/thermos.webp", 
-    "Claire's Thermos",
-    "A dented police-issue thermos. Claire left it here last week. You keep meaning to return it, but she keeps forgetting to pick it up. The coffee inside has long since gone cold.",
-    "inspect_thermos"
-)
-
-default cassette_tape = game_item(
-    "gui/items/cassette.webp",
-    "Unlabeled Cassette",
-    "Val's recording of the strange broadcast. She insists you need to hear it, but warns you not to listen alone. The tape is slightly warped, as if exposed to heat.",
-    "inspect_cassette"
-)
 
 #=============================================================================
 # SKILL BUFFS FOR THIS SCENARIO  
@@ -92,8 +73,8 @@ label test_scenario_setup:
     $ set_room(room_edgar_counter)
     
     # Add items to inventory
-    $ game_iventory.append(polaroid_photo)
-    $ game_iventory.append(coffee_thermos)
+    $ game_inventory.append(polaroid_photo)
+    $ game_inventory.append(coffee_thermos)
     
     # Setup Claire's interaction data
     $ char_claire.interested_items[coffee_thermos] = "claire_shown_thermos"
@@ -111,8 +92,8 @@ label test_scenario_setup:
     
     # Show overlays
     show screen vhs_overlay
-    show image "gui/overlay/vignette.webp" onlayer vignette
-    show grain_effect onlayer effect_overlay
+    #show image "gui/overlay/vignette.webp" onlayer vignette
+    #show grain_effect onlayer effect_overlay
     
     jump edgar_counter_test
 
@@ -164,13 +145,13 @@ label edgar_counter_menu:
 #=============================================================================
 
 label late_shift_intro:
-    scene edgar_diner_bg
+    scene edgar_diner_bg at vhs_subtle
     
     "The bell above the door jingles as two figures in blue step inside."
     
     "Claire and Matt. Their patrol route brings them by here most evenings."
     
-    show Claire front_shy at center with dissolve
+    show Claire front_shy at vhs_subtle with dissolve
     
     Claire "Hey, Daniel."
     
@@ -270,7 +251,7 @@ label late_shift_intro:
             "Val's eyes go wide."
             Val "How did you—have you heard it too?"
             "Her hands are shaking slightly as she pulls a cassette tape from her bag."
-            $ game_iventory.append(cassette_tape)
+            $ game_inventory.append(cassette_tape)
             $ add_skill_buff(buff_listened_to_val)
     
     # Setup for character interaction testing
@@ -350,10 +331,10 @@ label val_broadcast_conversation:
                 Val "Who would believe me? You barely believe me, and you're my best friend."
     
     # Give player the polaroid if they don't have it
-    if polaroid_photo not in game_iventory:
+    if polaroid_photo not in game_inventory:
         Val "Here. I took this last night too."
         "She presses a polaroid into your hand. The image shows the old Heartland Motors building, but something about the shadows..."
-        $ game_iventory.append(polaroid_photo)
+        $ game_inventory.append(polaroid_photo)
     
     Val "I need to get back to my apartment. Review the recordings. Cross-reference the names."
     
@@ -543,7 +524,7 @@ label claire_shown_thermos(character, item_slot=None):
     $ add_skill_buff(buff_coffee_offered)
     
     # Remove from inventory
-    $ game_iventory.remove(coffee_thermos)
+    $ game_inventory.remove(coffee_thermos)
     
     $ end_char_reaction(character, item_slot)
     return

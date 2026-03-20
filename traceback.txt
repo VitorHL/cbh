@@ -1,94 +1,69 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "game/screens/inventory.rpy", line 5, in execute
-    screen inventory_screen(character=None, **kwargs):
-  File "game/screens/inventory.rpy", line 5, in execute
-    screen inventory_screen(character=None, **kwargs):
-  File "game/screens/inventory.rpy", line 18, in execute
-    fixed yalign 0.5:
-  File "game/screens/inventory.rpy", line 25, in execute
-    vbox:
-  File "game/screens/inventory.rpy", line 26, in execute
-    hbox:
-  File "game/screens/inventory.rpy", line 28, in execute
-    frame background None xpadding 0 ypadding 0:
-  File "game/screens/inventory.rpy", line 30, in execute
-    vbox:
-  File "game/screens/inventory.rpy", line 41, in execute
-    frame style "black_tile_hollow_transparent" ysize 330 xfill True:
-  File "game/screens/inventory.rpy", line 42, in execute
-    hbox:
-  File "game/screens/inventory.rpy", line 44, in execute
-    frame style "black_tile_75" xfill true yfill true
-  File "game/screens/inventory.rpy", line 44, in keywords
-    frame style "black_tile_75" xfill true yfill true
-  File "game/screens/inventory.rpy", line 44, in <module>
-    frame style "black_tile_75" xfill true yfill true
-NameError: name 'true' is not defined
+  File "game/scenes/test_scenes/late_shift.rpy", line 109, in script call
+    $ check_for_event()
+  File "game/scenes/test_scenes/late_shift.rpy", line 150, in script
+    "The bell above the door jingles as two figures in blue step inside."
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+ShaderError: ERROR: 0:23: '' :  syntax error, unexpected LEFT_BRACE, expecting SEMICOLON
+ERROR: 1 compilation errors.  No code generated.
+
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "game/scenes/test_scenes/late_shift.rpy", line 109, in script call
+    $ check_for_event()
+  File "game/scenes/test_scenes/late_shift.rpy", line 150, in script
+    "The bell above the door jingles as two figures in blue step inside."
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 593, in execute
+    statement_name("say")
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 58, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1581, in do_with
+    return self.interact(trans_pause=True,
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens/inventory.rpy", line 5, in execute
-    screen inventory_screen(character=None, **kwargs):
-  File "game/screens/inventory.rpy", line 5, in execute
-    screen inventory_screen(character=None, **kwargs):
-  File "game/screens/inventory.rpy", line 18, in execute
-    fixed yalign 0.5:
-  File "game/screens/inventory.rpy", line 25, in execute
-    vbox:
-  File "game/screens/inventory.rpy", line 26, in execute
-    hbox:
-  File "game/screens/inventory.rpy", line 28, in execute
-    frame background None xpadding 0 ypadding 0:
-  File "game/screens/inventory.rpy", line 30, in execute
-    vbox:
-  File "game/screens/inventory.rpy", line 41, in execute
-    frame style "black_tile_hollow_transparent" ysize 330 xfill True:
-  File "game/screens/inventory.rpy", line 42, in execute
-    hbox:
-  File "game/screens/inventory.rpy", line 44, in execute
-    frame style "black_tile_75" xfill true yfill true
-  File "game/screens/inventory.rpy", line 44, in keywords
-    frame style "black_tile_75" xfill true yfill true
-  File "game/screens/inventory.rpy", line 44, in <module>
-    frame style "black_tile_75" xfill true yfill true
-NameError: name 'true' is not defined
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2882, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1391, in draw_screen
+    renpy.display.draw.draw_screen(surftree)
+  File "gl2draw.pyx", line 982, in renpy.gl2.gl2draw.GL2Draw.draw_screen
+  File "gl2draw.pyx", line 1052, in renpy.gl2.gl2draw.GL2Draw.load_all_textures
+  File "gl2draw.pyx", line 1066, in renpy.gl2.gl2draw.GL2Draw.load_all_textures
+  File "gl2draw.pyx", line 1106, in renpy.gl2.gl2draw.GL2Draw.render_to_texture
+  File "gl2texture.pyx", line 213, in renpy.gl2.gl2texture.TextureLoader.render_to_texture
+  File "gl2texture.pyx", line 400, in renpy.gl2.gl2texture.GLTexture.from_render
+  File "gl2draw.pyx", line 1550, in renpy.gl2.gl2draw.GL2DrawingContext.draw
+  File "gl2draw.pyx", line 1531, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  File "gl2draw.pyx", line 1531, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  File "gl2draw.pyx", line 1531, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  [Previous line repeated 1 more time]
+  File "gl2draw.pyx", line 1441, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  File "gl2draw.pyx", line 1396, in renpy.gl2.gl2draw.GL2DrawingContext.draw_model
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\gl2\gl2shadercache.py", line 352, in get
+    rv.load()
+  File "gl2shader.pyx", line 315, in renpy.gl2.gl2shader.Program.load
+  File "gl2shader.pyx", line 298, in renpy.gl2.gl2shader.Program.load_shader
+ShaderError: ERROR: 0:23: '' :  syntax error, unexpected LEFT_BRACE, expecting SEMICOLON
+ERROR: 1 compilation errors.  No code generated.
+
+
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 Coppernell Hill 1.0
-Wed Feb  4 09:50:31 2026
+Tue Feb 10 00:43:59 2026

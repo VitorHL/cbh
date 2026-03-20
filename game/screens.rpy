@@ -344,7 +344,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, content_yalign=0.5):
                     text ">ATTRIBUTES" style "pause_menu_button_text"
                     action ShowMenu("skills")
                 button style "select_button_menu" xsize 250:
-                    text ">IVENTORY" style "pause_menu_button_text"
+                    text ">INVENTORY" style "pause_menu_button_text"
                     action ShowMenu("inventory_screen")
                 button style "select_button_menu" xsize 250:
                     text ">PROFILES" style "pause_menu_button_text"

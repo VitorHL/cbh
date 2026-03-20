@@ -1,0 +1,23 @@
+{
+  "enableAiFeatures": false,
+  "selectedModel": "gemini-2.5-flash",
+  "draftingMode": false,
+  "openTabs": [
+    {
+      "id": "canvas",
+      "type": "canvas"
+    },
+    {
+      "id": "route-canvas",
+      "type": "route-canvas"
+    }
+  ],
+  "activeTabId": "route-canvas",
+  "stickyNotes": [],
+  "characterProfiles": {},
+  "punchlistMetadata": {},
+  "sceneCompositions": {},
+  "sceneNames": {},
+  "scannedImagePaths": [],
+  "scannedAudioPaths": []
+}
