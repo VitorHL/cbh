@@ -145,13 +145,14 @@ label edgar_counter_menu:
 #=============================================================================
 
 label late_shift_intro:
-    scene edgar_diner_bg at vhs_subtle
+    camera at vhs_subtle
+    scene edgar_diner_bg 
     
     "The bell above the door jingles as two figures in blue step inside."
     
     "Claire and Matt. Their patrol route brings them by here most evenings."
     
-    show Claire front_shy at vhs_subtle with dissolve
+    show Claire front_shy
     
     Claire "Hey, Daniel."
     

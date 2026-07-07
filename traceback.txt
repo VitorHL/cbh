@@ -1,25 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
+Compiling ATL code at game/GFX/vhs_shader.rpy:161
   File "game/scenes/test_scenes/late_shift.rpy", line 109, in script call
     $ check_for_event()
-  File "game/scenes/test_scenes/late_shift.rpy", line 150, in script
+  File "game/scenes/test_scenes/late_shift.rpy", line 151, in script
+    "The bell above the door jingles as two figures in blue step inside."
+  File "game/scenes/test_scenes/late_shift.rpy", line 109, in script call
+    $ check_for_event()
+  File "game/scenes/test_scenes/late_shift.rpy", line 151, in script
     "The bell above the door jingles as two figures in blue step inside."
   File "renpy/common/000window.rpy", line 132, in _window_auto_callback
     _window_show(auto=True)
   File "renpy/common/000window.rpy", line 75, in _window_show
     renpy.with_statement(trans)
-ShaderError: ERROR: 0:23: '' :  syntax error, unexpected LEFT_BRACE, expecting SEMICOLON
-ERROR: 1 compilation errors.  No code generated.
-
-
+  File "game/GFX/vhs_shader.rpy", line 161, in <module>
+    yoffset yadj
+NameError: name 'yadj' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
   File "game/scenes/test_scenes/late_shift.rpy", line 109, in script call
     $ check_for_event()
-  File "game/scenes/test_scenes/late_shift.rpy", line 150, in script
+  File "game/scenes/test_scenes/late_shift.rpy", line 151, in script
+    "The bell above the door jingles as two figures in blue step inside."
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/scenes/test_scenes/late_shift.rpy", line 109, in script call
+    $ check_for_event()
+  File "game/scenes/test_scenes/late_shift.rpy", line 151, in script
     "The bell above the door jingles as two figures in blue step inside."
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\ast.py", line 2586, in execute
     Say.execute(self)
@@ -37,33 +53,45 @@ Full traceback:
     return self.interact(trans_pause=True,
   File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2882, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1391, in draw_screen
-    renpy.display.draw.draw_screen(surftree)
-  File "gl2draw.pyx", line 982, in renpy.gl2.gl2draw.GL2Draw.draw_screen
-  File "gl2draw.pyx", line 1052, in renpy.gl2.gl2draw.GL2Draw.load_all_textures
-  File "gl2draw.pyx", line 1066, in renpy.gl2.gl2draw.GL2Draw.load_all_textures
-  File "gl2draw.pyx", line 1106, in renpy.gl2.gl2draw.GL2Draw.render_to_texture
-  File "gl2texture.pyx", line 213, in renpy.gl2.gl2texture.TextureLoader.render_to_texture
-  File "gl2texture.pyx", line 400, in renpy.gl2.gl2texture.GLTexture.from_render
-  File "gl2draw.pyx", line 1550, in renpy.gl2.gl2draw.GL2DrawingContext.draw
-  File "gl2draw.pyx", line 1531, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
-  File "gl2draw.pyx", line 1531, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
-  File "gl2draw.pyx", line 1531, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
-  [Previous line repeated 1 more time]
-  File "gl2draw.pyx", line 1441, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
-  File "gl2draw.pyx", line 1396, in renpy.gl2.gl2draw.GL2DrawingContext.draw_model
-  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\gl2\gl2shadercache.py", line 352, in get
-    rv.load()
-  File "gl2shader.pyx", line 315, in renpy.gl2.gl2shader.Program.load
-  File "gl2shader.pyx", line 298, in renpy.gl2.gl2shader.Program.load_shader
-ShaderError: ERROR: 0:23: '' :  syntax error, unexpected LEFT_BRACE, expecting SEMICOLON
-ERROR: 1 compilation errors.  No code generated.
-
-
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 2547, in interact_core
+    scene = self.compute_scene(scene_lists)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\core.py", line 1782, in compute_scene
+    rv[layer] = scene_lists.transform_layer(layer, d)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\scenelists.py", line 761, in transform_layer
+    self.transform_state(old_transform, new_transform, execution=True)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\scenelists.py", line 307, in transform_state
+    old_transform.update_state()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\display\transform.py", line 1235, in update_state
+    fr = self.execute(self, fst, fat)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 755, in execute
+    block = self.compile()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 723, in compile
+    block = self.atl.compile(self.context)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 925, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 925, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 1244, in compile
+    child.compile()
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 723, in compile
+    block = self.atl.compile(self.context)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 925, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 925, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 1267, in compile
+    value = ctx.eval(expr)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\atl.py", line 387, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Vitor\Documents\Workflow\renpy-8.0.0-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/GFX/vhs_shader.rpy", line 161, in <module>
+    yoffset yadj
+NameError: name 'yadj' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 Coppernell Hill 1.0
-Tue Feb 10 00:43:59 2026
+Tue Jul  7 13:03:59 2026
