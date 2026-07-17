@@ -4,3 +4,6 @@
 /game/saves
 traceback.txt
 log.txt
+*.save
+/game/cache
+/.agents
