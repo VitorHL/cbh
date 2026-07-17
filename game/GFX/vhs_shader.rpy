@@ -187,12 +187,12 @@ transform vhs_subtle:
         chroma=2.0,
         scanlines=0.1,
         noise=0.4,
-        wobble=0.3,
+        wobble=0.2,
         jitter=0.3,
         slip=0.3,
-        bleed=1.0,
+        bleed=2.0,
         vignette=0.25,
-        desat=0.08,
+        desat=0.00,
         glitch=0.01
     )
 
@@ -298,7 +298,7 @@ transform vhs_static_only:
 
 
 # =============================================================================
-# SECTION 4: LAYER APPLICATION HELPERS
+# LAYER APPLICATION HELPERS
 # =============================================================================
 #
 # These utilities let you apply the VHS effect to an entire Ren'Py display
