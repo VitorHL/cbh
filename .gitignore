@@ -1,9 +1,11 @@
 *.rpyc
 *.rpyb
 *.save
-/game/saves
+*.rpymc
+*.bak
+/game/saves/
+/game/cache/
 traceback.txt
 log.txt
-*.save
-/game/cache
+errors.txt
 /.agents
