@@ -145,7 +145,7 @@ label edgar_counter_menu:
 #=============================================================================
 
 label late_shift_intro:
-    camera at vhs_subtle
+    camera at vhs_worn
     scene edgar_diner_bg 
     
     "The bell above the door jingles as two figures in blue step inside."
