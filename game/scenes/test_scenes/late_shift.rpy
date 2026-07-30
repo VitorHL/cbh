@@ -146,7 +146,10 @@ label edgar_counter_menu:
 
 label late_shift_intro:
     camera at vhs_subtle
-    #$ apply_vhs_to_layer("vhs_screens","subtle")
+    camera vhs_screens at vhs_crt_subtle
+    camera screens at vhs_crt_subtle
+    camera effect_overlay at vhs_crt_subtle
+
     scene edgar_diner_bg 
     
     "The bell above the door jingles as two figures in blue step inside."

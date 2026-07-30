@@ -1,4 +1,4 @@
-﻿transform dice_roll_trans:
+transform dice_roll_trans:
     zoom 0.75
     linear 0.075 rotate 1
     linear 0.075 rotate -1

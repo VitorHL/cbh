@@ -1,4 +1,4 @@
-﻿## This file contains options that can be changed to customize your game.
+## This file contains options that can be changed to customize your game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
@@ -212,8 +212,8 @@ init python:
 # define build.itch_project = "renpytom/test-project"
 
 
-define config.layers = [ "master", "transient", "underlay", "vignette", "screens", "overlay" ]    
-define config.menu_clear_layers = [ "screens" ]
-define config.top_layers = [ "vhs_screens", "effect_overlay" ]
+define config.layers = [ "master", "transient", "underlay", "vignette", "screens", "overlay", "screens" , "vhs_screens", "effect_overlay" ]    
+define config.menu_clear_layers = [  ]
+define config.top_layers = [  ]
 python:
     renpy.add_layer()
