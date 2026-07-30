@@ -1,5 +1,7 @@
 #init offset = -2
 
+define def_blip_sound = ['audio/default_talk_blip.ogg']
+
 init python:
 
     # Basic functions
@@ -15,10 +17,14 @@ init python:
         var_new_loc = "{0}_{1}".format(var_loc, suffix)
         return globals()[var_new_loc]
 
+
     # Function that stops the talking animation once the text is done showing
-    def callback_builder(character_sprite_basename):
+    def callback_builder(character_sprite_basename, blip_sound=def_blip_sound):
         def char_callback(event, **kwargs):
-            if event == "show_done":
+            if event == "show":
+                #plays the blip sound repeatedly if text is being written
+                renpy.sound.play(renpy.random.choice(blip_sound), loop=True)
+            elif event == "show_done":
                 # Get current attributes and add "talk"
                 current_attrs = renpy.get_attributes(character_sprite_basename)
                 if current_attrs and "talk" not in current_attrs:
@@ -26,7 +32,9 @@ init python:
                     renpy.show(character_sprite_basename, at_list=[], layer="master", what=None, zorder=None, tag=None, behind=[])
                     # Use the proper show syntax
                     renpy.show(character_sprite_basename + " " + " ".join(new_attrs))
-            elif event == "slow_done":
+            elif event == "slow_done" or event == "end":
+                # stops the typing sound if the text stopped writting
+                renpy.sound.stop(fadeout=1.0)
                 # Get current attributes and remove "talk"
                 current_attrs = renpy.get_attributes(character_sprite_basename)
                 if current_attrs:

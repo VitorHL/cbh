@@ -128,7 +128,7 @@ init python:
         // === TAPE TRACKING BAND (Vertical Stretch) ===
         float min_s = u_glitch_delay_min / 1000.0;
         float max_s = u_glitch_delay_max / 1000.0;
-        float travel_dist = 1.2;
+        float travel_dist = 1.6; // Extended bounds so it doesn't clip on entry/exit
         float scroll_duration = travel_dist / max(u_glitch_speed, 0.001);
         
         float max_cycle = max_s + scroll_duration;
@@ -139,25 +139,27 @@ init python:
         
         float glitch_pos = -10.0;
         if (local_time >= random_delay) {
-            glitch_pos = -0.1 + ((local_time - random_delay) / scroll_duration) * travel_dist;
+            glitch_pos = -0.3 + ((local_time - random_delay) / scroll_duration) * travel_dist;
         }
         
         float core_size = u_glitch_size;
         float inner_soft = core_size * clamp(u_glitch_edge, 0.0, 1.0);
         
-        float glitch_band = smoothstep(glitch_pos - core_size, glitch_pos - core_size + inner_soft, uv.y)
-                          - smoothstep(glitch_pos + core_size - inner_soft, glitch_pos + core_size, uv.y);
+        // Evaluate the mask using v_tex_coord.y so it remains anchored to the physical screen
+        float glitch_band = smoothstep(glitch_pos - core_size, glitch_pos - core_size + inner_soft, v_tex_coord.y)
+                          - smoothstep(glitch_pos + core_size - inner_soft, glitch_pos + core_size, v_tex_coord.y);
                           
-        float dist_to_center = uv.y - glitch_pos;
+        // Distance is also calculated against the physical screen coordinate
+        float dist_to_center = v_tex_coord.y - glitch_pos;
         float stretch_factor = clamp(u_glitch_stretch, 0.0, 1.0);
         
         uv.y -= dist_to_center * glitch_band * stretch_factor;
-        uv.y = clamp(uv.y, 0.001, 0.999);
+        uv.y = fract(uv.y); // Ensure any extreme stretches wrap safely
 
         // === SECONDARY NOISE BAND (Grain Only) ===
         float n_min_s = u_noise_band_delay_min / 1000.0;
         float n_max_s = u_noise_band_delay_max / 1000.0;
-        float n_travel_dist = 1.2;
+        float n_travel_dist = 1.6;
         float n_scroll_duration = n_travel_dist / max(u_noise_band_speed, 0.001);
         
         float n_max_cycle = n_max_s + n_scroll_duration;
@@ -168,13 +170,15 @@ init python:
         
         float noise_band_pos = -10.0;
         if (n_local_time >= n_random_delay) {
-            noise_band_pos = -0.1 + ((n_local_time - n_random_delay) / n_scroll_duration) * n_travel_dist;
+            noise_band_pos = -0.3 + ((n_local_time - n_random_delay) / n_scroll_duration) * n_travel_dist;
         }
         
         float n_core_size = u_noise_band_size;
         float n_inner_soft = n_core_size * clamp(u_noise_band_edge, 0.0, 1.0);
-        float noise_band_mask = smoothstep(noise_band_pos - n_core_size, noise_band_pos - n_core_size + n_inner_soft, uv.y)
-                              - smoothstep(noise_band_pos + n_core_size - n_inner_soft, noise_band_pos + n_core_size, uv.y);
+        
+        // Evaluate noise mask in screen space
+        float noise_band_mask = smoothstep(noise_band_pos - n_core_size, noise_band_pos - n_core_size + n_inner_soft, v_tex_coord.y)
+                              - smoothstep(noise_band_pos + n_core_size - n_inner_soft, noise_band_pos + n_core_size, v_tex_coord.y);
 
         // === 3. NTSC COMPOSITE & COLOR-UNDER EMULATION ===
 
@@ -389,19 +393,19 @@ transform vhs_subtle:
         scanlines=1.0,
         noise=0.4,
         wobble=0.0,
-        jitter=0.25,
+        jitter=0.3,
         slip=0.0,
-        bleed=1.0,
+        bleed=0.5,
         vignette=0.25,
         desat=0.00,
-        warp=0.1,
-        glitch=0.01,
-        glitch_size=0.03,
-        glitch_stretch=0.5,
-        glitch_speed=1.0,
-        glitch_edge=0.2,
-        glitch_delay_min=2000.0,
-        glitch_delay_max=4000.0,
+        warp=0.0,
+        glitch=0.0,
+        glitch_size=0.0125,
+        glitch_stretch=0.75,
+        glitch_speed=0.40,
+        glitch_edge=0.0,
+        glitch_delay_min=5000.0,
+        glitch_delay_max=10000.0,
         roll_speed=0.0,
         noise_band_intensity=0.0
     )
