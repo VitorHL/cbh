@@ -1,10 +1,11 @@
 ## ============================================================================
 ## VHS & CRT SHADER FOR REN'PY (ADVANCED THEORY EDITION)
+## Performance, GPU Stability & Artifact-Free Precision
 ## ============================================================================
 
 init python:
     # ------------------------------------------------------------------------
-    # 1. UNIFIED SINGLE-PASS SHADER (Full compatibility)
+    # 1. UNIFIED SINGLE-PASS SHADER
     # ------------------------------------------------------------------------
     renpy.register_shader("custom.vhs",
         variables="""
@@ -48,18 +49,19 @@ init python:
             return fract((p3.x + p3.y) * p3.z);
         }
 
+        // Horizontal Gaussian low-pass filter (5-tap radius 2 for VRAM bandwidth safety)
         float filterChannel(sampler2D tex, vec2 uv, vec3 coeffs, float filter_width, vec2 res) {
             if (filter_width <= 0.05) {
                 return dot(texture2D(tex, uv).rgb, coeffs);
             }
             float accumulated_val = 0.0;
             float total_weight = 0.0;
-            const int radius = 4;
+            const int radius = 2;
             for (int i = -radius; i <= radius; i++) {
                 float offset = float(i) * filter_width / res.x;
                 vec3 neighbor_rgb = texture2D(tex, uv + vec2(offset, 0.0)).rgb;
                 float val = dot(neighbor_rgb, coeffs);
-                float weight = exp(-0.5 * float(i * i) / 4.0);
+                float weight = exp(-0.5 * float(i * i) / 2.0);
                 accumulated_val += val * weight;
                 total_weight += weight;
             }
@@ -220,7 +222,8 @@ init python:
         vec3 color_rgb = YIQ_TO_RGB_MATRIX * yiq;
 
         // === 4. CHROMATIC ABERRATION ===
-        vec2 chroma_offset = vec2(u_chroma_amount * 0.5, 0.2) * px_size;
+        // Pure horizontal offset to eliminate vertical RGB color line artifacts
+        vec2 chroma_offset = vec2(u_chroma_amount * 0.5, 0.0) * px_size;
         
         float r_val = texture2D(tex0, uv - chroma_offset).r;
         float b_val = texture2D(tex0, uv + chroma_offset).b;
@@ -264,6 +267,7 @@ init python:
             float dark_w = mix(1.0, 0.6, u_scanline_strength);
             float light_w = mix(1.0, 1.25, u_scanline_strength);
             
+            // gl_FragCoord is the physical window pixel position, ensuring hardware-exact subpixel alignment without UV moire bands
             vec2 mask_pos = gl_FragCoord.xy;
             mask_pos.x += mask_pos.y * 3.0;
             float frac_x = fract(mask_pos.x * 0.166666666);
@@ -296,7 +300,7 @@ init python:
         """)
 
     # ------------------------------------------------------------------------
-    # 2. GLOBAL CRT OVERLAY SHADER (Scanlines + Bleed + Jitter for ALL Layers)
+    # 2. GLOBAL CRT OVERLAY SHADER (Scanlines + Bleed + Jitter for Top Layers)
     # ------------------------------------------------------------------------
     renpy.register_shader("custom.vhs_crt",
         variables="""
@@ -325,12 +329,12 @@ init python:
             }
             float accumulated_val = 0.0;
             float total_weight = 0.0;
-            const int radius = 4;
+            const int radius = 2;
             for (int i = -radius; i <= radius; i++) {
                 float offset = float(i) * filter_width / res.x;
                 vec3 neighbor_rgb = texture2D(tex, uv + vec2(offset, 0.0)).rgb;
                 float val = dot(neighbor_rgb, coeffs);
-                float weight = exp(-0.5 * float(i * i) / 4.0);
+                float weight = exp(-0.5 * float(i * i) / 2.0);
                 accumulated_val += val * weight;
                 total_weight += weight;
             }
@@ -402,7 +406,7 @@ init python:
         vec3 color_rgb = YIQ_TO_RGB_MATRIX * yiq;
 
         // === CHROMATIC ABERRATION ===
-        vec2 chroma_offset = vec2(u_chroma_amount * 0.5, 0.2) * px_size;
+        vec2 chroma_offset = vec2(u_chroma_amount * 0.5, 0.0) * px_size;
         float r_val = texture2D(tex0, uv - chroma_offset).r;
         float b_val = texture2D(tex0, uv + chroma_offset).b;
         color_rgb.r = mix(color_rgb.r, r_val, 0.35);
@@ -483,7 +487,7 @@ transform vhs(
     xoffset xadj
     yoffset yadj
     mesh True
-    mesh_pad (int(chroma + bleed + 2), 0, int(chroma + bleed + 2), 0)
+    mesh_pad (min(int(chroma + bleed + 2), 16), 0, min(int(chroma + bleed + 2), 16), 0)
     shader "custom.vhs"
     u_chroma_amount float(chroma)
     u_scanline_strength float(scanlines)
@@ -516,7 +520,7 @@ transform vhs(
     pause 1.0 / 30.0
     repeat
 
-# 2. Global CRT Overlay Transform (Scanlines + Bleed + Jitter for all layers)
+# 2. Global CRT Overlay Transform (Scanlines + Bleed + Jitter for top layers)
 transform vhs_crt(
     chroma=2.0,
     scanlines=1.0,
@@ -531,7 +535,7 @@ transform vhs_crt(
     xoffset xadj
     yoffset yadj
     mesh True
-    mesh_pad (int(chroma + bleed + 2), 0, int(chroma + bleed + 2), 0)
+    mesh_pad (min(int(chroma + bleed + 2), 16), 0, min(int(chroma + bleed + 2), 16), 0)
     shader "custom.vhs_crt"
     u_chroma_amount float(chroma)
     u_scanline_strength float(scanlines)
@@ -626,47 +630,21 @@ init python:
 
     def apply_vhs_global(preset="subtle"):
         """
-        Apply VHS master tape distortions to 'master' layer,
-        and CRT scanlines + bleed + jitter overlay to ALL layers
-        (master, screens, vhs_screens, overlay, top_layers, menu_clear_layers, etc.).
+        Apply heavy VHS shader ONLY once to the master layer for GPU VRAM stability.
         """
-        master_presets = {
+        preset_map = {
             "subtle": vhs_subtle,
             "normal": vhs_normal,
         }
-        crt_presets = {
-            "subtle": vhs_crt_subtle,
-            "normal": vhs_crt_normal,
-        }
-        
-        tr_master = master_presets.get(preset, vhs_subtle)
-        tr_crt = crt_presets.get(preset, vhs_crt_subtle)
-        
-        # Apply full VHS to master layer
-        renpy.layer_at_list([tr_master], layer="master")
-        
-        # Gather all configured Ren'Py layers
-        all_layers = list(getattr(renpy.config, "layers", ["master", "transient", "screens", "overlay"]))
-        top_layers = list(getattr(renpy.config, "top_layers", ["vhs_screens", "effect_overlay"]))
-        
-        combined_layers = list(dict.fromkeys(all_layers + top_layers))
-        
-        # Apply CRT Scanlines + Bleed + Jitter to top/screen layers
-        for lyr in combined_layers:
-            if lyr != "master":
-                renpy.layer_at_list([tr_crt], layer=lyr)
+        tr = preset_map.get(preset, vhs_subtle)
+        renpy.layer_at_list([tr], layer="master")
 
 
     def remove_vhs_global():
         """
-        Remove VHS shaders from all layers.
+        Remove VHS shader from master layer.
         """
-        all_layers = list(getattr(renpy.config, "layers", ["master", "transient", "screens", "overlay"]))
-        top_layers = list(getattr(renpy.config, "top_layers", ["vhs_screens", "effect_overlay"]))
-        combined_layers = list(dict.fromkeys(all_layers + top_layers))
-        
-        for lyr in combined_layers:
-            renpy.layer_at_list([], layer=lyr)
+        renpy.layer_at_list([], layer="master")
 
 
     def apply_vhs_to_layer(layer="master", preset="subtle", mode="full"):
