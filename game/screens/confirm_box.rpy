@@ -1,4 +1,4 @@
-﻿screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
+screen game_confirm_box (on_confirm, desc = None, hide_transition = None):
     modal True
     zorder 999
     frame:

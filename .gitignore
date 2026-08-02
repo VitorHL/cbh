@@ -9,3 +9,6 @@ traceback.txt
 log.txt
 errors.txt
 /.agents
+/vhs_theory
+vhs_shader_backup.rpy
+vhs_shader_backup_gemini.rpy

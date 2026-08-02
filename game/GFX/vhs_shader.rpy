@@ -1,6 +1,7 @@
 ## ============================================================================
 ## VHS & CRT SHADER FOR REN'PY (ADVANCED THEORY EDITION)
-## Performance, GPU Stability & Artifact-Free Precision
+## Includes Horizontal, Vertical, and Radial Chromatic Aberration
+## Chromatic Aberration Model by GRIMUMU (2025) & Qwen3.7 (2026)
 ## ============================================================================
 
 init python:
@@ -13,6 +14,7 @@ init python:
         uniform vec2 u_model_size;
         uniform float u_time;
         uniform float u_chroma_amount;
+        uniform float u_chroma_mode;
         uniform float u_scanline_strength;
         uniform float u_noise_strength;
         uniform float u_wobble;
@@ -221,14 +223,27 @@ init python:
         vec3 yiq = vec3(Y_decoded, I_val, Q_val);
         vec3 color_rgb = YIQ_TO_RGB_MATRIX * yiq;
 
-        // === 4. CHROMATIC ABERRATION ===
-        // Pure horizontal offset to eliminate vertical RGB color line artifacts
-        vec2 chroma_offset = vec2(u_chroma_amount * 0.5, 0.0) * px_size;
-        
-        float r_val = texture2D(tex0, uv - chroma_offset).r;
-        float b_val = texture2D(tex0, uv + chroma_offset).b;
-        color_rgb.r = mix(color_rgb.r, r_val, 0.35);
-        color_rgb.b = mix(color_rgb.b, b_val, 0.35);
+        // === 4. CHROMATIC ABERRATION (Horizontal, Vertical, or Radial) ===
+        if (u_chroma_amount > 0.001) {
+            vec2 chroma_offset;
+            if (u_chroma_mode > 1.5) {
+                // Radial (Cinematic lens distortion scaling from center outward)
+                vec2 center = (v_tex_coord - 0.5) * 2.0;
+                float dist = length(center);
+                chroma_offset = (center * dist) * (u_chroma_amount / u_model_size);
+            } else if (u_chroma_mode > 0.5) {
+                // Vertical
+                chroma_offset = vec2(0.0, u_chroma_amount) * px_size;
+            } else {
+                // Horizontal (NTSC tape head delay)
+                chroma_offset = vec2(u_chroma_amount, 0.0) * px_size;
+            }
+
+            float r_val = texture2D(tex0, uv - chroma_offset).r;
+            float b_val = texture2D(tex0, uv + chroma_offset).b;
+            color_rgb.r = mix(color_rgb.r, r_val, 0.7);
+            color_rgb.b = mix(color_rgb.b, b_val, 0.7);
+        }
 
         // === 5. STATIC NOISE & BLOOMING ===
         float static_noise = vhs_hash(vec2(v_tex_coord.x * u_model_size.x, v_tex_coord.y * u_model_size.y + time * 1000.0));
@@ -267,7 +282,6 @@ init python:
             float dark_w = mix(1.0, 0.6, u_scanline_strength);
             float light_w = mix(1.0, 1.25, u_scanline_strength);
             
-            // gl_FragCoord is the physical window pixel position, ensuring hardware-exact subpixel alignment without UV moire bands
             vec2 mask_pos = gl_FragCoord.xy;
             mask_pos.x += mask_pos.y * 3.0;
             float frac_x = fract(mask_pos.x * 0.166666666);
@@ -308,6 +322,9 @@ init python:
         uniform vec2 u_model_size;
         uniform float u_time;
         uniform float u_chroma_amount;
+        uniform float u_chroma_mode;
+        uniform float u_edge_lock;
+        uniform float u_warp;
         uniform float u_scanline_strength;
         uniform float u_jitter;
         uniform float u_bleed_amount;
@@ -346,10 +363,22 @@ init python:
         vec2 px_size = 1.0 / u_model_size;
         float time = u_time;
 
-        // === LINE JITTER ===
-        if (u_jitter > 0.001) {
-            float jitter_noise = vhs_hash_crt(vec2(uv.y * 500.0, time * 2.0));
-            uv.x += (jitter_noise - 0.5) * 0.0015 * u_jitter;
+        // === EDGE LOCK MASK ===
+        float edge_mask = 1.0;
+        if (u_edge_lock > 0.5) {
+            float margin = 0.05;
+            edge_mask = smoothstep(0.0, margin, v_tex_coord.x)
+                      * smoothstep(0.0, margin, 1.0 - v_tex_coord.x)
+                      * smoothstep(0.0, margin, v_tex_coord.y)
+                      * smoothstep(0.0, margin, 1.0 - v_tex_coord.y);
+        }
+
+        // === 1. CRT SCREEN CURVATURE ===
+        if (u_warp > 0.0) {
+            vec2 ndc = uv * 2.0 - 1.0;
+            ndc.x *= 1.0 + u_warp * 0.03 * (ndc.y * ndc.y);
+            ndc.y *= 1.0 + u_warp * 0.04 * (ndc.x * ndc.x);
+            uv = ndc * 0.5 + 0.5;
         }
 
         vec4 tex_base = texture2D(tex0, uv);
@@ -405,12 +434,27 @@ init python:
         vec3 yiq = vec3(Y_decoded, I_val, Q_val);
         vec3 color_rgb = YIQ_TO_RGB_MATRIX * yiq;
 
-        // === CHROMATIC ABERRATION ===
-        vec2 chroma_offset = vec2(u_chroma_amount * 0.5, 0.0) * px_size;
-        float r_val = texture2D(tex0, uv - chroma_offset).r;
-        float b_val = texture2D(tex0, uv + chroma_offset).b;
-        color_rgb.r = mix(color_rgb.r, r_val, 0.35);
-        color_rgb.b = mix(color_rgb.b, b_val, 0.35);
+        // === CHROMATIC ABERRATION (Horizontal, Vertical, or Radial) ===
+        if (u_chroma_amount > 0.001) {
+            vec2 chroma_offset;
+            if (u_chroma_mode > 1.5) {
+                // Radial (Cinematic lens distortion scaling from center outward)
+                vec2 center = (v_tex_coord - 0.5) * 2.0;
+                float dist = length(center);
+                chroma_offset = (center * dist) * (u_chroma_amount / u_model_size);
+            } else if (u_chroma_mode > 0.5) {
+                // Vertical
+                chroma_offset = vec2(0.0, u_chroma_amount) * px_size;
+            } else {
+                // Horizontal (NTSC tape head delay)
+                chroma_offset = vec2(u_chroma_amount, 0.0) * px_size;
+            }
+
+            float r_val = texture2D(tex0, uv - chroma_offset).r;
+            float b_val = texture2D(tex0, uv + chroma_offset).b;
+            color_rgb.r = mix(color_rgb.r, r_val, 0.7);
+            color_rgb.b = mix(color_rgb.b, b_val, 0.7);
+        }
 
         // === CRT SCANLINES ===
         float scanline_coord = v_tex_coord.y * u_model_size.y;
@@ -451,9 +495,19 @@ init python:
 ## TRANSFORMS
 ## ============================================================================
 
+# Helper to resolve chroma_mode string/float into uniform value
+init python:
+    def _parse_chroma_mode(mode):
+        if mode == "radial" or mode == 2 or mode == 2.0:
+            return 2.0
+        elif mode == "v" or mode == 1 or mode == 1.0:
+            return 1.0
+        return 0.0
+
 # 1. Full Single-Pass Transform
 transform vhs(
     chroma=4.0,
+    chroma_mode="h",
     scanlines=0.25,
     noise=1.0,
     wobble=1.0,
@@ -481,15 +535,15 @@ transform vhs(
     noise_band_delay_min=2000.0,
     noise_band_delay_max=5000.0,
     noise_band_intensity=0.0,
-    xadj=-4,
+    xadj=0,
     yadj=0
     ):
     xoffset xadj
     yoffset yadj
     mesh True
-    mesh_pad (min(int(chroma + bleed + 2), 16), 0, min(int(chroma + bleed + 2), 16), 0)
     shader "custom.vhs"
     u_chroma_amount float(chroma)
+    u_chroma_mode float(_parse_chroma_mode(chroma_mode))
     u_scanline_strength float(scanlines)
     u_noise_strength float(noise)
     u_wobble float(wobble)
@@ -523,25 +577,30 @@ transform vhs(
 # 2. Global CRT Overlay Transform (Scanlines + Bleed + Jitter for top layers)
 transform vhs_crt(
     chroma=2.0,
+    chroma_mode="h",
     scanlines=1.0,
     jitter=0.3,
     bleed=0.5,
     luma_bw=4.2,
     chroma_bw=1.5,
     decoder=1.0,
-    xadj=-4,
+    warp=0.00,
+    mode =False,
+    xadj=0,
     yadj=0
     ):
     xoffset xadj
     yoffset yadj
     mesh True
-    mesh_pad (min(int(chroma + bleed + 2), 16), 0, min(int(chroma + bleed + 2), 16), 0)
     shader "custom.vhs_crt"
     u_chroma_amount float(chroma)
+    u_chroma_mode float(_parse_chroma_mode(chroma_mode))
+    u_edge_lock float(1.0 if mode == "bg" else 0.0)
     u_scanline_strength float(scanlines)
     u_jitter float(jitter)
     u_bleed_amount float(bleed)
     u_luma_bandwidth float(luma_bw)
+    u_warp float(warp)
     u_chroma_bandwidth float(chroma_bw)
     u_decoder_type float(decoder)
     pause 1.0 / 30.0
@@ -556,15 +615,16 @@ transform vhs_crt(
 transform vhs_subtle:
     vhs(
         chroma=2.0,
+        chroma_mode="h",
         scanlines=1.0,
         noise=0.4,
         wobble=0.0,
         jitter=0.3,
         slip=0.0,
-        bleed=0.5,
-        vignette=0.25,
+        bleed=1.0,
+        vignette=0.5,
         desat=0.00,
-        warp=0.0,
+        warp=1.25,
         glitch=0.0,
         glitch_size=0.0125,
         glitch_stretch=0.75,
@@ -579,6 +639,7 @@ transform vhs_subtle:
 transform vhs_normal:
     vhs(
         chroma=4.0,
+        chroma_mode="h",
         scanlines=0.25,
         noise=1.0,
         wobble=0.0,
@@ -608,16 +669,20 @@ transform vhs_normal:
 transform vhs_crt_subtle:
     vhs_crt(
         chroma=2.0,
+        chroma_mode="h",
         scanlines=1.0,
         jitter=0.3,
+        warp=1.25,
         bleed=0.5
     )
 
 transform vhs_crt_normal:
     vhs_crt(
         chroma=4.0,
+        chroma_mode="h",
         scanlines=0.25,
         jitter=1.0,
+        warp=1.25,
         bleed=3.0
     )
 

@@ -33,6 +33,8 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+Chromatic Aberration Shader by GRIMUMU (2025) & Qwen3.7 (2026).
+https://grimumu.itch.io/
 """)
 
 
@@ -212,8 +214,8 @@ init python:
 # define build.itch_project = "renpytom/test-project"
 
 
-define config.layers = [ "master", "transient", "underlay", "vignette", "screens", "overlay", "screens" , "vhs_screens", "effect_overlay" ]    
-define config.menu_clear_layers = [  ]
-define config.top_layers = [  ]
+define config.layers = [ "master", "transient", "underlay", "vignette", "screens", "overlay" ]    
+define config.menu_clear_layers = [ "screens" ]
+define config.top_layers = [ "vhs_screens", "effect_overlay" ]
 python:
     renpy.add_layer()

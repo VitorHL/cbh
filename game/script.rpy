@@ -28,42 +28,29 @@ default clock_hours = 0
 default clock_minutes = 0
 default clock_seconds = 0
 
-image grain_effect:
-    "gui/overlay/grain/grain_00.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_01.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_02.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_03.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_04.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_05.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_06.webp"   
-    pause 0.06
-    "gui/overlay/grain/grain_07.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_08.webp"
-    pause 0.06
-    "gui/overlay/grain/grain_09.webp"
-    pause 0.06
-    repeat
-
 label  before_main_menu:
-    show grain_effect onlayer effect_overlay
-    show image "gui/overlay/scanlines.webp" onlayer effect_overlay
+    camera at vhs_subtle
+    camera vhs_screens at vhs_crt_subtle
+    camera screens at vhs_crt_subtle
+    camera effect_overlay at vhs_crt_subtle
     #show image "gui/overlay/screen_overlay.webp" onlayer effect_overlay
 return
 
 label  after_load:
+    camera at vhs_subtle
+    camera vhs_screens at vhs_crt_subtle
+    camera screens at vhs_crt_subtle
+    camera effect_overlay at vhs_crt_subtle
     # show image "gui/overlay/vignette.webp" onlayer vignette
     # show image "gui/overlay/scanlines.webp" onlayer effect_overlay
 return
 
 label start:
     #$set_room( room_daniel_apartment )
+    camera at vhs_subtle
+    camera vhs_screens at vhs_crt_subtle
+    camera screens at vhs_crt_subtle
+    camera effect_overlay at vhs_crt_subtle
     show screen vhs_overlay
     #show image "gui/overlay/vignette.webp" onlayer vignette
     #show image "gui/overlay/scanlines.webp" onlayer effect_overlay

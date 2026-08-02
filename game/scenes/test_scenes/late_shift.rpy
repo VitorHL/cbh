@@ -145,10 +145,6 @@ label edgar_counter_menu:
 #=============================================================================
 
 label late_shift_intro:
-    camera at vhs_subtle
-    camera vhs_screens at vhs_crt_subtle
-    camera screens at vhs_crt_subtle
-    camera effect_overlay at vhs_crt_subtle
 
     scene edgar_diner_bg 
     
